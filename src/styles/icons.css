@@ -1,0 +1,26 @@
+.icon {
+    background-size: cover;
+    width: 24px;
+    height: 24px;
+    display: flex;
+}
+
+.twitter-icon {
+    background-image: url(../assets/twitter.svg);
+}
+
+.reddit-icon {
+    background-image: url(../assets/reddit.svg);
+}
+
+.mastodon-icon {
+    background-image: url(../assets/mastodon.svg);
+}
+
+.discord-icon {
+    background-image: url(../assets/discord.svg);
+}
+
+.github-icon {
+    background-image: url(../assets/github.svg);
+}
