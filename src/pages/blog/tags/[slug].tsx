@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from "../../../components/Layout"
 import { Landing } from "../../../components/Landing"
-import { GetStaticProps, GetStaticPaths } from "next"
+import {GetStaticProps, GetStaticPaths, GetServerSideProps} from "next"
 import { getTags, getSingleTag, getTagPosts } from "../../../lib/blog"
 import { BlogHero } from "../../../components/Blog/BlogHero"
 import { BlogCard } from "../../../components/Blog/BlogCard"
@@ -23,7 +23,7 @@ const BlogTag = (props) => {
     )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+/*export const getStaticPaths: GetStaticPaths = async () => {
     const tags = await getTags()
 
     const paths = tags.map((tag) => ({
@@ -33,9 +33,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }))
 
     return { paths, fallback: false }
-}
+}*/
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     const tag = await getSingleTag(context.params.slug)
     const posts = await getTagPosts(context.params.slug)
 

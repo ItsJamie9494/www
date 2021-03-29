@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from "../../../components/Layout"
 import { Landing } from "../../../components/Landing"
-import { GetStaticProps } from "next"
+import {GetServerSideProps, GetStaticProps} from "next"
 import { getTags } from "../../../lib/blog"
 import { BlogHero } from "../../../components/Blog/BlogHero"
 import { TagCard } from "../../../components/Blog/TagCard"
@@ -23,7 +23,7 @@ const BlogTags = (props) => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     const tags = await getTags()
 
     if (!tags) {

@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from "../../components/Layout";
-import { GetStaticProps } from "next";
+import {GetServerSideProps, GetStaticProps} from "next";
 import { getPosts } from "../../lib/blog";
 import { BlogEnding } from "../../components/Blog/BlogEnding"
 import { BlogCard } from '../../components/Blog/BlogCard'
@@ -42,7 +42,7 @@ const Blog = (props) => {
     )
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     const posts = await getPosts()
 
     if (!posts) {

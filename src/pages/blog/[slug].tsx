@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from "../../components/Layout"
 import { BlogHero } from "../../components/Blog/BlogHero"
-import { GetStaticProps, GetStaticPaths } from "next"
+import {GetStaticProps, GetStaticPaths, GetServerSideProps} from "next"
 import { getPosts, getSinglePost } from "../../lib/blog"
 import { Time } from "../../components/Blog/BlogCard"
 import Link from 'next/link'
@@ -58,7 +58,7 @@ const BlogPost = (props) => {
     )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
+/* export const getStaticPaths: GetStaticPaths = async () => {
     const posts = await getPosts()
 
     const paths = posts.map((post) => ({
@@ -68,9 +68,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
     }))
 
     return { paths, fallback: false }
-}
+}*/
 
-export const getStaticProps: GetStaticProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
     const post = await getSinglePost(context.params.slug)
 
     if (!post) {
