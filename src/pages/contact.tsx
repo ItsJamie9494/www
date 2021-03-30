@@ -85,7 +85,7 @@ const Contact = () => {
                     <p>You could just email me, through this domain. I have a catch-all setup, so any email sent to
                         @{config.hostname} will probably make it to me. For best results, please try and email me
                         at <span style={{ display: 'inline-block' }}>
-                            <Link href={"mailto:hello@trevorthalacker.me"}>hello@trevorthalacker.me</Link>
+                            <Link href={"mailto:hello@trevorthalacker.com"}><a>hello@{config.hostname}</a></Link>
                         </span>.</p>
                 </Container>
             </Layout>

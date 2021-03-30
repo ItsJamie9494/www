@@ -69,4 +69,4 @@ export const CardDescription = styled.div`
 
 export const CardContainerLink = styled.a`
   
-  }`
+`

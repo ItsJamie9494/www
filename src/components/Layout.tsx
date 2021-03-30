@@ -35,12 +35,13 @@ const Layout = (props: PropTypes) => {
                 <meta name={"og:title"} content={`${props.title} | Trevor Thalacker`} />
                 <meta name={"og:description"} content={config.description} />
                 <meta name={"og:type"} content={"website"} />
+                <meta name={"og:image"} content={"/assets/logo.png"} />
                 <meta name={"twitter:card"} content={"summary"} />
                 <meta name={"twitter:creator"} content={"Trevor Thalacker"} />
                 <meta name={"twitter:description"} content={config.description} />
                 <meta name={"twitter:title"} content={`${props.title} | Trevor Thalacker`} />
                 {/* Analytics */}
-                <script async defer data-domain={"trevorthalacker.me"} src={"https://analytics.trevorthalacker.me/js/plausible.js"} />
+                <script async defer data-domain={"trevorthalacker.com"} src={"https://analytics.trevorthalacker.com/js/plausible.js"} />
                 {/* Comment Section */}
                 <script type={"text/javascript"} src={"https://latest.cactus.chat/cactus.js"} />
                 <link rel={"stylesheet"} href={"https://latest.cactus.chat/style.css"} type={"text/css"} />
