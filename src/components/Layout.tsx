@@ -47,7 +47,7 @@ const Layout = (props: PropTypes) => {
                 <meta name={"twitter:description"} content={config.description} />
                 <meta name={"twitter:title"} content={`${props.title} | Trevor Thalacker`} />
                 {/* Analytics */}
-                <script async defer data-domain={"trevorthalacker.com"} src={"https://analytics.trevorthalacker.com/js/plausible.js"} />
+                <script async defer data-domain={"trevorthalacker.com"} src={"https://analytics.trevorthalacker.com/js/plausible.outbound-links.js"} />
                 {/* Comment Section */}
                 <script type={"text/javascript"} src={"https://latest.cactus.chat/cactus.js"} />
                 <link rel={"stylesheet"} href={"https://latest.cactus.chat/style.css"} type={"text/css"} />
