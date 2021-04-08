@@ -3,6 +3,7 @@ import Layout from "../../components/Layout";
 import { Head, Landing, Subheader } from "../../components/Landing";
 import Link from 'next/link'
 import { Container } from '../../components/Page'
+import config from '../../config';
 
 const Legal = () => {
     return (
@@ -10,7 +11,7 @@ const Legal = () => {
             <Layout title={'Privacy Policy'}>
                 <Landing>
                     <Head>Privacy Policy</Head>
-                    <Subheader>Last Modified 28 March, 2021</Subheader>
+                    <Subheader>Last Modified 8 April, 2021</Subheader>
                 </Landing>
                 <Container>
                     <p>The privacy of our website visitors is important to us so we do not track any individual people.
@@ -31,6 +32,7 @@ const Legal = () => {
                         Data collected includes websites that send us traffic, pages on our site that are visited,
                         duration of the visits, information from the devices
                         (device type, operating system, country and browser) used during the visit and more.</p>
+                        <p>If you would like to opt-out of this analytics collection, please visit <Link href={"/legal/opt-out"}><a>https://{config.hostname}/legal/opt-out</a></Link></p>
 
                     <h2>Data Collection Policy</h2>
                     <p>We do not track people across their devices and across websites and apps that they visit.
