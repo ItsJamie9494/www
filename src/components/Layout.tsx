@@ -32,7 +32,7 @@ const generateCSP = () => {
     let csp = ``;
     csp += `base-uri 'self';`;
     csp += `script-src 'nonce-${nonce}' 'self' https://analytics.${config.hostname} https://latest.cactus.chat ${productionEnv ? '' : "'unsafe-eval'"};`;
-    csp += `connect-src 'self' matrix.cactus.chat:* 'unsafe-eval';`
+    csp += `connect-src 'self' matrix.cactus.chat:* analytics.trevorthalacker.com:* 'unsafe-eval';`
     //if (!productionEnv) csp += `connect-src 'self';`;
 
     return [csp, nonce]
