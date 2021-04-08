@@ -44,6 +44,7 @@ const Layout = (props: PropTypes) => {
 
     React.useEffect(() => {
         if (window) {
+            // @ts-ignore Custom DOM Event
             window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
         }
     }, [])

@@ -5,6 +5,7 @@ import { Head, Landing, Subheader } from "../components/Landing";
 const Error = () => {
     React.useEffect(() => {
         if (window) {
+            // @ts-ignore Custom DOM Event
             window.plausible("404",{ props: { path: document.location.pathname } });
         }
     }, [])
