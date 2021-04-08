@@ -22,6 +22,12 @@ const GStyle = createGlobalStyle`${GlobalStyle}`
 
 const Layout = (props: PropTypes) => {
     const [isDarkTheme, setIsDarkTheme] = useGlobalState('isDarkTheme')
+
+    React.useEffect(() => {
+        if (window) {
+            window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }
+        }
+    }, [])
     return (
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
             <GStyle />

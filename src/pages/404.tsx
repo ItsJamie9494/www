@@ -3,6 +3,11 @@ import Layout from "../components/Layout";
 import { Head, Landing, Subheader } from "../components/Landing";
 
 const Error = () => {
+    React.useEffect(() => {
+        if (window) {
+            window.plausible("404",{ props: { path: document.location.pathname } });
+        }
+    }, [])
     return (
         <>
             <Layout title={'Page Not Found'}>
