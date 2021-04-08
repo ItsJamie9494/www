@@ -1,5 +1,7 @@
 import React from "react"
-import Head from "next/head";
+import Head from "next/head"
+import crypto from 'crypto'
+import { v4 } from 'uuid'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
 
 import { Header } from "./Header"
@@ -20,8 +22,25 @@ interface PropTypes {
 
 const GStyle = createGlobalStyle`${GlobalStyle}`
 
+const generateCSP = () => {
+    const productionEnv = process.env.NODE_END === 'production'
+
+    const hash = crypto.createHash('sha256')
+    hash.update(v4())
+    const nonce = hash.digest('base64')
+
+    let csp = ``;
+    csp += `base-uri 'self';`;
+    csp += `script-src 'nonce-${nonce}' 'self' https://analytics.${config.hostname} https://latest.cactus.chat ${productionEnv ? '' : "'unsafe-eval'"};`;
+    csp += `connect-src 'self' matrix.cactus.chat:* 'unsafe-eval';`
+    //if (!productionEnv) csp += `connect-src 'self';`;
+
+    return [csp, nonce]
+}
+
 const Layout = (props: PropTypes) => {
     const [isDarkTheme, setIsDarkTheme] = useGlobalState('isDarkTheme')
+    const [csp, nonce] = generateCSP();
 
     React.useEffect(() => {
         if (window) {
@@ -46,6 +65,7 @@ const Layout = (props: PropTypes) => {
                 <meta name={"twitter:creator"} content={"Trevor Thalacker"} />
                 <meta name={"twitter:description"} content={config.description} />
                 <meta name={"twitter:title"} content={`${props.title} | Trevor Thalacker`} />
+                <meta httpEquiv='Content-Security-Policy' content={csp} />
                 {/* Analytics */}
                 <script async defer data-domain={"trevorthalacker.com"} src={"https://analytics.trevorthalacker.com/js/plausible.outbound-links.js"} />
                 {/* Comment Section */}
