@@ -27,6 +27,13 @@ const Index = () => {
                         projectWebsite={"https://keyboardnotfound.com"}
                         projectImage={"/assets/projects/keyboardnotfound.png"}
                         projectRepository={"https://github.com/trevorthalacker/keyboardnotfound"} />
+                    <Project
+                        header={"Lead Developer"}
+                        projectName={"bingus.link"}
+                        projectDescription={"A free, private URL shortener with the greatest domain in existence."}
+                        projectWebsite={"https://bingus.link"}
+                        projectImage={"/assets/projects/binguslink.png"}
+                        projectRepository={"https://github.com/trevorthalacker/bingus.link"} />
                     <p>And hopefully more to come in the future!</p>
                 </Container>
             </Layout>
