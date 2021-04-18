@@ -19,6 +19,10 @@ module.exports = {
               {
                 key: 'Access-Control-Allow-Origin',
                 value: '*',
+              },
+              {
+                key: 'Permissions-Policy',
+                value: 'interest-cohort=()'
               }
             ],
           },
