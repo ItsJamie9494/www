@@ -8,6 +8,10 @@ module.exports = {
             {
                 source: '/privacy',
                 destination: '/legal/privacy'
+            },
+            {
+                source: '/discord',
+                destination: 'https://discord.gg/MTFcPZwaEC'
             }
         ]
     },
