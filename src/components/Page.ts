@@ -8,6 +8,12 @@ export const Container = styled.div`
   margin-bottom: 40px;
 `;
 
+export const CenteredElement = styled.div`
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+`;
+
 export const ContactGrid = styled.div`
   display: grid;
   grid-auto-flow: column;
