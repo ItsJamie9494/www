@@ -27,8 +27,8 @@ export const Heading = styled.span`
 export const ProjectName = styled.span`
   display: flex;
   font-weight: 900;
-  font-size: 50px;
-  line-height: 52px;
+  font-size: 40px;
+  line-height: 42px;
   align-items: center;
   justify-content: center;
   transition: color .5s;
