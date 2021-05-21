@@ -6,6 +6,7 @@ import Typist from 'react-typist'
 import { Project } from "../components/Project"
 import { Container, CenteredElement, ContactGrid, ContactSocialLink } from "../components/Page"
 import Link from 'next/link';
+import { AboutPage } from '../components/AboutPage'
 
 const Index = () => {
   return (
@@ -52,30 +53,9 @@ const Index = () => {
                     <CenteredElement>
                         <p>And hopefully more to come in the future!</p>
                     </CenteredElement>
-                    <CenteredElement>
-                        <Head>About Me</Head>
-                        <Typist
-                            cursor={{
-                                show: false
-                            }}
-                            avgTypingDelay={100}>
-                            <Subheader>$ whoami</Subheader>
-                        </Typist>
-                    </CenteredElement>
-                    <p>Hey there, <span onClick={() => window.location.replace('/maybe')}>my name</span> is Trevor
-                        Thalacker. You might also know me as "AwesomeTech10," which was my online identity for a few
-                        years, before I decided to use my name. I program stuff, usually website stuff.</p>
+                    
+                    <AboutPage />
 
-                    <h2>More Information</h2>
-
-                    <p>I mostly program websites, using Typescript, and React (fun fact: this entire website is written
-                        with React and Next.js). I can do CSS as well. I also develop a few applications, most notably
-                        the Dot Browser.</p>
-
-                    <p>I'm trying to learn more programming languages, such as Rust and Python.</p>
-
-                    <p>I am a major fan of privacy, and usually try and use as many privacy-focused alternatives as
-                        possible.</p>
                     <CenteredElement>
                         <Head>Contact Me</Head>
                     </CenteredElement>
