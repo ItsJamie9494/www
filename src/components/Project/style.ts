@@ -3,12 +3,14 @@ import styled from 'styled-components';
 export const StyledProject = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 1rem auto;
   align-items: unset;
   justify-content: unset;
-  padding: 1rem 0;
+  padding: 1rem 1.5rem;
   text-align: center;
-  box-shadow: 0 0.5px 3.6px 0 rgba(${props => props.theme.isDark ? '255,255,255' : '0,0,0'},.132), 0 0.3px 0.9px 0 rgba(${props => props.theme.isDark ? '255,255,255' : '0,0,0'},.108);
+  border-radius: 8px;
+  width: 30vw;
+  box-shadow: 0 0 10px 0 ${props => props.theme.colors.tertiary}A6;
 `;
 
 export const Heading = styled.span`
@@ -56,8 +58,9 @@ export const ProjectLink = styled.div`
 
 export const ProjectImage = styled.img`
   margin: 18px auto 0 auto;
-  max-width: 50%;
-  box-shadow: 0 0 10px 0 ${props => props.theme.colors.tertiary}A6;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 100px;
   opacity: ${props => props.theme.isDark ? '.75' : '100'};
   transition: box-shadow .5s, opacity .5s;
 `;

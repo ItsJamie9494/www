@@ -9,7 +9,6 @@ export const Project = ({
     projectWebsite,
     projectRepository,
     projectImage,
-    noRepo,
     discontinued,
 }: {
     header: string,
@@ -17,21 +16,21 @@ export const Project = ({
     projectDescription: string,
     projectWebsite: string,
     projectRepository?: string,
-    projectImage: string,
-    noRepo?: boolean,
+    projectImage?: string,
     discontinued?: boolean
 }) => {
 
     return (
         <StyledProject>
+            {projectImage && ( <ProjectImage src={projectImage} /> )}
+            
             <Heading>{header}</Heading>
             <ProjectName>{projectName} {discontinued && (<DiscontinuedPill>Discontinued</DiscontinuedPill>)}</ProjectName>
             <ProjectDescription>{projectDescription}</ProjectDescription>
             <div style={{ display: 'grid', gridAutoFlow: 'column', gap: '30px', margin: '0 auto' }}>
                 <ProjectLink><Link href={projectWebsite}>Visit Website</Link></ProjectLink>
-                {!noRepo && ( <ProjectLink><Link href={projectRepository}>View Source Code</Link></ProjectLink> )}
+                {projectRepository && ( <ProjectLink><Link href={projectRepository}>View Source Code</Link></ProjectLink> )}
             </div>
-            <ProjectImage src={projectImage} />
         </StyledProject>
     )
 }
