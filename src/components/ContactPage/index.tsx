@@ -52,7 +52,7 @@ export const ContactPage = () => {
                 </span>
                 <span style={{ display: 'flex', justifyContent: 'center', width: 'fit-content' }}>
                     <span style={{ display: 'inline-block' }}>
-                        <Link href={`${config.hostname}/discord`}>
+                        <Link href={`https://${config.hostname}/discord`}>
                             <a>
                                 <ContactSocialLink>
                                     <i className={'icon discord-icon'} />
