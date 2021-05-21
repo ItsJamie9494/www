@@ -26,55 +26,65 @@ export const ContactPage = () => {
             <p>I am available on a lot of social media services. The full list is as follows:</p>
 
             <ContactGrid>
-                <span style={{ width: 'fit-content' }}>
-                    <Link href={"https://twitter.com/trevorthalacker"}>
-                        <a>
-                            <ContactSocialLink>
-                                <i className={'icon twitter-icon'} />
-                                Twitter
-                            </ContactSocialLink>
-                        </a>
-                    </Link>
+                <span style={{ display: 'flex', justifyContent: 'center', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-block' }}>
+                        <Link href={"https://twitter.com/trevorthalacker"}>
+                            <a>
+                                <ContactSocialLink>
+                                    <i className={'icon twitter-icon'} />
+                                    Twitter
+                                </ContactSocialLink>
+                            </a>
+                        </Link>
+                    </span>
                 </span>
-                <span style={{ width: 'fit-content' }}>
-                    <Link href={"https://reddit.com/u/IAmAwesomeTech10"}>
-                        <a>
-                            <ContactSocialLink>
-                                <i className={'icon reddit-icon'} />
-                                Reddit
-                            </ContactSocialLink>
-                        </a>
-                    </Link>
+                <span style={{ display: 'flex', justifyContent: 'center', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-block' }}>
+                        <Link href={"https://reddit.com/u/IAmAwesomeTech10"}>
+                            <a>
+                                <ContactSocialLink>
+                                    <i className={'icon reddit-icon'} />
+                                    Reddit
+                                </ContactSocialLink>
+                            </a>
+                        </Link>
+                    </span>
                 </span>
-                <span style={{ width: 'fit-content' }}>
-                    <Link href={"https://discord.com/users/381541244360327168"}>
-                        <a>
-                            <ContactSocialLink>
-                                <i className={'icon discord-icon'} />
-                                Discord (Trevor#7688)
-                            </ContactSocialLink>
-                        </a>
-                    </Link>
+                <span style={{ display: 'flex', justifyContent: 'center', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-block' }}>
+                        <Link href={`${config.hostname}/discord`}>
+                            <a>
+                                <ContactSocialLink>
+                                    <i className={'icon discord-icon'} />
+                                    Discord
+                                </ContactSocialLink>
+                            </a>
+                        </Link>
+                    </span>
                 </span>
-                <span style={{ width: 'fit-content' }}>
-                    <Link href={"https://github.com/trevorthalacker"}>
-                        <a>
-                            <ContactSocialLink>
-                                <i className={'icon github-icon'} />
-                                Github
-                            </ContactSocialLink>
-                        </a>
-                    </Link>
+                <span style={{ display: 'flex', justifyContent: 'center', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-block' }}>
+                        <Link href={"https://github.com/trevorthalacker"}>
+                            <a>
+                                <ContactSocialLink>
+                                    <i className={'icon github-icon'} />
+                                    Github
+                                </ContactSocialLink>
+                            </a>
+                        </Link>
+                    </span>
                 </span>
-                <span style={{ width: 'fit-content' }}>
-                    <Link href={"https://mastodon.online/@trevorthalacker"}>
-                        <a>
-                            <ContactSocialLink>
-                                <i className={'icon mastodon-icon'} />
-                                Mastodon
-                            </ContactSocialLink>
-                        </a>
-                    </Link>
+                <span style={{ display: 'flex', justifyContent: 'center', width: 'fit-content' }}>
+                    <span style={{ display: 'inline-block' }}>
+                        <Link href={"https://mastodon.online/@trevorthalacker"}>
+                            <a>
+                                <ContactSocialLink>
+                                    <i className={'icon mastodon-icon'} />
+                                    Mastodon
+                                </ContactSocialLink>
+                            </a>
+                        </Link>
+                    </span>
                 </span>
             </ContactGrid>
 
