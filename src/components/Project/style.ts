@@ -6,11 +6,9 @@ export const StyledProject = styled.div`
   margin: 0 auto;
   align-items: unset;
   justify-content: unset;
-  padding: 4rem 0;
-  width: 100%;
-  max-width: 100%;
+  padding: 1rem 0;
   text-align: center;
-  height: 100%;
+  box-shadow: 0 0.5px 3.6px 0 rgba(${props => props.theme.isDark ? '255,255,255' : '0,0,0'},.132), 0 0.3px 0.9px 0 rgba(${props => props.theme.isDark ? '255,255,255' : '0,0,0'},.108);
 `;
 
 export const Heading = styled.span`
@@ -58,7 +56,7 @@ export const ProjectLink = styled.div`
 
 export const ProjectImage = styled.img`
   margin: 18px auto 0 auto;
-  max-width: 70%;
+  max-width: 50%;
   box-shadow: 0 0 10px 0 ${props => props.theme.colors.tertiary}A6;
   opacity: ${props => props.theme.isDark ? '.75' : '100'};
   transition: box-shadow .5s, opacity .5s;

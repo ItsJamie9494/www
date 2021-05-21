@@ -35,15 +35,3 @@ export const Project = ({
         </StyledProject>
     )
 }
-
-/*
-* <StyledProject>
-            <Heading>{header}</Heading>
-            <ProjectName>{projectName}</ProjectName>
-            <ProjectDescription>{projectDescription}</ProjectDescription>
-            <div>
-                <ProjectLink target={"__blank"} href={projectWebsite} style={{ marginRight: '28px' }}>Visit Site</ProjectLink>
-                {!noRepo && <ProjectLink target={"__blank"} href={projectRepository}>Visit Repository</ProjectLink>}
-            </div>
-            <ProjectImage src={projectImage} />
-        </StyledProject>*/
