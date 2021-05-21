@@ -3,14 +3,14 @@ import styled from 'styled-components';
 export const StyledProject = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 1rem auto;
-  align-items: unset;
-  justify-content: unset;
+  align-items: center;
+  justify-content: center;
   padding: 1rem 1.5rem;
   text-align: center;
   border-radius: 8px;
-  width: 30vw;
+  width: 25vw;
   box-shadow: 0 0 10px 0 ${props => props.theme.colors.tertiary}A6;
+  
 `;
 
 export const Heading = styled.span`
