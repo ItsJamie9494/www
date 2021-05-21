@@ -1,7 +1,8 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import { StyledFooter, Container, Image, RightContainer, LinkContainer, CopyrightContainer, EggToast } from "./style";
-import Link from "next/link";
+import { StyledFooter, Container, Image, RightContainer, LinkContainer, CopyrightContainer, EggToast } from "./style"
+import Link from "next/link"
+import { config } from '../../config'
 
 export const Footer = () => {
     const [devCount, setDevCount] = React.useState(0)
@@ -56,9 +57,9 @@ export const Footer = () => {
                                 </a>
                             </Link>
                             <span style={{ margin: '10px' }} />
-                            <Link href={'https://reddit.com/u/IAmAwesomeTech10'}>
+                            <Link href={`https://${config.hostname}/discord`}>
                                 <a className={"noHover"}>
-                                    <i className={'icon reddit-icon'} />
+                                    <i className={'icon discord-icon'} />
                                 </a>
                             </Link>
                             <span style={{ margin: '10px' }} />
