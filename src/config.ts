@@ -1,6 +1,6 @@
 export const config = {
     name: 'Trevor Thalacker',
-    hostname: 'trevorthalacker.com',
+    hostname: process.env.NODE_ENV === 'production' ? 'trevorthalacker.com' : 'localhost:3000',
     description: 'I make computer programs'
 }
 
