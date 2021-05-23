@@ -1,14 +1,19 @@
 import React from 'react'
 import Layout from "../../../components/Layout"
-import { Landing } from "../../../components/Landing"
-import {GetServerSideProps, GetStaticProps} from "next"
+import {GetServerSideProps} from "next"
 import { getTags } from "../../../lib/blog"
 import { BlogHero } from "../../../components/Blog/BlogHero"
 import { TagCard } from "../../../components/Blog/TagCard"
 import { BlogEnding } from "../../../components/Blog/BlogEnding"
+import { BlogError } from '../../../components/Blog/BlogError'
 
 const BlogTags = (props) => {
     // TODO support tag searching
+    if (props.notFound) {
+        return (
+            <BlogError />
+        )
+    }
     return (
         <>
             <Layout title={'Blog'}>
@@ -28,7 +33,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     if (!tags) {
         return {
-            notFound: true,
+            props: {
+                notFound: true
+            }
         }
     }
 

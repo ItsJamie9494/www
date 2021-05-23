@@ -6,9 +6,15 @@ import { getTags, getSingleTag, getTagPosts } from "../../../lib/blog"
 import { BlogHero } from "../../../components/Blog/BlogHero"
 import { BlogCard } from "../../../components/Blog/BlogCard"
 import { BlogEnding } from "../../../components/Blog/BlogEnding"
+import { BlogError } from '../../../components/Blog/BlogError'
 
 const BlogTag = (props) => {
     // TODO support tag searching
+    if (props.notFound) {
+        return (
+            <BlogError />
+        )
+    }
     return (
         <>
             <Layout title={'Blog'}>
@@ -23,25 +29,15 @@ const BlogTag = (props) => {
     )
 }
 
-/*export const getStaticPaths: GetStaticPaths = async () => {
-    const tags = await getTags()
-
-    const paths = tags.map((tag) => ({
-        params: {
-            slug: tag.slug
-        }
-    }))
-
-    return { paths, fallback: false }
-}*/
-
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const tag = await getSingleTag(context.params.slug)
     const posts = await getTagPosts(context.params.slug)
 
     if (!tag) {
         return {
-            notFound: true,
+            props: {
+                notFound: true
+            }
         }
     }
 

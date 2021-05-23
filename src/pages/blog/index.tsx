@@ -6,6 +6,8 @@ import { BlogEnding } from "../../components/Blog/BlogEnding"
 import { BlogCard } from '../../components/Blog/BlogCard'
 import { BlogHero } from "../../components/Blog/BlogHero"
 import { useGlobalState } from "../../globals"
+import { Head, Landing, Subheader } from '../../components/Landing';
+import { BlogError } from '../../components/Blog/BlogError';
 
 const Blog = (props) => {
     const [postsArray, setPostsArray] = useGlobalState('blogPostArray')
@@ -25,6 +27,12 @@ const Blog = (props) => {
             setPosts(props.posts)
         }
     })
+    
+    if (props.notFound) {
+        return (
+            <BlogError />
+        )
+    }
     return (
         <>
             <Layout title={'Blog'}>
@@ -47,7 +55,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     if (!posts) {
         return {
-            notFound: true,
+            props: {
+                notFound: true
+            }
         }
     }
 

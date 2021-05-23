@@ -7,10 +7,12 @@ import { Time } from "../../components/Blog/BlogCard"
 import Link from 'next/link'
 import { PostContainer, PostContent, PostImage, PostMetadata } from "../../components/Post"
 import { Comments } from '../../components/Comments'
+import { Head, Landing, Subheader } from '../../components/Landing'
+import { BlogError } from '../../components/Blog/BlogError'
 
 const BlogPost = (props) => {
     React.useEffect(() => {
-        if (document && window) {
+        if (document && window && !props.notFound) {
             // @ts-ignore
             initComments({
                 node: document.getElementById("comments-section"),
@@ -21,6 +23,12 @@ const BlogPost = (props) => {
             })
         }
     })
+
+    if (props.notFound) {
+        return (
+            <BlogError />
+        )
+    }
     return (
         <>
             <Layout title={`${props.post.title} | Blog`} isBlogPost postID={props.post.id}>
@@ -58,24 +66,14 @@ const BlogPost = (props) => {
     )
 }
 
-/* export const getStaticPaths: GetStaticPaths = async () => {
-    const posts = await getPosts()
-
-    const paths = posts.map((post) => ({
-        params: {
-            slug: post.slug
-        }
-    }))
-
-    return { paths, fallback: false }
-}*/
-
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const post = await getSinglePost(context.params.slug)
 
     if (!post) {
         return {
-            notFound: true,
+            props: {
+                notFound: true
+            }
         }
     }
 
