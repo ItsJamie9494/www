@@ -54,13 +54,25 @@ export const Header = () => {
         setIsScript(true)
 
         window.addEventListener("keydown", downHandler, { passive: true });
+
+        // header blur
+        window.onscroll = function() {
+            if (window.scrollY <= 25) {
+                setBlurred(false)
+            } else {
+                setBlurred(true)
+            }
+        }
+
         return () => {
             window.removeEventListener("keydown", downHandler);
         };
+
+        
     })
     return (
         <>
-            <StyledHeader isBlured={isBlurred}>
+            <StyledHeader isBlurred={isBlurred}>
                 <Container>
                     <div>
                         <Link href={'/'}>

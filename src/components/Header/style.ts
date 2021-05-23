@@ -4,16 +4,15 @@ import Link from "next/link";
 export const StyledHeader = styled.div`
     height: 80px;
     width: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     transition: 0.3s background-color, 0.3s box-shadow;
     text-decoration: none;
-    backdrop-filter: blur(8px);
-    background-color: rgb(${props => props.theme.ui.secondary} / 69%);
+    background-color: ${props => props.theme.ui.background}E6;
     z-index: 999999999;
-    ${(( isBlurred ) => css`
-      box-shadow: ${isBlurred ? `0 0.5px 3.6px 0 rgba(255,255,255,.132), 0 0.3px 0.9px 0 rgba(255,255,255,.108)` : ''};
-    `)}
+    ${({ isBlurred }: { isBlurred: boolean }) => css`
+      box-shadow: ${isBlurred ? '0 0 10px 0' : '' } ${isBlurred ? props => props.theme.colors.tertiary + 'A6' : ''};
+    `}
     @media print {
       display: none;
     }
