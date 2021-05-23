@@ -24,7 +24,7 @@ export const Button = styled.div`
     box-shadow: 0 5px 10px rgba(0,0,0,0.05);
   }
   text-align: center;
-  transition: 0.2s background-color, 0.2s box-shadow, 0.3s transform, 0.2s border;
+  transition: 0.5s background-color, 0.5s box-shadow, 0.5s transform, 0.5s border;
 `;
 
 export const HeroButton = styled(Button)`

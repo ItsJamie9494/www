@@ -6,7 +6,7 @@ export const StyledHeader = styled.div`
     width: 100%;
     position: fixed;
     top: 0;
-    transition: 0.3s background-color, 0.3s box-shadow;
+    transition: 0.5s background-color, 0.5s box-shadow;
     text-decoration: none;
     background-color: ${props => props.theme.ui.background}E6;
     z-index: 999999999;
@@ -40,7 +40,7 @@ export const Image = styled.img`
   height: 45px;
   border-radius: 64px;
   margin: 0;
-  transition: 0.3s transform;
+  transition: 0.5s transform;
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
@@ -52,7 +52,7 @@ export const LinkContainer = styled.div`
   gap: 20px;
   grid-auto-flow: column;
   margin: 0 auto;
-  transition: 0.3s opacity;
+  transition: 0.5s opacity;
   color: ${props => props.theme.colors.tertiary};
   text-decoration: none;
   ${({ isBlurred }: { isBlurred: boolean }) => css`
@@ -61,7 +61,7 @@ export const LinkContainer = styled.div`
     text-decoration: none;
   `}
   a:hover {
-    transition: 0.3s opacity;
+    transition: 0.5s opacity;
   }
   @media screen and (max-width: 600px) {
     display: none;

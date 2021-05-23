@@ -7,7 +7,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: .5s background-color;
+  transition: 0.5s background-color;
   color: ${props => props.theme.colors.tertiary};
   background-color: ${props => props.theme.ui.background};
 `;

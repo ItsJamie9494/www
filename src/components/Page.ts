@@ -39,7 +39,7 @@ export const ContactSocialLink = styled.span`
     margin-right: 10px;
     margin-bottom: 5px;
     filter: invert(${props => props.theme.isDark ? 1 : 0 });
-    transition: opacity 0.3s ease 0s, filter 0.5s ease;
+    transition: opacity 0.5s ease 0s, filter 0.5s ease;
     &:hover {
       opacity: 0.6;
       cursor: pointer;

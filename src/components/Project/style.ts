@@ -9,6 +9,8 @@ export const StyledProject = styled.div`
   text-align: center;
   border-radius: 8px;
   width: 25vw;
+  transition: 0.5s box-shadow;
+
   box-shadow: 0 0 10px 0 ${props => props.theme.colors.tertiary}A6;
   
 `;

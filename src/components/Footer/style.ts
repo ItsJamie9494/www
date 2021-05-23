@@ -36,7 +36,7 @@ export const Container = styled.div`
     width: 24px;
     height: 24px;
     filter: invert(${props => props.theme.isDark ? 1 : 0 });
-    transition: opacity 0.3s ease 0s, filter 0.5s ease;
+    transition: opacity 0.5s ease 0s, filter 0.5s ease;
     &:hover {
       opacity: 0.6;
       cursor: pointer;
@@ -53,7 +53,7 @@ export const Image = styled.img`
   height: 45px;
   border-radius: 64px;
   margin: 0 20px 0 auto;
-  transition: 0.3s transform;
+  transition: 0.5s transform;
   &:hover {
     transform: scale(1.1);
     cursor: pointer;
@@ -84,7 +84,7 @@ export const LinkContainer = styled.div`
     }
   }
   margin: 0 auto;
-  transition: 0.3s opacity;
+  transition: 0.5s opacity;
   color: ${props => props.theme.colors.tertiary};
   text-decoration: none;
   ${({ isBlurred }: { isBlurred: boolean }) => css`
@@ -93,7 +93,7 @@ export const LinkContainer = styled.div`
     text-decoration: none;
   `}
   a:hover {
-    transition: 0.3s opacity;
+    transition: 0.5s opacity;
   }
 `;
 
@@ -101,7 +101,7 @@ export const CopyrightContainer = styled.div`
   display: grid;
   gap: 20px;
   grid-auto-flow: column;
-  transition: 0.3s opacity;
+  transition: 0.5s opacity;
   color: ${props => props.theme.colors.tertiary};
   text-decoration: none;
   @media screen and (max-width: 660px) {
