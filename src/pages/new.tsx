@@ -33,7 +33,6 @@ const Index = () => {
                     <AboutPage />
 
                     <ContactPage />
-
                     
                 </Container>
         </Layout>
