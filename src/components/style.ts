@@ -59,7 +59,7 @@ export const GlobalStyle = css`
   
   a:hover {
     color: ${props => props.theme.colors.tertiary};
-    text-underline: none;
+    text-decoration: none;
     transition: color .5s;
     cursor: pointer;
     opacity: 0.7;
