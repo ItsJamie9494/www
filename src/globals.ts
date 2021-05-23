@@ -1,7 +1,7 @@
 import { createGlobalState } from "react-hooks-global-state"
 import { lightTheme, darkTheme } from "./theme";
 const initialState = {
-    isDarkTheme: false,
+    isDarkTheme: true,
     blogPostArray: [],
     isSearch: false,
     isResults: true }
