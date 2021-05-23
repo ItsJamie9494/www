@@ -1,14 +1,14 @@
 import React from 'react'
-import Link from "next/link"
+import Link from 'next/link'
 import FeatherIcon from 'feather-icons-react'
 import cookies from 'react-cookies'
-import { MobileContainer, MobileLink, MobileLinkContainer } from "./style"
-import { useGlobalState } from "../../globals"
-import {IconButton} from "../Button";
+import { MobileContainer, MobileLink, MobileLinkContainer } from './style'
+import { useGlobalState } from '../../globals'
+import { IconButton } from '../Button'
 
 // This navigation menu should only appear on devices with a really small screen
 export const NavMenu = ({ isVisible }: { isVisible: boolean }) => {
-    const [ isDarkTheme, setIsDarkTheme ] = useGlobalState('isDarkTheme')
+    const [isDarkTheme, setIsDarkTheme] = useGlobalState('isDarkTheme')
 
     const darkThemeCookie = cookies.load('darkTheme')
     const expires = new Date()
@@ -17,47 +17,38 @@ export const NavMenu = ({ isVisible }: { isVisible: boolean }) => {
     return (
         <MobileContainer isVisible={isVisible}>
             <MobileLinkContainer>
-                <Link href={"/"}>
-                    <a className={"noHover"}>
-                        <MobileLink>
-                            Home
-                        </MobileLink>
+                <Link href={'/'}>
+                    <a className={'noHover'}>
+                        <MobileLink>Home</MobileLink>
                     </a>
                 </Link>
-                <Link href={"/blog"}>
-                    <a className={"noHover"}>
-                        <MobileLink>
-                            Blog
-                        </MobileLink>
+                <Link href={'/blog'}>
+                    <a className={'noHover'}>
+                        <MobileLink>Blog</MobileLink>
                     </a>
                 </Link>
-                <Link href={"/work"}>
-                    <a className={"noHover"}>
-                        <MobileLink>
-                            Work
-                        </MobileLink>
+                <Link href={'/work'}>
+                    <a className={'noHover'}>
+                        <MobileLink>Work</MobileLink>
                     </a>
                 </Link>
-                <Link href={"/about"}>
-                    <a className={"noHover"}>
-                        <MobileLink>
-                            About
-                        </MobileLink>
+                <Link href={'/about'}>
+                    <a className={'noHover'}>
+                        <MobileLink>About</MobileLink>
                     </a>
                 </Link>
             </MobileLinkContainer>
-            <MobileLink onClick={() => {
-                setIsDarkTheme(!isDarkTheme);
-                cookies.save(
-                    'darkTheme',
-                    !isDarkTheme,
-                    { expires }
-                );
-            }}>
+            <MobileLink
+                onClick={() => {
+                    setIsDarkTheme(!isDarkTheme)
+                    cookies.save('darkTheme', !isDarkTheme, { expires })
+                }}
+            >
                 <IconButton>
                     <FeatherIcon
                         icon={isDarkTheme ? 'sun' : 'moon'}
-                        size={18} />
+                        size={18}
+                    />
                 </IconButton>
                 <p>{isDarkTheme ? 'Dark' : 'Light'} Theme</p>
             </MobileLink>

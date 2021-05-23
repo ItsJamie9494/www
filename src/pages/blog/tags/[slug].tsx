@@ -1,25 +1,22 @@
 import React from 'react'
-import Layout from "../../../components/Layout"
-import { Landing } from "../../../components/Landing"
-import {GetStaticProps, GetStaticPaths, GetServerSideProps} from "next"
-import { getTags, getSingleTag, getTagPosts } from "../../../lib/blog"
-import { BlogHero } from "../../../components/Blog/BlogHero"
-import { BlogCard } from "../../../components/Blog/BlogCard"
-import { BlogEnding } from "../../../components/Blog/BlogEnding"
+import Layout from '../../../components/Layout'
+import { GetServerSideProps } from 'next'
+import { getSingleTag, getTagPosts } from '../../../lib/blog'
+import { BlogHero } from '../../../components/Blog/BlogHero'
+import { BlogCard } from '../../../components/Blog/BlogCard'
+import { BlogEnding } from '../../../components/Blog/BlogEnding'
 import { BlogError } from '../../../components/Blog/BlogError'
 
 const BlogTag = (props) => {
     // TODO support tag searching
     if (props.notFound) {
-        return (
-            <BlogError />
-        )
+        return <BlogError />
     }
     return (
         <>
             <Layout title={'Blog'}>
-                <div style={{ marginTop: 100 }}/>
-                <BlogHero subTitle={props.tag.name} link={'/blog/tags'}/>
+                <div style={{ marginTop: 100 }} />
+                <BlogHero subTitle={props.tag.name} link={'/blog/tags'} />
                 {props.posts.map((post) => (
                     <BlogCard post={post} key={post.id} />
                 ))}
@@ -36,16 +33,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     if (!tag) {
         return {
             props: {
-                notFound: true
-            }
+                notFound: true,
+            },
         }
     }
 
     return {
         props: {
             tag,
-            posts
-        }
+            posts,
+        },
     }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import Layout from "../../components/Layout";
-import { Head, Landing, Subheader } from "../../components/Landing";
+import Layout from '../../components/Layout'
+import { Head, Landing, Subheader } from '../../components/Landing'
 import Link from 'next/link'
 
 const Legal = () => {
@@ -10,9 +10,16 @@ const Legal = () => {
                 <Landing>
                     <Head>Legal Notices</Head>
                     <Subheader>
-                        <div style={{ margin: '0 auto', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <div
+                            style={{
+                                margin: '0 auto',
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                            }}
+                        >
                             <span style={{ display: 'inline-block' }}>
-                                <Link href={"/legal/privacy"}>Privacy</Link>
+                                <Link href={'/legal/privacy'}>Privacy</Link>
                             </span>
                         </div>
                     </Subheader>

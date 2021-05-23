@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ReadMore = styled.figure`
     padding-bottom: 40px;
     transition: 0.5s color;
     display: flex;
     cursor: pointer;
-    color: ${props => props.theme.colors.tertiary + 90};
+    color: ${(props) => props.theme.colors.tertiary + 90};
     span {
         font-size: 12px;
         padding-left: 12px;
@@ -16,7 +16,7 @@ export const ReadMore = styled.figure`
     &:hover {
         color: #0070f3 !important;
     }
-`;
+`
 
 export const StyledBlogCard = styled.div`
     display: block;
@@ -29,24 +29,24 @@ export const StyledBlogCard = styled.div`
         color: #0070f3 !important;
     }
     a:after {
-      width: 0;
-      background: transparent;
+        width: 0;
+        background: transparent;
     }
     a:hover:after {
-      width: 0;
-      background: transparent;
-      text-decoration: none;
+        width: 0;
+        background: transparent;
+        text-decoration: none;
     }
-`;
+`
 
 export const CardDate = styled.div`
     font-size: 14px;
     opacity: 0.8;
     padding-bottom: 0.8rem;
     transition: 0.5s color;
-    color: ${props => props.theme.colors.tertiary};
+    color: ${(props) => props.theme.colors.tertiary};
     cursor: pointer;
-`;
+`
 
 export const CardTitle = styled.h1`
     font-weight: 600;
@@ -56,17 +56,15 @@ export const CardTitle = styled.h1`
     transition: 0.1s border-bottom, 0.5s color;
     border-bottom: 1px solid #00000000;
     cursor: pointer;
-`;
+`
 
 export const CardDescription = styled.div`
     font-size: 15px;
     opacity: 0.7;
     padding-bottom: 1.5rem;
     transition: 0.5s color;
-    color: ${props => props.theme.colors.tertiary};
+    color: ${(props) => props.theme.colors.tertiary};
     cursor: pointer;
-`;
-
-export const CardContainerLink = styled.a`
-  
 `
+
+export const CardContainerLink = styled.a``

@@ -1,33 +1,34 @@
 import styled from 'styled-components'
 
 export const StyledBlogHero = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  max-width: 1164px;
-  @media print {
-    display: none;
-  }
-  @media screen and (max-width: 400px) {
-    flex-direction: column;
-  }
-`;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    max-width: 1164px;
+    @media print {
+        display: none;
+    }
+    @media screen and (max-width: 400px) {
+        flex-direction: column;
+    }
+`
 
 export const InputContainer = styled.div`
     margin-left: 40px;
-    --input-border: ${props => props.theme.ui.border};
+    --input-border: ${(props) => props.theme.ui.border};
     border: 1px solid var(--input-border);
     display: inline-flex;
     border-radius: 4px;
     transition: 0.5s border;
-    &:focus-within, &:focus {
+    &:focus-within,
+    &:focus {
         --input-border: #8c8c8c !important;
     }
     @media screen and (max-width: 400px) {
-      margin-left: 0;
-      margin-top: 10px;
+        margin-left: 0;
+        margin-top: 10px;
     }
-`;
+`
 
 export const InputIconContainer = styled.div`
     height: 42px;
@@ -38,8 +39,8 @@ export const InputIconContainer = styled.div`
     justify-content: center;
     min-width: 42px;
     transition: 0.5s color;
-    color: ${props => props.theme.colors.tertiary};
-`;
+    color: ${(props) => props.theme.colors.tertiary};
+`
 
 export const Input = styled.input`
     height: 41px;
@@ -54,12 +55,12 @@ export const Input = styled.input`
     width: inherit;
     background-color: transparent;
     transition: 0.5s color;
-    color: ${props => props.theme.colors.tertiary};
+    color: ${(props) => props.theme.colors.tertiary};
     &::placeholder {
         transition: 0.5s color;
-        color: ${props => props.theme.colors.tertiary + "87"};
+        color: ${(props) => props.theme.colors.tertiary + '87'};
     }
     @media screen and (max-width: 250px) {
-      width: 80vw;
+        width: 80vw;
     }
-`;
+`

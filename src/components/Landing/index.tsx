@@ -1,29 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-import { StyledLanding, HeaderText, SubheaderText } from './style';
+import { StyledLanding, HeaderText, SubheaderText } from './style'
 
 export const Landing = ({ children }: { children: any }) => {
     return (
         <StyledLanding>
-            <div>
-                {children}
-            </div>
+            <div>{children}</div>
         </StyledLanding>
     )
 }
 
 export const Head = ({ children }) => {
-    return (
-        <HeaderText>
-            {children}
-        </HeaderText>
-    )
+    return <HeaderText>{children}</HeaderText>
 }
 
 export const Subheader = ({ children }) => {
-    return (
-        <SubheaderText>
-            {children}
-        </SubheaderText>
-    )
+    return <SubheaderText>{children}</SubheaderText>
 }

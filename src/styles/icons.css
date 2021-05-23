@@ -6,21 +6,21 @@
 }
 
 .twitter-icon {
-    background-image: url("/assets/social-icons/twitter.svg");
+    background-image: url('/assets/social-icons/twitter.svg');
 }
 
 .reddit-icon {
-    background-image: url("/assets/social-icons/reddit.svg");
+    background-image: url('/assets/social-icons/reddit.svg');
 }
 
 .mastodon-icon {
-    background-image: url("/assets/social-icons/mastodon.svg");
+    background-image: url('/assets/social-icons/mastodon.svg');
 }
 
 .discord-icon {
-    background-image: url("/assets/social-icons/discord.svg");
+    background-image: url('/assets/social-icons/discord.svg');
 }
 
 .github-icon {
-    background-image: url("/assets/social-icons/github.svg");
+    background-image: url('/assets/social-icons/github.svg');
 }

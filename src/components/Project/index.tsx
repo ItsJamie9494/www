@@ -1,6 +1,14 @@
-import React from 'react';
+import React from 'react'
 import Link from 'next/link'
-import { StyledProject, Heading, ProjectName, ProjectDescription, ProjectLink, ProjectImage, DiscontinuedPill } from './style';
+import {
+    StyledProject,
+    Heading,
+    ProjectName,
+    ProjectDescription,
+    ProjectLink,
+    ProjectImage,
+    DiscontinuedPill,
+} from './style'
 
 export const Project = ({
     header,
@@ -11,25 +19,42 @@ export const Project = ({
     projectImage,
     discontinued,
 }: {
-    header: string,
-    projectName: string,
-    projectDescription: string,
-    projectWebsite: string,
-    projectRepository?: string,
-    projectImage?: string,
+    header: string
+    projectName: string
+    projectDescription: string
+    projectWebsite: string
+    projectRepository?: string
+    projectImage?: string
     discontinued?: boolean
 }) => {
-
     return (
         <StyledProject>
-            {projectImage && ( <ProjectImage src={projectImage} /> )}
-            
+            {projectImage && <ProjectImage src={projectImage} />}
+
             <Heading>{header}</Heading>
-            <ProjectName>{projectName} {discontinued && (<DiscontinuedPill>Discontinued</DiscontinuedPill>)}</ProjectName>
+            <ProjectName>
+                {projectName}{' '}
+                {discontinued && (
+                    <DiscontinuedPill>Discontinued</DiscontinuedPill>
+                )}
+            </ProjectName>
             <ProjectDescription>{projectDescription}</ProjectDescription>
-            <div style={{ display: 'grid', gridAutoFlow: 'column', gap: '30px', margin: '0 auto' }}>
-                <ProjectLink><Link href={projectWebsite}>Visit Website</Link></ProjectLink>
-                {projectRepository && ( <ProjectLink><Link href={projectRepository}>View Source Code</Link></ProjectLink> )}
+            <div
+                style={{
+                    display: 'grid',
+                    gridAutoFlow: 'column',
+                    gap: '30px',
+                    margin: '0 auto',
+                }}
+            >
+                <ProjectLink>
+                    <Link href={projectWebsite}>Visit Website</Link>
+                </ProjectLink>
+                {projectRepository && (
+                    <ProjectLink>
+                        <Link href={projectRepository}>View Source Code</Link>
+                    </ProjectLink>
+                )}
             </div>
         </StyledProject>
     )
