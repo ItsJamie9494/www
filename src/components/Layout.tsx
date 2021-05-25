@@ -119,8 +119,6 @@ const Layout = (props: PropTypes) => {
                     href={'https://latest.cactus.chat/style.css'}
                     type={'text/css'}
                 />
-                {/* :) */}
-                <script type={'text/javascript'} src={'/console.js'} />
             </Head>
             <Header />
             <Container>{props.children}</Container>
