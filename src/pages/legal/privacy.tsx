@@ -52,10 +52,12 @@ const Legal = () => {
                     </p>
                     <p>
                         If you would like to opt-out of this analytics
-                        collection, please visit{' '}
-                        <Link href={'/legal/opt-out'}>
-                            <a>https://{config.hostname}/legal/opt-out</a>
-                        </Link>
+                        collection, please visit
+                        <span style={{ display: 'inline-flex' }}>
+                            <Link href={'/legal/opt-out'}>
+                                <a>https://{config.hostname}/legal/opt-out</a>
+                            </Link>
+                        </span>
                     </p>
 
                     <h2>Data Collection Policy</h2>
@@ -88,7 +90,7 @@ const Legal = () => {
                                 <td>
                                     <b>Page URL</b>
                                 </td>
-                                <td>https://trevorthalacker.com</td>
+                                <td>https://{config.hostname}</td>
                                 <td>
                                     We track the page URL of each page view on
                                     this website. We use this to show us which
