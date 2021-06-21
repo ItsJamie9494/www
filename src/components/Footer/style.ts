@@ -5,7 +5,6 @@ export const StyledFooter = styled.div`
     width: 100%;
     position: relative;
     bottom: 0;
-    transition: 0.5s background-color;
     text-decoration: none;
     ${({ isBlurred }: { isBlurred: boolean }) => css`
         backdrop-filter: blur(${isBlurred ? 8 : 0}px);
@@ -13,14 +12,15 @@ export const StyledFooter = styled.div`
             ${(props) => (props.theme.isDark ? '0 0 0' : '255 255 255')} /
                 ${isBlurred ? 69 : 0}%
         );
-        transition: 0.5s background-color;
     `};
-    /* background-color: ${(props) => props.theme.ui.secondaryBackground}; */
+    background-color: ${(props) => props.theme.ui.secondaryBackground};
+    /* Something for the future
     background-image: ${(props) =>
-        `linear-gradient(${props.theme.ui.background}, ${props.theme.ui.secondaryBackground} 10%)`};
+        `linear-gradient(${props.theme.ui.background}, ${props.theme.ui.secondaryBackground} 10%)`}; */
     @media print {
         display: none;
     }
+    transition: background-color 0.5s;
 `
 
 export const Container = styled.div`
