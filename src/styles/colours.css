@@ -1,0 +1,22 @@
+:root {
+    /* --primary: #0070f3;
+    --secondary: #ffffff;
+    --tertiary: #222222;
+    --background: #ffffff;
+    --secondary-background: #eaeaea;
+    --color: #222222;
+    --border: #eaeaea; */
+
+    /* Animated Background Colours */
+
+    --grey-1: #e2e8f0;
+    --grey-2: #cbd5e0;
+    --teal-1: #81e6d9;
+    --teal-2: #4fd1c5;
+    --blue-1: #90cdf4;
+    --blue-2: #63b3ed;
+    --green-1: #9ae6b4;
+    --green-2: #68d391;
+    --purple-1: #d6bcfa;
+    --purple-2: #b794f4;
+}
