@@ -23,8 +23,9 @@ export const AnimatedBackground = () => {
                 <AnimatedSVG
                     icon="box"
                     width={6}
-                    left={`${Math.floor(Math.random() * 101)}%`}
-                    top={`${Math.floor(Math.random() * 101)}%`}
+                    left={`${Math.floor(Math.random() * 80)}%`}
+                    top={`${Math.floor(Math.random() * 80)}%`}
+                    horizontal={Math.random() < 0.5}
                 />
             </>
 
@@ -42,17 +43,19 @@ export const AnimatedBackground = () => {
                     icon="triangle"
                     width={12}
                     stroke
-                    left={`${Math.floor(Math.random() * 101)}%`}
-                    top={`${Math.floor(Math.random() * 101)}%`}
+                    left={`${Math.floor(Math.random() * 80)}%`}
+                    top={`${Math.floor(Math.random() * 80)}%`}
                     animation="wide"
+                    horizontal={Math.random() < 0.5}
                 />
                 <AnimatedSVG
                     icon="triangle"
                     width={16}
                     stroke
-                    left={`${Math.floor(Math.random() * 101)}%`}
-                    top={`${Math.floor(Math.random() * 101)}%`}
+                    left={`${Math.floor(Math.random() * 80)}%`}
+                    top={`${Math.floor(Math.random() * 80)}%`}
                     animation="wide"
+                    horizontal={Math.random() < 0.5}
                 />
             </>
 
@@ -78,16 +81,18 @@ export const AnimatedBackground = () => {
                 <AnimatedSVG
                     icon="circle"
                     width={6}
-                    left={`${Math.floor(Math.random() * 101)}%`}
-                    top={`${Math.floor(Math.random() * 101)}%`}
+                    left={`${Math.floor(Math.random() * 80)}%`}
+                    top={`${Math.floor(Math.random() * 80)}%`}
                     animation="slow"
+                    horizontal={Math.random() < 0.5}
                 />
                 <AnimatedSVG
                     icon="circle"
                     width={12}
-                    left={`${Math.floor(Math.random() * 101)}%`}
-                    top={`${Math.floor(Math.random() * 101)}%`}
+                    left={`${Math.floor(Math.random() * 80)}%`}
+                    top={`${Math.floor(Math.random() * 80)}%`}
                     animation="slow"
+                    horizontal={Math.random() < 0.5}
                 />
             </>
         </>

@@ -48,6 +48,7 @@ interface SVGProps {
     top: string
     hiddenMobile?: boolean
     animation?: 'slow' | 'wide'
+    horizontal?: boolean
 }
 
 const colour = () => {
@@ -69,6 +70,7 @@ export const AnimatedSVG = ({
     top,
     hiddenMobile = false,
     animation,
+    horizontal,
 }: SVGProps) => {
     return (
         <AnimatedBackground
@@ -89,7 +91,8 @@ export const AnimatedSVG = ({
             }}
             viewBox={icons[icon].viewBox}
             slow={animation === 'slow' ? true : false}
-            wide={animation === 'wide' ? true : false}
+            large={animation === 'wide' ? true : false}
+            horizontal={horizontal}
         >
             {icons[icon].shape}
         </AnimatedBackground>
