@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const StyledAnimatedBackground = styled.div`
     overflow: hidden;
-    display: flex;
-    flex-flow: column wrap;
-    overflow: hidden;
+    position: fixed;
+    width: 90vw;
+    height: 90vh;
+    z-index: 0;
 `

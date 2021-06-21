@@ -7,7 +7,6 @@ export const Landing = ({ children }: { children: any }) => {
     return (
         <StyledLanding>
             <div>{children}</div>
-            <AnimatedBackground />
         </StyledLanding>
     )
 }

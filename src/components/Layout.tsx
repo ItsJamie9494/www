@@ -12,6 +12,7 @@ import { lightTheme, darkTheme } from '../theme'
 import { useGlobalState } from '../globals'
 
 import config from '../config'
+import { AnimatedBackground } from './Animated'
 
 interface PropTypes {
     title: string
@@ -120,6 +121,7 @@ const Layout = (props: PropTypes) => {
                     type={'text/css'}
                 />
             </Head>
+            <AnimatedBackground />
             <Header />
             <Container>{props.children}</Container>
             <Footer />
