@@ -1,9 +1,10 @@
 import React from 'react'
+import { StyledAnimatedBackground } from './style'
 import { AnimatedSVG } from './SVG'
 
 export const AnimatedBackground = () => {
     return (
-        <>
+        <StyledAnimatedBackground>
             <>
                 {/* NORMAL ANIMATION */}
                 <AnimatedSVG
@@ -95,6 +96,6 @@ export const AnimatedBackground = () => {
                     horizontal={Math.random() < 0.5}
                 />
             </>
-        </>
+        </StyledAnimatedBackground>
     )
 }
