@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-export const StyledAnimatedBackground = styled.span`
-    width: 100vh;
-    height: 100vh;
+export const StyledAnimatedBackground = styled.div`
+    overflow: hidden;
+    display: flex;
+    flex-flow: column wrap;
     overflow: hidden;
 `

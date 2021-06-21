@@ -6,8 +6,8 @@ import { StyledLanding, HeaderText, SubheaderText } from './style'
 export const Landing = ({ children }: { children: any }) => {
     return (
         <StyledLanding>
-            <AnimatedBackground />
             <div>{children}</div>
+            <AnimatedBackground />
         </StyledLanding>
     )
 }
