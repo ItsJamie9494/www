@@ -1,18 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import axios from 'axios'
 import config from '../../config'
-
-interface Repository {
-    id: number
-    name: string
-    html_url: string
-    created_at: string
-    pushed_at: string
-    language: string
-    description: string
-    fork: boolean
-    stargazers_count: number
-}
+import { Repository } from '../../interfaces/IRepository'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
     const userRepos = await axios
