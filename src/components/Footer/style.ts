@@ -15,6 +15,9 @@ export const StyledFooter = styled.div`
         );
         transition: 0.5s background-color;
     `};
+    /* background-color: ${(props) => props.theme.ui.secondaryBackground}; */
+    background-image: ${(props) =>
+        `linear-gradient(${props.theme.ui.background}, ${props.theme.ui.secondaryBackground} 10%)`};
     @media print {
         display: none;
     }
