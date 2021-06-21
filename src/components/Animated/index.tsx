@@ -2,7 +2,6 @@ import React from 'react'
 import { AnimatedSVG } from './SVG'
 
 export const AnimatedBackground = () => {
-    // I might want to randomize this later
     return (
         <>
             <>
@@ -11,17 +10,22 @@ export const AnimatedBackground = () => {
                     icon="triangle"
                     width={48}
                     stroke
-                    left="10%"
-                    top="20%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                 />
                 <AnimatedSVG
                     icon="hexa"
                     width={48}
                     stroke
-                    left="60%"
-                    top="70%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                 />
-                <AnimatedSVG icon="box" width={6} left="60%" top="15%" />
+                <AnimatedSVG
+                    icon="box"
+                    width={6}
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
+                />
             </>
 
             <>
@@ -30,24 +34,24 @@ export const AnimatedBackground = () => {
                     icon="triangle"
                     width={24}
                     stroke
-                    left="65%"
-                    top="8%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                     animation="wide"
                 />
                 <AnimatedSVG
                     icon="triangle"
                     width={12}
                     stroke
-                    left="90%"
-                    top="50%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                     animation="wide"
                 />
                 <AnimatedSVG
                     icon="triangle"
                     width={16}
                     stroke
-                    left="30%"
-                    top="65%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                     animation="wide"
                 />
             </>
@@ -58,8 +62,8 @@ export const AnimatedBackground = () => {
                     icon="circle"
                     width={20}
                     hiddenMobile
-                    left="85%"
-                    top="25%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                     animation="slow"
                 />
                 <AnimatedSVG
@@ -67,22 +71,22 @@ export const AnimatedBackground = () => {
                     hiddenMobile
                     stroke
                     width={24}
-                    left="5%"
-                    top="70%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                     animation="slow"
                 />
                 <AnimatedSVG
                     icon="circle"
                     width={6}
-                    left="4%"
-                    top="20%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                     animation="slow"
                 />
                 <AnimatedSVG
                     icon="circle"
                     width={12}
-                    left="50%"
-                    top="60%"
+                    left={`${Math.floor(Math.random() * 101)}%`}
+                    top={`${Math.floor(Math.random() * 101)}%`}
                     animation="slow"
                 />
             </>
