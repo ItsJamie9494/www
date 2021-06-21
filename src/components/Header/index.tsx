@@ -28,6 +28,20 @@ export const Header = () => {
     const expires = new Date()
     expires.setDate(Date.now() + 1000 * 60 * 60 * 24 * 14)
 
+    const changeTheme = () => {
+        let theme = !isDarkTheme
+        setIsDarkTheme(theme)
+
+        cookies.save('darkTheme', theme, { expires })
+
+        // because it's hard to mess with the body
+        if (document) {
+            document.querySelector('html').classList.value = theme
+                ? 'darkTheme'
+                : 'lightTheme'
+        }
+    }
+
     React.useEffect(() => {
         if (darkThemeCookie === 'true') {
             setIsDarkTheme(true)
@@ -102,14 +116,7 @@ export const Header = () => {
                             <IconButton>
                                 <FeatherIcon
                                     icon={isDarkTheme ? 'sun' : 'moon'}
-                                    onClick={() => {
-                                        setIsDarkTheme(!isDarkTheme)
-                                        cookies.save(
-                                            'darkTheme',
-                                            !isDarkTheme,
-                                            { expires }
-                                        )
-                                    }}
+                                    onClick={() => changeTheme()}
                                     size={18}
                                 />
                             </IconButton>
