@@ -11,6 +11,7 @@ import axios from 'axios'
 import { Repository } from '../components/Repository'
 import config from '../config'
 import { TextButton } from '../components/Button'
+import { Repository as IRepository } from '../interfaces/IRepository'
 
 const Index = (props) => {
     return (
@@ -96,13 +97,33 @@ export async function getServerSideProps(context) {
     let res: Object = []
     await axios
         .get(
-            `${process.env.NODE_ENV === 'production' ? 'https' : 'http'}://${
-                config.hostname
-            }/api/github`
+            `https://api.github.com/users/${config.username}/repos?per_page=100`
         )
         .then((data) => {
-            res = data.data
+            let response = data.data
+            let repos = []
+
+            ;(response as Array<IRepository>).map((repo) => {
+                if (!repo.fork) {
+                    let strippedRepo = {
+                        id: repo.id,
+                        name: repo.name,
+                        html_url: repo.html_url,
+                        created_at: repo.created_at,
+                        pushed_at: repo.pushed_at,
+                        language: repo.language,
+                        description: repo.description,
+                        fork: repo.fork,
+                        stargazers_count: repo.stargazers_count,
+                        archived: repo.archived,
+                    }
+                    repos.push(strippedRepo)
+                }
+            })
+
+            return (res = repos)
         })
+
     return {
         props: {
             repositories: res,
