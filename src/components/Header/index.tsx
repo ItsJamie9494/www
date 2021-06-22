@@ -45,6 +45,8 @@ export const Header = () => {
     React.useEffect(() => {
         if (darkThemeCookie === 'true') {
             setIsDarkTheme(true)
+        } else {
+            setIsDarkTheme(false)
         }
 
         if (keys.join('') === 'uuddlrlrbae') {
