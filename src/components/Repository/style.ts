@@ -10,7 +10,11 @@ export const StyledLink = styled.a`
             background: ${(props) => props.theme.colors.tertiary};
             text-decoration: none;
         }
+        transform: translateY(-10px);
+        transition: 0.5s transform;
     }
+
+    transition: 0.5s transform;
 `
 
 export const StyledRepository = styled.div`
