@@ -13,6 +13,7 @@ import { useGlobalState } from '../globals'
 
 import config from '../config'
 import { AnimatedBackground } from './Animated'
+import { useRouter } from 'next/router'
 
 interface PropTypes {
     title: string
@@ -32,9 +33,9 @@ const generateCSP = () => {
 
     let csp = ``
     csp += `base-uri 'self';`
-    csp += `script-src 'nonce-${nonce}' 'self' https://analytics.${
-        config.hostname
-    } https://latest.cactus.chat ${productionEnv ? '' : "'unsafe-eval'"};`
+    csp += `script-src 'nonce-${nonce}' 'self' https://analytics.trevorthalacker.com https://latest.cactus.chat ${
+        productionEnv ? '' : "'unsafe-eval'"
+    };`
     csp += `connect-src 'self' matrix.cactus.chat:* analytics.trevorthalacker.com:* 'unsafe-eval';`
     //if (!productionEnv) csp += `connect-src 'self';`;
 
@@ -59,11 +60,13 @@ const Layout = (props: PropTypes) => {
                 }
         }
     }, [])
+
+    const router = useRouter()
     return (
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
             <GStyle />
             <Head>
-                <title>{props.title} | Trevor Thalacker</title>
+                <title>{props.title} • Trevor Thalacker</title>
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
@@ -85,7 +88,7 @@ const Layout = (props: PropTypes) => {
                 <meta name={'description'} content={config.description} />
                 <meta
                     name={'og:title'}
-                    content={`${props.title} | Trevor Thalacker`}
+                    content={`${props.title} • Trevor Thalacker`}
                 />
                 <meta name={'og:description'} content={config.description} />
                 <meta name={'og:type'} content={'website'} />
@@ -98,9 +101,15 @@ const Layout = (props: PropTypes) => {
                 />
                 <meta
                     name={'twitter:title'}
-                    content={`${props.title} | Trevor Thalacker`}
+                    content={`${props.title} • Trevor Thalacker`}
                 />
                 <meta httpEquiv="Content-Security-Policy" content={csp} />
+                <link
+                    rel="canonical"
+                    href={`${
+                        process.env.NODE_ENV === 'production' ? 'https' : 'http'
+                    }://${config.hostname}${router.asPath}`}
+                />
                 {/* Analytics */}
                 <script
                     async
