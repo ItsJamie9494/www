@@ -89,7 +89,7 @@ export async function getServerSideProps(context) {
         .get(
             `${process.env.NODE_ENV === 'production' ? 'https' : 'http'}://${
                 config.hostname
-            }api/github`
+            }/api/github`
         )
         .then((data) => {
             res = data.data
