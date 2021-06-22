@@ -89,10 +89,6 @@ export const TextButton = styled.div`
         filter: invert(${(props) => (props.theme.isDark ? 1 : 0)});
         transition: opacity 0.5s ease 0s, filter 0.5s ease;
         margin: 0 10px;
-        &:hover {
-            opacity: 0.6;
-            cursor: pointer;
-        }
     }
 `
 
