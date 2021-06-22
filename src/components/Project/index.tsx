@@ -17,6 +17,7 @@ export const Project = ({
     projectWebsite,
     projectRepository,
     projectImage,
+    noRepo,
     discontinued,
 }: {
     header: string
@@ -24,13 +25,12 @@ export const Project = ({
     projectDescription: string
     projectWebsite: string
     projectRepository?: string
-    projectImage?: string
+    projectImage: string
+    noRepo?: boolean
     discontinued?: boolean
 }) => {
     return (
         <StyledProject>
-            {projectImage && <ProjectImage src={projectImage} />}
-
             <Heading>{header}</Heading>
             <ProjectName>
                 {projectName}{' '}
@@ -50,12 +50,25 @@ export const Project = ({
                 <ProjectLink>
                     <Link href={projectWebsite}>Visit Website</Link>
                 </ProjectLink>
-                {projectRepository && (
+                {!noRepo && (
                     <ProjectLink>
                         <Link href={projectRepository}>View Source Code</Link>
                     </ProjectLink>
                 )}
             </div>
+            <ProjectImage src={projectImage} />
         </StyledProject>
     )
 }
+
+/*
+* <StyledProject>
+            <Heading>{header}</Heading>
+            <ProjectName>{projectName}</ProjectName>
+            <ProjectDescription>{projectDescription}</ProjectDescription>
+            <div>
+                <ProjectLink target={"__blank"} href={projectWebsite} style={{ marginRight: '28px' }}>Visit Site</ProjectLink>
+                {!noRepo && <ProjectLink target={"__blank"} href={projectRepository}>Visit Repository</ProjectLink>}
+            </div>
+            <ProjectImage src={projectImage} />
+        </StyledProject>*/

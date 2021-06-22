@@ -3,15 +3,14 @@ import styled from 'styled-components'
 export const StyledProject = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 1.5rem;
+    margin: 0 auto;
+    align-items: unset;
+    justify-content: unset;
+    padding: 4rem 0;
+    width: 100%;
+    max-width: 100%;
     text-align: center;
-    border-radius: 8px;
-    width: 25vw;
-    transition: 0.5s box-shadow;
-
-    box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.tertiary}A6;
+    height: 100%;
 `
 
 export const Heading = styled.span`
@@ -28,8 +27,8 @@ export const Heading = styled.span`
 export const ProjectName = styled.span`
     display: flex;
     font-weight: 900;
-    font-size: 40px;
-    line-height: 42px;
+    font-size: 50px;
+    line-height: 52px;
     align-items: center;
     justify-content: center;
     transition: color 0.5s;
@@ -59,9 +58,8 @@ export const ProjectLink = styled.div`
 
 export const ProjectImage = styled.img`
     margin: 18px auto 0 auto;
-    width: 5rem;
-    height: 5rem;
-    border-radius: 100px;
+    max-width: 70%;
+    box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.tertiary}A6;
     opacity: ${(props) => (props.theme.isDark ? '.75' : '100')};
     transition: box-shadow 0.5s, opacity 0.5s;
 `
