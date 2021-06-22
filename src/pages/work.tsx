@@ -32,7 +32,7 @@ const Index = (props) => {
                             alignItems: 'center',
                         }}
                     >
-                        {/* DATA RETURNED FROM GITHUB API*/}
+                        {/* DATA RETURNED FROM GITHUB API */}
                         <Project
                             description={
                                 'Dot Browser is a privacy-conscious web browser with smarts built-in for protection against trackers and advertisements online.'
@@ -40,9 +40,8 @@ const Index = (props) => {
                             image={'/assets/projects/dotbrowser.png'}
                             repo={'dothq/browser'}
                             name={'Dot Browser'}
-                            language={
-                                'Python'
-                            } /* DATA RETURNED FROM GITHUB API*/
+                            language={'Python'}
+                            link={'https://dothq.co'}
                         />
                         <Project
                             description={
@@ -52,6 +51,7 @@ const Index = (props) => {
                             repo={'trevorthalacker/bingus.link'}
                             name={'bingus.link'}
                             language={'TypeScript'}
+                            link={'https://bingus.link'}
                         />
                         <Project
                             description={
@@ -61,20 +61,8 @@ const Index = (props) => {
                             repo={'trevorthalacker/keyboardnotfound'}
                             name={'keyboardnotfound.com'}
                             language={'JavaScript'}
+                            link={'https://keyboardnotfound.com'}
                         />
-                        {/*
-                        <Project
-                            header={'Lead Developer'}
-                            projectName={'bingus.link'}
-                            projectDescription={
-                                'A free, private URL shortener with the greatest domain in existence.'
-                            }
-                            projectWebsite={'https://bingus.link'}
-                            projectImage={'/assets/projects/binguslink.png'}
-                            projectRepository={
-                                'https://github.com/trevorthalacker/bingus.link'
-                            }
-                        /> */}
                     </div>
 
                     <CenteredElement>

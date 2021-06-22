@@ -6,6 +6,21 @@ export const StyledProject = styled.section`
     overflow: hidden;
     background: ${(props) => props.theme.ui.secondaryBackground};
     margin: 10px 0 20px;
+
+    &:hover {
+        opacity: 1;
+        cursor: pointer;
+
+        &::after {
+            width: 0;
+            background: ${(props) => props.theme.colors.tertiary};
+            text-decoration: none;
+        }
+        transform: translateY(-5px);
+        transition: 0.5s transform;
+    }
+
+    transition: 0.5s transform;
 `
 
 export const Container = styled.div`

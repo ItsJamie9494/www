@@ -20,6 +20,7 @@ export const Project = ({
     repo,
     description,
     image,
+    link,
 }: {
     repo: string
     name: string
@@ -27,30 +28,39 @@ export const Project = ({
     discontinued?: boolean
     description: string
     image: string
+    link: string
 }) => {
     return (
-        <StyledProject>
-            <ProjectImage src={image} />
-            <Container>
-                <Header>
-                    <NameContainer>
-                        <ProjectName>{name}</ProjectName>
-                        {language && <LanguagePill>{language}</LanguagePill>}
-                        {discontinued && (
-                            <DiscontinuedPill>Discontinued</DiscontinuedPill>
-                        )}
-                    </NameContainer>
-                    <Link href={`https://github.com/${repo}`}>
-                        <a className={'noHover'}>
-                            <HeroButton noBG>
-                                <i className={'icon github-icon'} /> View on
-                                GitHub
-                            </HeroButton>
-                        </a>
-                    </Link>
-                </Header>
-                <ProjectDescription>{description}</ProjectDescription>
-            </Container>
-        </StyledProject>
+        <Link href={link}>
+            <a className={'noHover'}>
+                <StyledProject>
+                    <ProjectImage src={image} />
+                    <Container>
+                        <Header>
+                            <NameContainer>
+                                <ProjectName>{name}</ProjectName>
+                                {language && (
+                                    <LanguagePill>{language}</LanguagePill>
+                                )}
+                                {discontinued && (
+                                    <DiscontinuedPill>
+                                        Discontinued
+                                    </DiscontinuedPill>
+                                )}
+                            </NameContainer>
+                            <Link href={`https://github.com/${repo}`}>
+                                <a className={'noHover'}>
+                                    <HeroButton noBG>
+                                        <i className={'icon github-icon'} />{' '}
+                                        View on GitHub
+                                    </HeroButton>
+                                </a>
+                            </Link>
+                        </Header>
+                        <ProjectDescription>{description}</ProjectDescription>
+                    </Container>
+                </StyledProject>
+            </a>
+        </Link>
     )
 }
