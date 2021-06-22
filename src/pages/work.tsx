@@ -1,6 +1,6 @@
 import React from 'react'
 import Layout from '../components/Layout'
-import { Head, Landing } from '../components/Landing'
+import { Head, Landing, Subheader } from '../components/Landing'
 import { Project } from '../components/Project'
 import {
     CenteredElement,
@@ -12,19 +12,21 @@ import { darkTheme } from '../theme'
 import FeatherIcon from 'feather-icons-react'
 import { Repository } from '../components/Repository'
 import config from '../config'
+import { HeroButton, TextButton } from '../components/Button'
 
 const Index = (props) => {
     return (
         <>
             <Layout title={'Work'}>
                 <Landing>
-                    <Head>My Work</Head>
+                    <CenteredElement>
+                        <Head>My Work</Head>
+                        <Subheader>
+                            A quick list of my past and present projects
+                        </Subheader>
+                    </CenteredElement>
                 </Landing>
                 <Container>
-                    <p>
-                        This is a comprehensive list of all projects that I have
-                        worked on, as well as organizations I've worked with
-                    </p>
                     <Project
                         header={'Developer'}
                         projectName={'Dot Browser'}
@@ -62,6 +64,9 @@ const Index = (props) => {
                     <CenteredElement>
                         <Head>Repositories</Head>
                         <p>A list of public repositories on my Github page</p>
+                        <TextButton>
+                            <i className={'icon github-icon'} /> View my Profile
+                        </TextButton>
                     </CenteredElement>
                     <RepositoriesGrid>
                         {props.repositories.map((repo) => (

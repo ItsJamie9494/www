@@ -55,9 +55,10 @@ export const TextButton = styled.div`
     background-color: transparent;
     padding: 0px 12px;
     font-size: 16px;
-    color: ${(props) => props.theme.colors.tertiary};
+    color: ${(props) => props.theme.colors.primary};
     letter-spacing: 0.3px;
     transition: 0.2s background-color, 0.2s opacity;
+    display: flex;
     &:hover {
         cursor: pointer;
         opacity: 0.7;
@@ -82,6 +83,17 @@ export const TextButton = styled.div`
         `
             : ''}
     `}
+    i {
+        width: 24px;
+        height: 24px;
+        filter: invert(${(props) => (props.theme.isDark ? 1 : 0)});
+        transition: opacity 0.5s ease 0s, filter 0.5s ease;
+        margin: 0 10px;
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
 `
 
 export const IconButton = styled(TextButton)`
