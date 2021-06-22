@@ -7,28 +7,34 @@ import {
     HeaderText,
     LanguagePill,
     StarContainer,
+    StyledLink,
     StyledRepository,
     TextContainer,
 } from './style'
+import Link from 'next/link'
 
 export const Repository = ({ repo }: { repo: IRepository }) => {
     return (
-        <StyledRepository>
-            <TextContainer>
-                <HeaderContainer>
-                    <HeaderText>{repo.name}</HeaderText>
-                    {repo.language && (
-                        <LanguagePill discontinued={repo.archived}>
-                            {repo.language}
-                        </LanguagePill>
-                    )}
-                </HeaderContainer>
-                <Description>{repo.description}</Description>
-            </TextContainer>
-            <StarContainer>
-                <FeatherIcon icon={'star'} size={18} />
-                <p>{repo.stargazers_count}</p>
-            </StarContainer>
-        </StyledRepository>
+        <Link href={repo.html_url}>
+            <StyledLink>
+                <StyledRepository>
+                    <TextContainer>
+                        <HeaderContainer>
+                            <HeaderText>{repo.name}</HeaderText>
+                            {repo.language && (
+                                <LanguagePill discontinued={repo.archived}>
+                                    {repo.language}
+                                </LanguagePill>
+                            )}
+                        </HeaderContainer>
+                        <Description>{repo.description}</Description>
+                    </TextContainer>
+                    <StarContainer>
+                        <FeatherIcon icon={'star'} size={18} />
+                        <p>{repo.stargazers_count}</p>
+                    </StarContainer>
+                </StyledRepository>
+            </StyledLink>
+        </Link>
     )
 }

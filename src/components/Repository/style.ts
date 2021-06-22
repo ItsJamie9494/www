@@ -1,10 +1,22 @@
 import styled, { css } from 'styled-components'
 
+export const StyledLink = styled.a`
+    margin: 10px;
+    &:hover {
+        opacity: 1;
+
+        &::after {
+            width: 0;
+            background: ${(props) => props.theme.colors.tertiary};
+            text-decoration: none;
+        }
+    }
+`
+
 export const StyledRepository = styled.div`
     display: flex;
     background-color: ${(props) => props.theme.ui.secondaryBackground};
     padding: 5px 10px;
-    margin: 10px;
     border-radius: 8px;
     width: 100%;
     text-overflow: ellipsis;
