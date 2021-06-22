@@ -25,6 +25,8 @@ export const HeaderContainer = styled.span`
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 `
 
 export const HeaderText = styled.p`
