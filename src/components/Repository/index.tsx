@@ -16,7 +16,7 @@ import Link from 'next/link'
 export const Repository = ({ repo }: { repo: IRepository }) => {
     return (
         <Link href={repo.html_url}>
-            <StyledLink>
+            <StyledLink href={repo.html_url}>
                 <StyledRepository>
                     <TextContainer>
                         <HeaderContainer>
