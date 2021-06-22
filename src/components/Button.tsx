@@ -36,15 +36,27 @@ export const Button = styled.div`
             : ''}
     &:hover {
         cursor: pointer;
-        background-color: ${(props) => props.theme.ui.secondaryBackground};
+        background-color: ${(props) => props.theme.ui.secondaryBackground}EA;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+        opacity: 0.7;
     }
     text-align: center;
     transition: 0.5s background-color, 0.5s box-shadow, 0.5s transform,
-        0.5s border;
+        0.5s border, 0.2s opacity;
+
+    i {
+        width: 24px;
+        height: 24px;
+        filter: invert(${(props) => (props.theme.isDark ? 1 : 0)});
+        transition: opacity 0.5s ease 0s, filter 0.5s ease;
+        margin-right: 5px;
+    }
 `
 
 export const HeroButton = styled(Button)`
+    ${({ noBG }: { noBG: boolean }) => css`
+        background-color: inherit;
+    `}
     height: 50px;
     display: flex;
     vertical-align: middle;

@@ -8,11 +8,9 @@ import {
     RepositoriesGrid,
 } from '../components/Page'
 import axios from 'axios'
-import { darkTheme } from '../theme'
-import FeatherIcon from 'feather-icons-react'
 import { Repository } from '../components/Repository'
 import config from '../config'
-import { HeroButton, TextButton } from '../components/Button'
+import { TextButton } from '../components/Button'
 
 const Index = (props) => {
     return (
@@ -27,40 +25,58 @@ const Index = (props) => {
                     </CenteredElement>
                 </Landing>
                 <Container>
-                    <Project
-                        header={'Developer'}
-                        projectName={'Dot Browser'}
-                        projectDescription={
-                            'Dot Browser is a privacy-conscious web browser with smarts built-in for protection against trackers and advertisements online.'
-                        }
-                        projectWebsite={'https://dothq.co'}
-                        projectImage={'/assets/projects/dotbrowser.png'}
-                        projectRepository={'https://github.com/dothq'}
-                    />
-                    <Project
-                        header={'Lead Developer'}
-                        projectName={'keyboardnotfound.com'}
-                        projectDescription={
-                            'keyboardnotfound.com is a joke website, that shows the famous "Keyboard not found, Press F1 to continue" message.'
-                        }
-                        projectWebsite={'https://keyboardnotfound.com'}
-                        projectImage={'/assets/projects/keyboardnotfound.png'}
-                        projectRepository={
-                            'https://github.com/trevorthalacker/keyboardnotfound'
-                        }
-                    />
-                    <Project
-                        header={'Lead Developer'}
-                        projectName={'bingus.link'}
-                        projectDescription={
-                            'A free, private URL shortener with the greatest domain in existence.'
-                        }
-                        projectWebsite={'https://bingus.link'}
-                        projectImage={'/assets/projects/binguslink.png'}
-                        projectRepository={
-                            'https://github.com/trevorthalacker/bingus.link'
-                        }
-                    />
+                    <div
+                        style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                        }}
+                    >
+                        {/* DATA RETURNED FROM GITHUB API*/}
+                        <Project
+                            description={
+                                'Dot Browser is a privacy-conscious web browser with smarts built-in for protection against trackers and advertisements online.'
+                            }
+                            image={'/assets/projects/dotbrowser.png'}
+                            repo={'dothq/browser'}
+                            name={'Dot Browser'}
+                            language={
+                                'Python'
+                            } /* DATA RETURNED FROM GITHUB API*/
+                        />
+                        <Project
+                            description={
+                                'A free, private URL shortener with the greatest domain in existence.'
+                            }
+                            image={'/assets/projects/binguslink.png'}
+                            repo={'trevorthalacker/bingus.link'}
+                            name={'bingus.link'}
+                            language={'TypeScript'}
+                        />
+                        <Project
+                            description={
+                                'keyboardnotfound.com is a joke website, that shows the famous "Keyboard not found, Press F1 to continue" message.'
+                            }
+                            image={'/assets/projects/keyboardnotfound.png'}
+                            repo={'trevorthalacker/keyboardnotfound'}
+                            name={'keyboardnotfound.com'}
+                            language={'JavaScript'}
+                        />
+                        {/*
+                        <Project
+                            header={'Lead Developer'}
+                            projectName={'bingus.link'}
+                            projectDescription={
+                                'A free, private URL shortener with the greatest domain in existence.'
+                            }
+                            projectWebsite={'https://bingus.link'}
+                            projectImage={'/assets/projects/binguslink.png'}
+                            projectRepository={
+                                'https://github.com/trevorthalacker/bingus.link'
+                            }
+                        /> */}
+                    </div>
+
                     <CenteredElement>
                         <Head>Repositories</Head>
                         <p>A list of public repositories on my Github page</p>

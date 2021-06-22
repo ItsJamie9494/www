@@ -1,27 +1,26 @@
 import styled from 'styled-components'
 
-export const StyledProject = styled.div`
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    align-items: unset;
-    justify-content: unset;
-    padding: 4rem 0;
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-    height: 100%;
+export const StyledProject = styled.section`
+    box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.tertiary}A6;
+    border-radius: 8px;
+    overflow: hidden;
+    background: ${(props) => props.theme.ui.secondaryBackground};
+    margin: 10px 0 20px;
 `
 
-export const Heading = styled.span`
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: color 0.5s;
-    padding-bottom: 5px;
-    @media only screen and (max-width: 660px) {
-        font-size: 14px;
-    }
+export const Container = styled.div`
+    padding: 0 10px 10px 10px;
+`
+
+export const Header = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`
+
+export const NameContainer = styled.div`
+    display: flex;
+    align-items: center;
 `
 
 export const ProjectName = styled.span`
@@ -51,14 +50,8 @@ export const ProjectDescription = styled.span`
     }
 `
 
-export const ProjectLink = styled.div`
-    width: max-content;
-    margin-top: 12px;
-`
-
 export const ProjectImage = styled.img`
-    margin: 18px auto 0 auto;
-    max-width: 70%;
+    width: 100%;
     box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.tertiary}A6;
     opacity: ${(props) => (props.theme.isDark ? '.75' : '100')};
     transition: box-shadow 0.5s, opacity 0.5s;
@@ -72,4 +65,17 @@ export const DiscontinuedPill = styled.span`
     font-size: 15px;
     color: rgba(217, 119, 6, 1);
     margin-left: 15px;
+`
+
+export const LanguagePill = styled.span`
+    border: 1px solid ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.primary};
+    display: inline-block;
+    border-radius: 8px;
+    padding: 0px 5px;
+    font-size: 15px;
+    margin-left: 15px;
+    width: max-content;
+    white-space: nowrap;
+    height: min-content;
 `

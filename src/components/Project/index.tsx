@@ -2,73 +2,55 @@ import React from 'react'
 import Link from 'next/link'
 import {
     StyledProject,
-    Heading,
     ProjectName,
     ProjectDescription,
-    ProjectLink,
     ProjectImage,
     DiscontinuedPill,
+    LanguagePill,
+    Container,
+    Header,
+    NameContainer,
 } from './style'
+import { HeroButton } from '../Button'
 
 export const Project = ({
-    header,
-    projectName,
-    projectDescription,
-    projectWebsite,
-    projectRepository,
-    projectImage,
-    noRepo,
+    name,
+    language,
     discontinued,
+    repo,
+    description,
+    image,
 }: {
-    header: string
-    projectName: string
-    projectDescription: string
-    projectWebsite: string
-    projectRepository?: string
-    projectImage: string
-    noRepo?: boolean
+    repo: string
+    name: string
+    language: string
     discontinued?: boolean
+    description: string
+    image: string
 }) => {
     return (
         <StyledProject>
-            <Heading>{header}</Heading>
-            <ProjectName>
-                {projectName}{' '}
-                {discontinued && (
-                    <DiscontinuedPill>Discontinued</DiscontinuedPill>
-                )}
-            </ProjectName>
-            <ProjectDescription>{projectDescription}</ProjectDescription>
-            <div
-                style={{
-                    display: 'grid',
-                    gridAutoFlow: 'column',
-                    gap: '30px',
-                    margin: '0 auto',
-                }}
-            >
-                <ProjectLink>
-                    <Link href={projectWebsite}>Visit Website</Link>
-                </ProjectLink>
-                {!noRepo && (
-                    <ProjectLink>
-                        <Link href={projectRepository}>View Source Code</Link>
-                    </ProjectLink>
-                )}
-            </div>
-            <ProjectImage src={projectImage} />
+            <ProjectImage src={image} />
+            <Container>
+                <Header>
+                    <NameContainer>
+                        <ProjectName>{name}</ProjectName>
+                        {language && <LanguagePill>{language}</LanguagePill>}
+                        {discontinued && (
+                            <DiscontinuedPill>Discontinued</DiscontinuedPill>
+                        )}
+                    </NameContainer>
+                    <Link href={`https://github.com/${repo}`}>
+                        <a className={'noHover'}>
+                            <HeroButton noBG>
+                                <i className={'icon github-icon'} /> View on
+                                GitHub
+                            </HeroButton>
+                        </a>
+                    </Link>
+                </Header>
+                <ProjectDescription>{description}</ProjectDescription>
+            </Container>
         </StyledProject>
     )
 }
-
-/*
-* <StyledProject>
-            <Heading>{header}</Heading>
-            <ProjectName>{projectName}</ProjectName>
-            <ProjectDescription>{projectDescription}</ProjectDescription>
-            <div>
-                <ProjectLink target={"__blank"} href={projectWebsite} style={{ marginRight: '28px' }}>Visit Site</ProjectLink>
-                {!noRepo && <ProjectLink target={"__blank"} href={projectRepository}>Visit Repository</ProjectLink>}
-            </div>
-            <ProjectImage src={projectImage} />
-        </StyledProject>*/
