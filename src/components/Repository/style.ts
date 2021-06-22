@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const StyledRepository = styled.div`
     display: flex;
@@ -34,12 +34,19 @@ export const HeaderText = styled.p`
 `
 
 export const LanguagePill = styled.span`
+    ${({ discontinued }: { discontinued: boolean }) => css`
+        border: 1px solid
+            ${discontinued
+                ? 'rgba(217, 119, 6, 1)'
+                : (props) => props.theme.colors.primary};
+        color: ${discontinued
+            ? 'rgba(217, 119, 6, 1)'
+            : (props) => props.theme.colors.primary};
+    `}
     display: inline-block;
     border-radius: 8px;
-    border: 1px solid rgba(217, 119, 6, 1);
     padding: 0px 5px;
     font-size: 15px;
-    color: rgba(217, 119, 6, 1);
     margin-left: 15px;
     width: max-content;
     white-space: nowrap;

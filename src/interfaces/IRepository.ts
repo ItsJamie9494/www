@@ -8,4 +8,5 @@ export interface Repository {
     description: string
     fork: boolean
     stargazers_count: number
+    archived: boolean
 }

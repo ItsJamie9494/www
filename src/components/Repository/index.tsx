@@ -18,7 +18,9 @@ export const Repository = ({ repo }: { repo: IRepository }) => {
                 <HeaderContainer>
                     <HeaderText>{repo.name}</HeaderText>
                     {repo.language && (
-                        <LanguagePill>{repo.language}</LanguagePill>
+                        <LanguagePill discontinued={repo.archived}>
+                            {repo.language}
+                        </LanguagePill>
                     )}
                 </HeaderContainer>
                 <Description>{repo.description}</Description>

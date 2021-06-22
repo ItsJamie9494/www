@@ -24,6 +24,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
                         description: repo.description,
                         fork: repo.fork,
                         stargazers_count: repo.stargazers_count,
+                        archived: repo.archived,
                     }
                     repos.push(strippedRepo)
                 }
