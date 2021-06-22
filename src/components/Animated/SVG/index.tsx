@@ -74,25 +74,17 @@ export const AnimatedSVG = ({
 }: SVGProps) => {
     return (
         <AnimatedBackground
-            style={{
-                position: `absolute`,
-                stroke: stroke ? `currentColor` : `none`,
-                fill: stroke ? `none` : `currentColor`,
-                display: hiddenMobile
-                    ? '{ base: `none`, md: `block` }'
-                    : `block`,
-                overflow: `visible`,
-                color,
-                zIndex,
-                width,
-                left,
-                top,
-                filter: `blur(8px) saturate(160%)`,
-            }}
             viewBox={icons[icon].viewBox}
             slow={animation === 'slow' ? true : false}
             large={animation === 'wide' ? true : false}
             horizontal={horizontal}
+            stroke={stroke.toString()}
+            colour={color}
+            zIndex={zIndex}
+            width={width}
+            left={left}
+            top={top}
+            hiddenMobile={hiddenMobile}
         >
             {icons[icon].shape}
         </AnimatedBackground>
