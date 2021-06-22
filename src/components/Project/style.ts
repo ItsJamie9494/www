@@ -52,7 +52,6 @@ export const ProjectDescription = styled.span`
 
 export const ProjectImage = styled.img`
     width: 100%;
-    box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.tertiary}A6;
     opacity: ${(props) => (props.theme.isDark ? '.75' : '100')};
     transition: box-shadow 0.5s, opacity 0.5s;
 `
