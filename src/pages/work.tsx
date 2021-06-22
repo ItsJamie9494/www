@@ -2,11 +2,16 @@ import React from 'react'
 import Layout from '../components/Layout'
 import { Head, Landing } from '../components/Landing'
 import { Project } from '../components/Project'
-import { CenteredElement, Container } from '../components/Page'
+import {
+    CenteredElement,
+    Container,
+    RepositoriesGrid,
+} from '../components/Page'
 import axios from 'axios'
 import { darkTheme } from '../theme'
 import FeatherIcon from 'feather-icons-react'
 import { Repository } from '../components/Repository'
+import config from '../config'
 
 const Index = (props) => {
     return (
@@ -58,19 +63,18 @@ const Index = (props) => {
                         <Head>Repositories</Head>
                         <p>A list of public repositories on my Github page</p>
                     </CenteredElement>
-                    <div
-                        style={{
-                            display: 'grid',
-                            gap: '10px',
-                            gridAutoRows: '1fr',
-                            gridTemplateColumns: 'repeat(2, minmax(0px,1fr))',
-                            width: '100%',
-                        }}
-                    >
+                    <RepositoriesGrid>
                         {props.repositories.map((repo) => (
                             <Repository repo={repo} key={repo.id} />
                         ))}
-                    </div>
+                        <p>
+                            Note: An{' '}
+                            <span style={{ color: 'rgba(217, 119, 6, 1)' }}>
+                                orange
+                            </span>{' '}
+                            language tag references an archived project
+                        </p>
+                    </RepositoriesGrid>
                 </Container>
             </Layout>
         </>
@@ -83,9 +87,9 @@ export async function getServerSideProps(context) {
     let res: Object = []
     await axios
         .get(
-            (process.env.NODE_ENV === 'development'
-                ? 'http://localhost:3000'
-                : '') + '/api/github'
+            `${process.env.NODE_ENV === 'production' ? 'https' : 'http'}://${
+                config.hostname
+            }api/github`
         )
         .then((data) => {
             res = data.data
