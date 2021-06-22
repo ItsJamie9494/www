@@ -4,8 +4,10 @@ export const StyledProject = styled.section`
     box-shadow: 0 0 10px 0 ${(props) => props.theme.colors.tertiary}A6;
     border-radius: 8px;
     overflow: hidden;
-    background: ${(props) => props.theme.ui.secondaryBackground};
+    background-color: ${(props) => props.theme.ui.secondaryBackground};
     margin: 10px 0 20px;
+    width: 100%;
+    max-width: 60vw;
 
     &:hover {
         opacity: 1;
@@ -20,7 +22,7 @@ export const StyledProject = styled.section`
         transition: 0.5s transform;
     }
 
-    transition: 0.5s transform;
+    transition: 0.5s transform, 0.5s background-color;
 `
 
 export const Container = styled.div`
@@ -45,7 +47,7 @@ export const ProjectName = styled.span`
     line-height: 52px;
     align-items: center;
     justify-content: center;
-    transition: color 0.5s;
+    transition: 0.5s color;
     @media only screen and (max-width: 1224px) {
         font-size: 40px;
         line-height: 3.5rem;
@@ -59,7 +61,7 @@ export const ProjectName = styled.span`
 export const ProjectDescription = styled.span`
     max-width: 710px;
     margin: 6px auto 6px auto;
-    transition: color 0.5s;
+    transition: 0.5s color;
     @media only screen and (max-width: 660px) {
         font-size: 12px;
     }

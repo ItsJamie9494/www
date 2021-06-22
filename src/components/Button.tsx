@@ -69,7 +69,7 @@ export const TextButton = styled.div`
     font-size: 16px;
     color: ${(props) => props.theme.colors.primary};
     letter-spacing: 0.3px;
-    transition: 0.2s background-color, 0.2s opacity;
+    transition: 0.2s background-color, 0.2s opacity, 0.5s color;
     display: flex;
     &:hover {
         cursor: pointer;
