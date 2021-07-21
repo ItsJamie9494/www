@@ -52,7 +52,7 @@ const Legal = () => {
                     </p>
                     <p>
                         If you would like to opt-out of this analytics
-                        collection, please visit
+                        collection, please visit{' '}
                         <span style={{ display: 'inline-flex' }}>
                             <Link href={'/legal/opt-out'}>
                                 <a>https://{config.hostname}/legal/opt-out</a>
