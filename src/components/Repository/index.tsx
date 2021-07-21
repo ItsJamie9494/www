@@ -15,15 +15,21 @@ import Link from 'next/link'
 
 export const Repository = ({ repo }: { repo: IRepository }) => {
     return (
-        <Link href={repo.html_url}>
-            <StyledLink href={repo.html_url}>
+        <Link href={'https://example.com'}>
+            <StyledLink href={repo.web_url}>
                 <StyledRepository>
                     <TextContainer>
                         <HeaderContainer>
                             <HeaderText>{repo.name}</HeaderText>
-                            {repo.language && (
+                            {/* {repo.language && (
                                 <LanguagePill discontinued={repo.archived}>
                                     {repo.language}
+                                </LanguagePill>
+                            )} */}
+                            {/* I don't care enough to spam API requests to get the language */}
+                            {repo.archived && (
+                                <LanguagePill discontinued={repo.archived}>
+                                    Archived
                                 </LanguagePill>
                             )}
                         </HeaderContainer>
@@ -31,7 +37,7 @@ export const Repository = ({ repo }: { repo: IRepository }) => {
                     </TextContainer>
                     <StarContainer>
                         <FeatherIcon icon={'star'} size={18} />
-                        <p>{repo.stargazers_count}</p>
+                        <p>{repo.star_count}</p>
                     </StarContainer>
                 </StyledRepository>
             </StyledLink>

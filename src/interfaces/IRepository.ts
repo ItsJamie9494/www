@@ -1,12 +1,8 @@
 export interface Repository {
     id: number
     name: string
-    html_url: string
-    created_at: string
-    pushed_at: string
-    language: string
+    web_url: string
     description: string
-    fork: boolean
-    stargazers_count: number
+    star_count: number
     archived: boolean
 }

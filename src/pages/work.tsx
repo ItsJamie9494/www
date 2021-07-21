@@ -12,6 +12,7 @@ import { Repository } from '../components/Repository'
 import config from '../config'
 import { TextButton } from '../components/Button'
 import { Repository as IRepository } from '../interfaces/IRepository'
+import { gitlab } from '../lib/gitlab'
 
 const Index = (props) => {
     return (
@@ -68,22 +69,22 @@ const Index = (props) => {
 
                     <CenteredElement>
                         <Head>Repositories</Head>
-                        <p>A list of public repositories on my Github page</p>
+                        <p>A list of public repositories on my Gitlab page</p>
                         <TextButton>
-                            <i className={'icon github-icon'} /> View my Profile
+                            <i className={'icon gitlab-icon'} /> View my Profile
                         </TextButton>
                     </CenteredElement>
                     <RepositoriesGrid>
                         {props.repositories.map((repo) => (
                             <Repository repo={repo} key={repo.id} />
                         ))}
-                        <p>
+                        {/* <p>
                             Note: An{' '}
                             <span style={{ color: 'rgba(217, 119, 6, 1)' }}>
                                 orange
                             </span>{' '}
                             language tag references an archived project
-                        </p>
+                        </p> */}
                     </RepositoriesGrid>
                 </Container>
             </Layout>
@@ -94,35 +95,21 @@ const Index = (props) => {
 export default Index
 
 export async function getServerSideProps(context) {
-    let res: Object = []
-    await axios
-        .get(
-            `https://api.github.com/users/${config.username}/repos?per_page=100`
-        )
-        .then((data) => {
-            let response = data.data
-            let repos = []
+    let res: Array<IRepository[]> = []
 
-            ;(response as Array<IRepository>).map((repo) => {
-                if (!repo.fork) {
-                    let strippedRepo = {
-                        id: repo.id,
-                        name: repo.name,
-                        html_url: repo.html_url,
-                        created_at: repo.created_at,
-                        pushed_at: repo.pushed_at,
-                        language: repo.language,
-                        description: repo.description,
-                        fork: repo.fork,
-                        stargazers_count: repo.stargazers_count,
-                        archived: repo.archived,
-                    }
-                    repos.push(strippedRepo)
-                }
-            })
+    let GitlabAPI = new gitlab()
 
-            return (res = repos)
-        })
+    let archivedProjects = await GitlabAPI.profiles(true)
+    let activeProjects = await GitlabAPI.profiles(false)
+
+    for (let i = 0; i < activeProjects.length; i++) {
+        res.push(activeProjects[i])
+    }
+
+    // archived projects last
+    for (let i = 0; i < archivedProjects.length; i++) {
+        res.push(archivedProjects[i])
+    }
 
     return {
         props: {
