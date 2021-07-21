@@ -82,9 +82,9 @@ export const Footer = () => {
                                 </a>
                             </Link>
                             <span style={{ margin: '10px' }} />
-                            <Link href={'https://github.com/trevorthalacker'}>
+                            <Link href={'https://gitlab.com/trevorthalacker'}>
                                 <a className={'noHover'}>
-                                    <i className={'icon github-icon'} />
+                                    <i className={'icon gitlab-icon'} />
                                 </a>
                             </Link>
                         </div>
@@ -92,7 +92,7 @@ export const Footer = () => {
                     <RightContainer>
                         <LinkContainer>
                             <Link
-                                href={'https://github.com/trevorthalacker/www'}
+                                href={'https://gitlab.com/trevorthalacker/www'}
                             >
                                 Source Code
                             </Link>

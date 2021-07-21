@@ -38,8 +38,8 @@ const Contact = () => {
                     <p>
                         If it's a personal project, please post an issue on{' '}
                         <span style={{ display: 'inline-block' }}>
-                            <Link href={'https://github.com/trevorthalacker'}>
-                                Github
+                            <Link href={'https://gitlab.com/trevorthalacker'}>
+                                Gitlab
                             </Link>
                         </span>{' '}
                         about it, and if it's still maintained, I'll try and
@@ -84,6 +84,16 @@ const Contact = () => {
                                     <ContactSocialLink>
                                         <i className={'icon discord-icon'} />
                                         Discord (Trevor#7688)
+                                    </ContactSocialLink>
+                                </a>
+                            </Link>
+                        </span>
+                        <span style={{ width: 'fit-content' }}>
+                            <Link href={'https://gitlab.com/trevorthalacker'}>
+                                <a>
+                                    <ContactSocialLink>
+                                        <i className={'icon gitlab-icon'} />
+                                        Gitlab
                                     </ContactSocialLink>
                                 </a>
                             </Link>

@@ -48,11 +48,11 @@ export const Project = ({
                                     </DiscontinuedPill>
                                 )}
                             </NameContainer>
-                            <Link href={`https://github.com/${repo}`}>
+                            <Link href={`https://gitlab.com/${repo}`}>
                                 <a className={'noHover'}>
                                     <HeroButton noBG>
-                                        <i className={'icon github-icon'} />{' '}
-                                        View on GitHub
+                                        <i className={'icon gitlab-icon'} />{' '}
+                                        View on Gitlab
                                     </HeroButton>
                                 </a>
                             </Link>
