@@ -52,75 +52,131 @@ const Contact = () => {
                     </p>
 
                     <ContactGrid>
-                        <span style={{ width: 'fit-content' }}>
-                            <Link href={'https://twitter.com/trevorthalacker'}>
-                                <a>
-                                    <ContactSocialLink>
-                                        <i className={'icon twitter-icon'} />
-                                        Twitter
-                                    </ContactSocialLink>
-                                </a>
-                            </Link>
-                        </span>
-                        <span style={{ width: 'fit-content' }}>
-                            <Link
-                                href={'https://reddit.com/u/IAmAwesomeTech10'}
+                        <span style={{ width: 'fit-content', display: 'flex' }}>
+                            <span
+                                style={{
+                                    display: 'inline-flex',
+                                    margin: 'auto',
+                                }}
                             >
-                                <a>
-                                    <ContactSocialLink>
-                                        <i className={'icon reddit-icon'} />
-                                        Reddit
-                                    </ContactSocialLink>
-                                </a>
-                            </Link>
+                                <Link
+                                    href={'https://twitter.com/trevorthalacker'}
+                                >
+                                    <a>
+                                        <ContactSocialLink>
+                                            <i
+                                                className={'icon twitter-icon'}
+                                            />
+                                            Twitter
+                                        </ContactSocialLink>
+                                    </a>
+                                </Link>
+                            </span>
                         </span>
-                        <span style={{ width: 'fit-content' }}>
-                            <Link
-                                href={
-                                    'https://discord.com/users/381541244360327168'
-                                }
+                        <span style={{ width: 'fit-content', display: 'flex' }}>
+                            <span
+                                style={{
+                                    display: 'inline-flex',
+                                    margin: 'auto',
+                                }}
                             >
-                                <a>
-                                    <ContactSocialLink>
-                                        <i className={'icon discord-icon'} />
-                                        Discord (Trevor#7688)
-                                    </ContactSocialLink>
-                                </a>
-                            </Link>
+                                <Link
+                                    href={
+                                        'https://reddit.com/u/IAmAwesomeTech10'
+                                    }
+                                >
+                                    <a>
+                                        <ContactSocialLink>
+                                            <i className={'icon reddit-icon'} />
+                                            Reddit
+                                        </ContactSocialLink>
+                                    </a>
+                                </Link>
+                            </span>
                         </span>
-                        <span style={{ width: 'fit-content' }}>
-                            <Link href={'https://gitlab.com/trevorthalacker'}>
-                                <a>
-                                    <ContactSocialLink>
-                                        <i className={'icon gitlab-icon'} />
-                                        Gitlab
-                                    </ContactSocialLink>
-                                </a>
-                            </Link>
-                        </span>
-                        <span style={{ width: 'fit-content' }}>
-                            <Link href={'https://github.com/trevorthalacker'}>
-                                <a>
-                                    <ContactSocialLink>
-                                        <i className={'icon github-icon'} />
-                                        Github
-                                    </ContactSocialLink>
-                                </a>
-                            </Link>
-                        </span>
-                        <span style={{ width: 'fit-content' }}>
-                            <Link
-                                href={
-                                    'https://mastodon.online/@trevorthalacker'
-                                }
+                        <span style={{ width: 'fit-content', display: 'flex' }}>
+                            <span
+                                style={{
+                                    display: 'inline-flex',
+                                    margin: 'auto',
+                                }}
                             >
-                                <a>
-                                    <ContactSocialLink>
-                                        <i className={'icon mastodon-icon'} />
-                                        Mastodon
-                                    </ContactSocialLink>
-                                </a>
-                            </Link>
+                                <Link
+                                    href={
+                                        'https://discord.com/users/381541244360327168'
+                                    }
+                                >
+                                    <a>
+                                        <ContactSocialLink>
+                                            <i
+                                                className={'icon discord-icon'}
+                                            />
+                                            Discord (Thalacker#9494)
+                                        </ContactSocialLink>
+                                    </a>
+                                </Link>
+                            </span>
+                        </span>
+                        <span style={{ width: 'fit-content', display: 'flex' }}>
+                            <span
+                                style={{
+                                    display: 'inline-flex',
+                                    margin: 'auto',
+                                }}
+                            >
+                                <Link
+                                    href={'https://gitlab.com/trevorthalacker'}
+                                >
+                                    <a>
+                                        <ContactSocialLink>
+                                            <i className={'icon gitlab-icon'} />
+                                            Gitlab
+                                        </ContactSocialLink>
+                                    </a>
+                                </Link>
+                            </span>
+                        </span>
+                        <span style={{ width: 'fit-content', display: 'flex' }}>
+                            <span
+                                style={{
+                                    display: 'inline-flex',
+                                    margin: 'auto',
+                                }}
+                            >
+                                <Link
+                                    href={'https://github.com/trevorthalacker'}
+                                >
+                                    <a>
+                                        <ContactSocialLink>
+                                            <i className={'icon github-icon'} />
+                                            Github
+                                        </ContactSocialLink>
+                                    </a>
+                                </Link>
+                            </span>
+                        </span>
+                        <span style={{ width: 'fit-content', display: 'flex' }}>
+                            <span
+                                style={{
+                                    display: 'inline-flex',
+                                    margin: 'auto',
+                                }}
+                            >
+                                <Link
+                                    href={
+                                        'https://mastodon.online/@trevorthalacker'
+                                    }
+                                >
+                                    <a>
+                                        <ContactSocialLink>
+                                            <i
+                                                className={'icon mastodon-icon'}
+                                            />
+                                            Mastodon
+                                        </ContactSocialLink>
+                                    </a>
+                                </Link>
+                            </span>
                         </span>
                     </ContactGrid>
 
