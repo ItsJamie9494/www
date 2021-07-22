@@ -1,29 +1,29 @@
 export const lightTheme = {
     isDark: false,
     colors: {
-        primary: '#0070f3',
-        secondary: '#ffffff',
-        tertiary: '#222222',
+        primary: '#3B82F6',
+        secondary: '#F9FAFB',
+        tertiary: '#1F2937',
     },
     ui: {
-        background: '#ffffff',
-        secondaryBackground: '#eaeaea',
-        color: '#222222',
-        border: '#eaeaea',
+        background: '#F9FAFB',
+        secondaryBackground: '#E5E7EB',
+        color: '#1F2937',
+        border: '#E5E7EB',
     },
 }
 
 export const darkTheme = {
     isDark: true,
     colors: {
-        primary: '#0070f3',
-        secondary: '#222222',
-        tertiary: '#ffffff',
+        primary: '#3B82F6',
+        secondary: '#1F2937',
+        tertiary: '#F9FAFB',
     },
     ui: {
-        background: '#222222',
-        secondaryBackground: '#0e0e0e',
-        color: '#fff',
+        background: '#1F2937',
+        secondaryBackground: '#111827',
+        color: '#F9FAFB',
         border: '#333333',
     },
 }
