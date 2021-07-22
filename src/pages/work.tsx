@@ -42,7 +42,7 @@ const Index = () => {
         gatherProjects().then((data) => {
             return setRepos(data)
         })
-    })
+    }, [])
     return (
         <>
             <Layout title={'Work'}>
