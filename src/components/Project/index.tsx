@@ -21,6 +21,7 @@ export const Project = ({
     description,
     image,
     link,
+    gh,
 }: {
     repo: string
     name: string
@@ -29,6 +30,7 @@ export const Project = ({
     description: string
     image: string
     link: string
+    gh?: boolean
 }) => {
     return (
         <Link href={link}>
@@ -48,11 +50,19 @@ export const Project = ({
                                     </DiscontinuedPill>
                                 )}
                             </NameContainer>
-                            <Link href={`https://gitlab.com/${repo}`}>
+                            <Link
+                                href={`https://${
+                                    gh ? 'github' : 'gitlab'
+                                }.com/${repo}`}
+                            >
                                 <a className={'noHover'}>
                                     <HeroButton noBG>
-                                        <i className={'icon gitlab-icon'} />{' '}
-                                        View on Gitlab
+                                        <i
+                                            className={`icon ${
+                                                gh ? 'github' : 'gitlab'
+                                            }-icon`}
+                                        />{' '}
+                                        View on {gh ? 'GitHub' : 'Gitlab'}
                                     </HeroButton>
                                 </a>
                             </Link>
