@@ -7,14 +7,42 @@ import {
     Container,
     RepositoriesGrid,
 } from '../components/Page'
-import axios from 'axios'
 import { Repository } from '../components/Repository'
 import config from '../config'
 import { TextButton } from '../components/Button'
 import { Repository as IRepository } from '../interfaces/IRepository'
 import { gitlab } from '../lib/gitlab'
+import { Spinner } from '../components/Spinner'
 
-const Index = (props) => {
+const Index = () => {
+    const [repos, setRepos] = React.useState(Array<IRepository[]>())
+
+    React.useEffect(() => {
+        // This will gather all the information for projects
+        const gatherProjects = async () => {
+            let res: Array<IRepository[]> = []
+
+            let GitlabAPI = new gitlab()
+
+            let archivedProjects = await GitlabAPI.profiles(true)
+            let activeProjects = await GitlabAPI.profiles(false)
+
+            for (let i = 0; i < activeProjects.length; i++) {
+                res.push(activeProjects[i])
+            }
+
+            // archived projects last
+            for (let i = 0; i < archivedProjects.length; i++) {
+                res.push(archivedProjects[i])
+            }
+
+            return res
+        }
+
+        gatherProjects().then((data) => {
+            return setRepos(data)
+        })
+    })
     return (
         <>
             <Layout title={'Work'}>
@@ -44,13 +72,14 @@ const Index = (props) => {
                             name={'Dot Browser'}
                             language={'Python'}
                             link={'https://dothq.co'}
+                            gh={true} // This repo is on Github
                         />
                         <Project
                             description={
                                 'A free, private URL shortener with the greatest domain in existence.'
                             }
                             image={'/assets/projects/binguslink.png'}
-                            repo={'trevorthalacker/bingus.link'}
+                            repo={`${config.username}/bingus-link`}
                             name={'bingus.link'}
                             language={'TypeScript'}
                             link={'https://bingus.link'}
@@ -60,7 +89,7 @@ const Index = (props) => {
                                 'keyboardnotfound.com is a joke website, that shows the famous "Keyboard not found, Press F1 to continue" message.'
                             }
                             image={'/assets/projects/keyboardnotfound.png'}
-                            repo={'trevorthalacker/keyboardnotfound'}
+                            repo={`${config.username}/keyboardnotfound`}
                             name={'keyboardnotfound.com'}
                             language={'JavaScript'}
                             link={'https://keyboardnotfound.com'}
@@ -74,18 +103,36 @@ const Index = (props) => {
                             <i className={'icon gitlab-icon'} /> View my Profile
                         </TextButton>
                     </CenteredElement>
-                    <RepositoriesGrid>
-                        {props.repositories.map((repo) => (
-                            <Repository repo={repo} key={repo.id} />
-                        ))}
-                        {/* <p>
+                    {repos.length != 0 ? (
+                        <RepositoriesGrid>
+                            {repos.map((repo) => (
+                                <Repository
+                                    repo={repo as unknown as IRepository}
+                                    key={(repo as unknown as IRepository).id}
+                                />
+                            ))}
+                        </RepositoriesGrid>
+                    ) : (
+                        <CenteredElement>
+                            <div
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                }}
+                            >
+                                <Spinner size={25} />
+                                <p>Loading Repositories...</p>
+                            </div>
+                        </CenteredElement>
+                    )}
+
+                    {/* <p>
                             Note: An{' '}
                             <span style={{ color: 'rgba(217, 119, 6, 1)' }}>
                                 orange
                             </span>{' '}
                             language tag references an archived project
                         </p> */}
-                    </RepositoriesGrid>
                 </Container>
             </Layout>
         </>
@@ -93,27 +140,3 @@ const Index = (props) => {
 }
 
 export default Index
-
-export async function getServerSideProps(context) {
-    let res: Array<IRepository[]> = []
-
-    let GitlabAPI = new gitlab()
-
-    let archivedProjects = await GitlabAPI.profiles(true)
-    let activeProjects = await GitlabAPI.profiles(false)
-
-    for (let i = 0; i < activeProjects.length; i++) {
-        res.push(activeProjects[i])
-    }
-
-    // archived projects last
-    for (let i = 0; i < archivedProjects.length; i++) {
-        res.push(archivedProjects[i])
-    }
-
-    return {
-        props: {
-            repositories: res,
-        }, // will be passed to the page component as props
-    }
-}

@@ -36,7 +36,7 @@ const generateCSP = () => {
     csp += `script-src 'nonce-${nonce}' 'self' https://analytics.trevorthalacker.com https://latest.cactus.chat ${
         productionEnv ? '' : "'unsafe-eval'"
     };`
-    csp += `connect-src 'self' matrix.cactus.chat:* analytics.trevorthalacker.com:* 'unsafe-eval';`
+    csp += `connect-src 'self' matrix.cactus.chat:* analytics.trevorthalacker.com:* gitlab.com:* 'unsafe-eval';`
     //if (!productionEnv) csp += `connect-src 'self';`;
 
     return [csp, nonce]
