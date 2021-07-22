@@ -33,44 +33,43 @@ export const Project = ({
     gh?: boolean
 }) => {
     return (
-        <Link href={link}>
-            <a className={'noHover'}>
-                <StyledProject>
-                    <ProjectImage src={image} />
-                    <Container>
-                        <Header>
-                            <NameContainer>
-                                <ProjectName>{name}</ProjectName>
-                                {language && (
-                                    <LanguagePill>{language}</LanguagePill>
-                                )}
-                                {discontinued && (
-                                    <DiscontinuedPill>
-                                        Discontinued
-                                    </DiscontinuedPill>
-                                )}
-                            </NameContainer>
-                            <Link
-                                href={`https://${
-                                    gh ? 'github' : 'gitlab'
-                                }.com/${repo}`}
-                            >
-                                <a className={'noHover'}>
-                                    <HeroButton noBG>
-                                        <i
-                                            className={`icon ${
-                                                gh ? 'github' : 'gitlab'
-                                            }-icon`}
-                                        />{' '}
-                                        View on {gh ? 'GitHub' : 'Gitlab'}
-                                    </HeroButton>
-                                </a>
-                            </Link>
-                        </Header>
-                        <ProjectDescription>{description}</ProjectDescription>
-                    </Container>
-                </StyledProject>
-            </a>
-        </Link>
+        <StyledProject onClick={() => window.location.replace(link)}>
+            <ProjectImage src={image} />
+            <Container>
+                <Header>
+                    <NameContainer>
+                        <ProjectName>{name}</ProjectName>
+                        {language && <LanguagePill>{language}</LanguagePill>}
+                        {discontinued && (
+                            <DiscontinuedPill>Discontinued</DiscontinuedPill>
+                        )}
+                    </NameContainer>
+                    <NameContainer>
+                        <Link href={link}>
+                            <a className={'noHover'}>
+                                <HeroButton noBG>Visit Website</HeroButton>
+                            </a>
+                        </Link>
+                        <Link
+                            href={`https://${
+                                gh ? 'github' : 'gitlab'
+                            }.com/${repo}`}
+                        >
+                            <a className={'noHover'}>
+                                <HeroButton noBG>
+                                    <i
+                                        className={`icon ${
+                                            gh ? 'github' : 'gitlab'
+                                        }-icon`}
+                                    />{' '}
+                                    View on {gh ? 'GitHub' : 'Gitlab'}
+                                </HeroButton>
+                            </a>
+                        </Link>
+                    </NameContainer>
+                </Header>
+                <ProjectDescription>{description}</ProjectDescription>
+            </Container>
+        </StyledProject>
     )
 }
