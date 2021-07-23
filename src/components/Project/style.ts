@@ -8,9 +8,10 @@ export const StyledProject = styled.section`
     margin: 10px 0 20px;
     width: 100%;
     max-width: 60vw;
+    opacity: 1;
+    z-index: 2;
 
     &:hover {
-        opacity: 1;
         cursor: pointer;
 
         &::after {
@@ -81,7 +82,7 @@ export const ProjectDescription = styled.span`
 
 export const ProjectImage = styled.img`
     width: 100%;
-    filter: brightness(${(props) => (props.theme.isDark ? '.75' : '100')});
+    filter: brightness(${(props) => (props.theme.isDark ? '.75' : '')});
     transition: box-shadow 0.5s, opacity 0.5s;
 `
 
