@@ -81,7 +81,7 @@ export const ProjectDescription = styled.span`
 
 export const ProjectImage = styled.img`
     width: 100%;
-    opacity: ${(props) => (props.theme.isDark ? '.75' : '100')};
+    filter: brightness(${(props) => (props.theme.isDark ? '.75' : '100')});
     transition: box-shadow 0.5s, opacity 0.5s;
 `
 
