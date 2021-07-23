@@ -23,6 +23,10 @@ export const StyledProject = styled.section`
     }
 
     transition: 0.5s transform, 0.5s background-color;
+
+    @media screen and (max-width: 768px) {
+        max-width: 80vw;
+    }
 `
 
 export const Container = styled.div`
@@ -33,11 +37,19 @@ export const Header = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 1024px) {
+        flex-direction: column;
+    }
 `
 
 export const NameContainer = styled.div`
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+    }
 `
 
 export const ProjectName = styled.span`
