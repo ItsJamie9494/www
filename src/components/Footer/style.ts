@@ -1,10 +1,8 @@
 import styled, { css } from 'styled-components'
 
 export const StyledFooter = styled.div`
-    height: 80px;
+    height: min-content;
     width: 100%;
-    position: relative;
-    bottom: 0;
     text-decoration: none;
     ${({ isBlurred }: { isBlurred: boolean }) => css`
         backdrop-filter: blur(${isBlurred ? 8 : 0}px);
@@ -27,7 +25,6 @@ export const Container = styled.div`
     margin: 0px auto;
     max-width: 1164px;
     color: black;
-    height: 80px;
     display: flex;
     -webkit-box-align: center;
     align-items: center;
