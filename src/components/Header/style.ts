@@ -8,7 +8,7 @@ export const StyledHeader = styled.div`
     transition: 0.5s background-color, 0.5s box-shadow;
     text-decoration: none;
     background-color: ${(props) => props.theme.ui.background}E6;
-    z-index: 9;
+    z-index: 999;
     ${({ isBlurred }: { isBlurred: boolean }) => css`
         box-shadow: ${isBlurred ? '0 0 10px 0' : ''}
             ${isBlurred ? (props) => props.theme.colors.tertiary + 'A6' : ''};
@@ -81,7 +81,7 @@ export const Dropdown = styled.div`
 `
 
 export const MobileContainer = styled.div`
-    position: absolute;
+    position: fixed;
     top: 80px;
     ${({ isVisible }: { isVisible: boolean }) => css`
         transform: translateY(${isVisible ? '0%' : '-200%'});
@@ -90,7 +90,7 @@ export const MobileContainer = styled.div`
     background-color: ${(props) => props.theme.ui.background};
     transition: 0.5s background-color, 0.5s transform;
     width: 100%;
-    z-index: 0;
+    z-index: 99;
 `
 
 export const MobileLinkContainer = styled.div`
