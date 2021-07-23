@@ -15,7 +15,7 @@ export const StyledProject = styled.section`
 
         &::after {
             width: 0;
-            background: ${(props) => props.theme.colors.tertiary};
+            background-color: ${(props) => props.theme.colors.tertiary};
             text-decoration: none;
         }
         transform: translateY(-5px);
