@@ -8,7 +8,7 @@ export const StyledHeader = styled.div`
     transition: 0.5s background-color, 0.5s box-shadow;
     text-decoration: none;
     background-color: ${(props) => props.theme.ui.background}E6;
-    z-index: 999999999;
+    z-index: 9;
     ${({ isBlurred }: { isBlurred: boolean }) => css`
         box-shadow: ${isBlurred ? '0 0 10px 0' : ''}
             ${isBlurred ? (props) => props.theme.colors.tertiary + 'A6' : ''};

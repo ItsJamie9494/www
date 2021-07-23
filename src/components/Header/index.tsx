@@ -133,10 +133,10 @@ export const Header = () => {
                                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                             />
                         </IconButton>
-                        <NavMenu isVisible={isMenuOpen} />
                     </Dropdown>
                 </Container>
             </StyledHeader>
+            <NavMenu isVisible={isMenuOpen} />
         </>
     )
 }
