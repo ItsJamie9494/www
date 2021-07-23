@@ -62,7 +62,7 @@ const Contact = () => {
                                 }}
                             >
                                 <Link
-                                    href={'https://twitter.com/trevorthalacker'}
+                                    href={`https://twitter.com/${config.username}`}
                                 >
                                     <a>
                                         <ContactSocialLink>
@@ -123,7 +123,7 @@ const Contact = () => {
                                 }}
                             >
                                 <Link
-                                    href={'https://gitlab.com/trevorthalacker'}
+                                    href={`https://gitlab.com/${config.username}`}
                                 >
                                     <a>
                                         <ContactSocialLink>
@@ -142,7 +142,7 @@ const Contact = () => {
                                 }}
                             >
                                 <Link
-                                    href={'https://github.com/trevorthalacker'}
+                                    href={`https://github.com/${config.username}`}
                                 >
                                     <a>
                                         <ContactSocialLink>
@@ -161,9 +161,7 @@ const Contact = () => {
                                 }}
                             >
                                 <Link
-                                    href={
-                                        'https://mastodon.online/@trevorthalacker'
-                                    }
+                                    href={`https://mastodon.online/@${config.username}`}
                                 >
                                     <a>
                                         <ContactSocialLink>
@@ -186,7 +184,7 @@ const Contact = () => {
                         will probably make it to me. For best results, please
                         try and email me at{' '}
                         <span style={{ display: 'inline-block' }}>
-                            <Link href={'mailto:hello@trevorthalacker.com'}>
+                            <Link href={`mailto:hello@${config.hostname}`}>
                                 <a>hello@{config.hostname}</a>
                             </Link>
                         </span>

@@ -70,7 +70,9 @@ export const Footer = () => {
                             />
                         </span>
                         <div style={{ display: 'flex' }}>
-                            <Link href={'https://twitter.com/trevorthalacker'}>
+                            <Link
+                                href={`https://twitter.com/${config.username}`}
+                            >
                                 <a className={'noHover'}>
                                     <i className={'icon twitter-icon'} />
                                 </a>
@@ -82,7 +84,9 @@ export const Footer = () => {
                                 </a>
                             </Link>
                             <span style={{ margin: '10px' }} />
-                            <Link href={'https://gitlab.com/trevorthalacker'}>
+                            <Link
+                                href={`https://gitlab.com/${config.username}`}
+                            >
                                 <a className={'noHover'}>
                                     <i className={'icon gitlab-icon'} />
                                 </a>
@@ -92,7 +96,7 @@ export const Footer = () => {
                     <RightContainer>
                         <LinkContainer>
                             <Link
-                                href={'https://gitlab.com/trevorthalacker/www'}
+                                href={`https://gitlab.com/${config.username}/www`}
                             >
                                 Source Code
                             </Link>

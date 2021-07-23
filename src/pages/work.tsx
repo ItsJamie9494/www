@@ -13,6 +13,7 @@ import { TextButton } from '../components/Button'
 import { Repository as IRepository } from '../interfaces/IRepository'
 import { gitlab } from '../lib/gitlab'
 import { Spinner } from '../components/Spinner'
+import Link from 'next/link'
 
 const Index = () => {
     const [repos, setRepos] = React.useState(Array<IRepository[]>())
@@ -100,7 +101,21 @@ const Index = () => {
                         <Head>Repositories</Head>
                         <p>A list of public repositories on my Gitlab page</p>
                         <TextButton>
-                            <i className={'icon gitlab-icon'} /> View my Profile
+                            <Link
+                                href={`https://gitlab.com/${config.username}`}
+                            >
+                                <a>
+                                    <span
+                                        style={{
+                                            display: 'flex',
+                                            marginLeft: -10,
+                                        }}
+                                    >
+                                        <i className={'icon gitlab-icon'} />{' '}
+                                        View my Profile
+                                    </span>
+                                </a>
+                            </Link>
                         </TextButton>
                     </CenteredElement>
                     {repos.length != 0 ? (

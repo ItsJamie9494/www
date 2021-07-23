@@ -600,7 +600,7 @@ const Index = () => {
     return (
         <>
             <Head>
-                <title>The Archive | Trevor Thalacker</title>
+                <title>The Archive • {config.name}</title>
                 <link rel="icon" href="/favicon.ico" />
                 <meta name={'description'} content={config.description} />
             </Head>

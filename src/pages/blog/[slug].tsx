@@ -13,6 +13,7 @@ import {
 } from '../../components/Post'
 import { Comments } from '../../components/Comments'
 import { BlogError } from '../../components/Blog/BlogError'
+import config from '../../config'
 
 const BlogPost = (props) => {
     React.useEffect(() => {
@@ -22,7 +23,7 @@ const BlogPost = (props) => {
                 node: document.getElementById('comments-section'),
                 defaultHomeserverUrl: 'https://matrix.cactus.chat:8448',
                 serverName: 'cactus.chat',
-                siteName: 'TREVORTHALACKER',
+                siteName: config.cactus_comments_sitename,
                 commentSectionId: props.post.id,
             })
         }

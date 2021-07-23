@@ -6,6 +6,7 @@ export const config = {
             : 'localhost:3000',
     description: 'I make computer programs',
     username: 'trevorthalacker',
+    cactus_comments_sitename: 'TREVORTHALACKER',
     gitlab_account_id: 5603886,
 }
 

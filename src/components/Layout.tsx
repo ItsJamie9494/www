@@ -33,10 +33,10 @@ const generateCSP = () => {
 
     let csp = ``
     csp += `base-uri 'self';`
-    csp += `script-src 'nonce-${nonce}' 'self' https://analytics.trevorthalacker.com https://latest.cactus.chat ${
-        productionEnv ? '' : "'unsafe-eval'"
-    };`
-    csp += `connect-src 'self' matrix.cactus.chat:* analytics.trevorthalacker.com:* gitlab.com:* 'unsafe-eval';`
+    csp += `script-src 'nonce-${nonce}' 'self' https://analytics.${
+        config.hostname
+    } https://latest.cactus.chat ${productionEnv ? '' : "'unsafe-eval'"};`
+    csp += `connect-src 'self' matrix.cactus.chat:* analytics.${config.hostname}:* gitlab.com:* 'unsafe-eval';`
     //if (!productionEnv) csp += `connect-src 'self';`;
 
     return [csp, nonce]
@@ -66,7 +66,9 @@ const Layout = (props: PropTypes) => {
         <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
             <GStyle />
             <Head>
-                <title>{props.title} • Trevor Thalacker</title>
+                <title>
+                    {props.title} • {config.name}
+                </title>
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
@@ -88,20 +90,20 @@ const Layout = (props: PropTypes) => {
                 <meta name={'description'} content={config.description} />
                 <meta
                     name={'og:title'}
-                    content={`${props.title} • Trevor Thalacker`}
+                    content={`${props.title} • ${config.name}`}
                 />
                 <meta name={'og:description'} content={config.description} />
                 <meta name={'og:type'} content={'website'} />
                 <meta name={'og:image'} content={'/assets/logo.png'} />
                 <meta name={'twitter:card'} content={'summary'} />
-                <meta name={'twitter:creator'} content={'Trevor Thalacker'} />
+                <meta name={'twitter:creator'} content={config.name} />
                 <meta
                     name={'twitter:description'}
                     content={config.description}
                 />
                 <meta
                     name={'twitter:title'}
-                    content={`${props.title} • Trevor Thalacker`}
+                    content={`${props.title} • ${config.name}`}
                 />
                 <meta httpEquiv="Content-Security-Policy" content={csp} />
                 <link
@@ -114,10 +116,8 @@ const Layout = (props: PropTypes) => {
                 <script
                     async
                     defer
-                    data-domain={'trevorthalacker.com'}
-                    src={
-                        'https://analytics.trevorthalacker.com/js/plausible.outbound-links.js'
-                    }
+                    data-domain={config.hostname}
+                    src={`https://analytics.${config.hostname}/js/plausible.outbound-links.js`}
                 />
                 {/* Comment Section */}
                 <script

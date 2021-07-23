@@ -7,6 +7,7 @@ import Emoji from 'react-emoji-render'
 import { generateEmojiConfig } from '../tools/emoji'
 import Link from 'next/link'
 import { AboutFamiliar } from '../components/AboutFamiliar'
+import config from '../config'
 
 const About = () => {
     return (
@@ -33,7 +34,7 @@ const About = () => {
                         />{' '}
                         Hey there,{' '}
                         <span onClick={() => window.location.replace('/maybe')}>
-                            my name is Trevor Thalacker.
+                            my name is {config.name}.
                         </span>{' '}
                         You might also know me as "AwesomeTech10," which was my
                         online identity for a few years, before I decided to use
@@ -106,22 +107,6 @@ const About = () => {
                             as many privacy-focused alternatives as possible.
                         </li>
                     </ul>
-                    {/* <p>
-                        I mostly program websites, using Typescript, and React
-                        (fun fact: this entire website is written with React and
-                        Next.js). I can do CSS as well. I also develop a few
-                        applications, most notably the Dot Browser.
-                    </p>
-
-                    <p>
-                        I'm trying to learn more programming languages, such as
-                        Rust and Python.
-                    </p>
-
-                    <p>
-                        I am a major fan of privacy, and usually try and use as
-                        many privacy-focused alternatives as possible.
-                    </p> */}
                 </Container>
             </Layout>
         </>
