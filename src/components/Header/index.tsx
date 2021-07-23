@@ -94,7 +94,7 @@ export const Header = () => {
     })
     return (
         <>
-            <StyledHeader isBlurred={isBlurred}>
+            <StyledHeader isBlurred={isBlurred} opacity={!isMenuOpen}>
                 <Container>
                     <div>
                         <Link href={'/'}>
