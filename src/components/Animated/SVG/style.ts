@@ -77,7 +77,7 @@ export const AnimatedBackground = styled.svg`
             ${slow ? '11s' : large ? '10s' : '4s'} ease-in-out infinite
             alternate;
         position: absolute;
-        filter: blur(8px) saturate(160%);
+        filter: blur(4px) saturate(160%);
         overflow: visible;
         stroke: ${!!stroke ? 'currentColor' : 'none'};
         fill: ${stroke ? 'none' : 'currentColor'};
