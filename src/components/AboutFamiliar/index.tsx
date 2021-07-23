@@ -15,9 +15,9 @@ export const TooltipImage = ({
     return (
         <Tooltip data-tooltip={alt}>
             {invert ? (
-                <InvertImage src={src} alt={alt} />
+                <InvertImage src={`/assets/about-icons/${src}.svg`} alt={alt} />
             ) : (
-                <Image src={src} alt={alt} />
+                <Image src={`/assets/about-icons/${src}.svg`} alt={alt} />
             )}
         </Tooltip>
     )
@@ -36,32 +36,13 @@ export const AboutFamiliar = () => {
                 Languages
             </h4>
             <div>
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-plain.svg"
-                    alt="Typescript"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg"
-                    alt="Rust"
-                    invert={true}
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-plain.svg"
-                    alt="Node.js"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain.svg"
-                    alt="CSS"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-plain.svg"
-                    alt="HTML"
-                />
+                <TooltipImage src="languages/typescript" alt="Typescript" />
+                <TooltipImage src="languages/rust" alt="Rust" invert={true} />
+                <TooltipImage src="languages/nodejs" alt="Node.js" />
+                <TooltipImage src="languages/css" alt="CSS" />
+                <TooltipImage src="languages/html" alt="HTML" />
 
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-plain.svg"
-                    alt="Dart"
-                />
+                <TooltipImage src="languages/dart" alt="Dart" />
             </div>
 
             <h4>
@@ -74,25 +55,16 @@ export const AboutFamiliar = () => {
                 Frameworks
             </h4>
             <div>
+                <TooltipImage src="frameworks/react" alt="React" />
                 <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
-                    alt="React"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg"
+                    src="frameworks/express"
                     alt="Express"
                     invert={true}
                 />
+                <TooltipImage src="frameworks/webpack" alt="Webpack" />
+                <TooltipImage src="frameworks/flutter" alt="Flutter" />
                 <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/webpack/webpack-plain.svg"
-                    alt="Webpack"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-plain.svg"
-                    alt="Flutter"
-                />
-                <TooltipImage
-                    src="https://cdn.worldvectorlogo.com/logos/nextjs-3.svg"
+                    src="frameworks/nextjs"
                     alt="Next.js"
                     invert={true}
                 />
@@ -108,39 +80,14 @@ export const AboutFamiliar = () => {
                 Software
             </h4>
             <div>
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-plain.svg"
-                    alt="Bash"
-                    invert={true}
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-plain.svg"
-                    alt="Git"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg"
-                    alt="NGINX"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-plain.svg"
-                    alt="MySQL"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-plain.svg"
-                    alt="PostgreSQL"
-                />
-                <TooltipImage
-                    src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg"
-                    alt="Postman"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/visualstudio/visualstudio-plain.svg"
-                    alt="Visual Studio Code"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/yarn/yarn-original.svg"
-                    alt="Yarn"
-                />
+                <TooltipImage src="software/bash" alt="Bash" invert={true} />
+                <TooltipImage src="software/git" alt="Git" />
+                <TooltipImage src="software/nginx" alt="NGINX" />
+                <TooltipImage src="software/mongodb" alt="MongoDB" />
+                <TooltipImage src="software/postgresql" alt="PostgreSQL" />
+                <TooltipImage src="software/insomnia" alt="Insomnia" />
+                <TooltipImage src="software/vscode" alt="Visual Studio Code" />
+                <TooltipImage src="software/yarn" alt="Yarn" />
             </div>
 
             <h4>
@@ -153,33 +100,12 @@ export const AboutFamiliar = () => {
                 Other
             </h4>
             <div>
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-plain.svg"
-                    alt="Linux"
-                    invert={true}
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-plain.svg"
-                    alt="Android"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg"
-                    alt="Windows"
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apple/apple-original.svg"
-                    alt="Apple"
-                    invert={true}
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg"
-                    alt="GitHub"
-                    invert={true}
-                />
-                <TooltipImage
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gitlab/gitlab-original.svg"
-                    alt="Gitlab"
-                />
+                <TooltipImage src="other/linux" alt="Linux" invert={true} />
+                <TooltipImage src="other/android" alt="Android" />
+                <TooltipImage src="other/windows" alt="Windows" />
+                <TooltipImage src="other/apple" alt="Apple" invert={true} />
+                <TooltipImage src="other/github" alt="GitHub" invert={true} />
+                <TooltipImage src="other/gitlab" alt="Gitlab" />
             </div>
         </span>
     )
