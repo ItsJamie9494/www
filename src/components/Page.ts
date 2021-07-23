@@ -22,6 +22,10 @@ export const RepositoriesGrid = styled.section`
     grid-template-columns: repeat(2, minmax(0px, 1fr));
     width: 100%;
     align-items: center;
+
+    @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+    }
 `
 
 export const ContactGrid = styled.div`
