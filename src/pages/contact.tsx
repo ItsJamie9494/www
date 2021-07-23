@@ -38,7 +38,9 @@ const Contact = () => {
                     <p>
                         If it's a personal project, please post an issue on{' '}
                         <span style={{ display: 'inline-block' }}>
-                            <Link href={'https://gitlab.com/trevorthalacker'}>
+                            <Link
+                                href={`https://gitlab.com/${config.username}`}
+                            >
                                 Gitlab
                             </Link>
                         </span>{' '}
@@ -101,17 +103,13 @@ const Contact = () => {
                                     margin: 'auto',
                                 }}
                             >
-                                <Link
-                                    href={
-                                        'https://discord.com/users/381541244360327168'
-                                    }
-                                >
+                                <Link href={'/discord'}>
                                     <a>
                                         <ContactSocialLink>
                                             <i
                                                 className={'icon discord-icon'}
                                             />
-                                            Discord (Thalacker#9494)
+                                            Discord Server
                                         </ContactSocialLink>
                                     </a>
                                 </Link>
