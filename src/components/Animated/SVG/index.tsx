@@ -1,4 +1,5 @@
 import React from 'react'
+import { useGlobalState } from '../../../globals'
 import { AnimatedBackground } from './style'
 
 const icons = {
@@ -52,12 +53,16 @@ interface SVGProps {
 }
 
 const colour = () => {
+    const [isDarkTheme, setIsDarkTheme] = useGlobalState('isDarkTheme')
+
     let colours = ['grey', 'teal', 'blue', 'green', 'purple']
     let numbers = [1, 2]
 
     let colour = Math.floor(Math.random() * 4)
     let number = Math.floor(Math.random() * 1)
-    return `var(--${colours[colour]}-${numbers[number]})`
+    return `var(--${isDarkTheme ? 'dark-' : ''}${colours[colour]}-${
+        numbers[number]
+    })`
 }
 
 export const AnimatedSVG = ({
