@@ -38,7 +38,7 @@ export const AboutFamiliar = () => {
             <div>
                 <TooltipImage src="languages/typescript" alt="Typescript" />
                 <TooltipImage src="languages/rust" alt="Rust" invert={true} />
-                <TooltipImage src="languages/nodejs" alt="Node.js" />
+                <TooltipImage src="languages/javascript" alt="Javascript" />
                 <TooltipImage src="languages/css" alt="CSS" />
                 <TooltipImage src="languages/html" alt="HTML" />
 
@@ -55,6 +55,7 @@ export const AboutFamiliar = () => {
                 Frameworks
             </h4>
             <div>
+                <TooltipImage src="frameworks/nodejs" alt="Node.js" />
                 <TooltipImage src="frameworks/react" alt="React" />
                 <TooltipImage
                     src="frameworks/express"
