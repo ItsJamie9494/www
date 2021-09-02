@@ -706,7 +706,7 @@ const Index = () => {
                             you to {externalPage}
                         </p>
 
-                        <p>-Trevor</p>
+                        <p>-Jamie</p>
                     </section>
                 )}
 

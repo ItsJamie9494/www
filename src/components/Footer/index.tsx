@@ -105,7 +105,7 @@ export const Footer = () => {
                         </LinkContainer>
                         <CopyrightContainer>
                             <p>
-                                Copyright {new Date().getFullYear()} Trevor
+                                Copyright {new Date().getFullYear()} Jamie
                                 Thalacker. All Rights Reserved
                             </p>
                         </CopyrightContainer>

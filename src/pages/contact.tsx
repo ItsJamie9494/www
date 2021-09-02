@@ -62,7 +62,7 @@ const Contact = () => {
                                 }}
                             >
                                 <Link
-                                    href={`https://twitter.com/${config.username}`}
+                                    href={`https://twitter.com/jamierthalacker`}
                                 >
                                     <a>
                                         <ContactSocialLink>

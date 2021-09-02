@@ -1,11 +1,11 @@
 export const config = {
-    name: 'Trevor Thalacker',
+    name: 'Jamie Thalacker',
     hostname:
         process.env.NODE_ENV === 'production'
             ? 'trevorthalacker.com'
             : 'localhost:3000',
     description: 'I make computer programs',
-    username: 'trevorthalacker',
+    username: 'jamiethalacker',
     cactus_comments_sitename: 'TREVORTHALACKER',
     gitlab_account_id: 5603886,
 }

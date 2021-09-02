@@ -41,6 +41,15 @@ const About = () => {
                         my name.
                     </p>
                     <p>
+                        <Emoji
+                            text={'🏳️‍⚧️'}
+                            options={generateEmojiConfig({
+                                className: 'emoji',
+                            })}
+                        />{' '}
+                        I am transfem enby, and use She/They pronouns.
+                    </p>
+                    <p>
                         I am a teenage computer programmer that develops
                         websites and apps.
                     </p>
