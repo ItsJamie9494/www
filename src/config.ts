@@ -2,7 +2,7 @@ export const config = {
     name: 'Jamie Thalacker',
     hostname:
         process.env.NODE_ENV === 'production'
-            ? 'trevorthalacker.com'
+            ? 'jamiethalacker.dev'
             : 'localhost:3000',
     description: 'I make computer programs',
     username: 'jamiethalacker',

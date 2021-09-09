@@ -25,14 +25,7 @@ const Contact = () => {
                                 Dot HQ or Dot Browser
                             </Link>
                         </span>
-                        ? I have a Dot HQ email address,{' '}
-                        <span style={{ display: 'inline-block' }}>
-                            <Link href={'mailto:trevor@dothq.co'}>
-                                trevor@dothq.co
-                            </Link>
-                        </span>
-                        , or you could just submit feedback through Dot Browser.
-                        Which would probably be a better idea.
+                        ? Submit feedback through Dot Browser please.
                     </p>
 
                     <p>
