@@ -70,9 +70,7 @@ export const Footer = () => {
                             />
                         </span>
                         <div style={{ display: 'flex' }}>
-                            <Link
-                                href={`https://twitter.com/${config.username}`}
-                            >
+                            <Link href={`https://twitter.com/jamierthalacker`}>
                                 <a className={'noHover'}>
                                     <i className={'icon twitter-icon'} />
                                 </a>
