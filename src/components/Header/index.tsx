@@ -18,10 +18,25 @@
 
 import type { NextComponentType } from 'next'
 import Link from 'next/link'
+import React from 'react'
 import { Menu } from 'react-feather'
+import Mobile from './mobile'
 import { Container, Image, LinkContainer, MobileButton, StyledHeader } from './style'
 
+export const HeaderLinks: NextComponentType = () => {
+    return (
+        <>
+            <Link href={'/'}>Home</Link>
+            <Link href={'/blog'}>Blog</Link>
+            <Link href={'/work'}>Work</Link>
+            <Link href={'/about'}>About</Link>
+        </>
+    )
+}
+
 const Header: NextComponentType = () => {
+    const [isMenuOpen, setMenuOpen] = React.useState(false)
+    
     return (
         <>
             <StyledHeader>
@@ -36,20 +51,17 @@ const Header: NextComponentType = () => {
                     </span>
 
                     <LinkContainer>
-                        <Link href={'/'}>Home</Link>
-                        <Link href={'/blog'}>Blog</Link>
-                        <Link href={'/work'}>Work</Link>
-                        <Link href={'/about'}>About</Link>
+                        <HeaderLinks />
                     </LinkContainer>
 
                     <MobileButton>
-                        <button onClick={() => alert("test")}>
+                        <button onClick={() => setMenuOpen(!isMenuOpen)}>
                             <Menu size={24} />
                         </button>
                     </MobileButton>
                 </Container>
             </StyledHeader>
-            {/* <Mobile visible={isMenuOpen} /> */}
+            <Mobile visible={isMenuOpen} />
         </>
     )
 }

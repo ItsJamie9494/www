@@ -28,7 +28,7 @@ export const Container = styled.section`
     display: flex;
     -webkit-box-align: center;
     align-items: center;
-    padding: 15px;
+    padding: 0 15px;
     justify-content: space-between;
     text-decoration: none;
     a {
@@ -81,40 +81,59 @@ export const MobileButton = styled.div`
     @media screen and (min-width: 600px) {
         display: none;
     }
+
+    button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        transition: color 0.5s, opacity 0.2s;
+        
+        &:hover {
+            color: #222222;
+            opacity: 0.7;
+        }
+    }
 `
 
 
 
-// export const MobileContainer = styled.div`
-//     position: absolute;
-//     top: 80px;
-//     ${({ isVisible }: { isVisible: boolean }) => css`
-//         transform: translateY(${isVisible ? '0%' : '-200%'});
-//     `}
-//     left: 0;
-//     background-color: #ffffff;
-//     transition: 0.5s background-color, 0.5s transform;
-//     width: 100%;
-//     z-index: 0;
-// `
+export const MobileContainer = styled.section`
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #fff;
+    transition: 0.5s background-color, 0.5s transform;
+    width: 100%;
+    z-index: 99;
+    max-width: 100vw;
 
-// export const MobileLinkContainer = styled.div`
-//     display: grid;
-//     grid-auto-flow: row;
-//     gap: 0;
-// `
+    ${({ isVisible }: { isVisible: boolean }) => css`
+        transform: translateY(${isVisible ? '0%' : '-200%'});
+    `}
 
-// export const MobileLink = styled.div`
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 0;
-//     text-align: center;
-//     padding-top: 20px;
-//     padding-bottom: 20px;
-//     &:hover {
-//         opacity: 0.6;
-//         transition: 0.5s opacity;
-//         cursor: pointer;
-//     }
-// `
+    @media screen and (min-width: 830px) {
+        display: none;
+    }
+`
+
+export const MobileLinkContainer = styled.div`
+    display: grid;
+    gap: 0;
+    grid-auto-flow: row;
+    justify-content: center;
+    
+    a {
+        padding: 1rem;
+        text-align: center;
+        &:hover {
+            opacity: 0.6;
+            transition: 0.5s opacity;
+            cursor: pointer;
+        }
+        &:hover:after {
+            width: 0;
+            background: #222222;
+            text-decoration: none;
+        }
+    }
+`
