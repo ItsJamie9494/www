@@ -20,12 +20,14 @@ import type { NextComponentType } from 'next'
 import type { ReactNode } from 'react'
 import { Global } from "@emotion/react"
 import { GlobalStyle } from './style'
+import Header from './Header'
 
 const Layout: NextComponentType = ({ children }: { children?: ReactNode }) => {
 
     return (
         <>
             <Global styles={GlobalStyle} />
+            <Header />
             {children}
         </>
             
