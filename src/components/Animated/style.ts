@@ -1,4 +1,4 @@
-/* components/Layout.tsx
+/* components/Animated/style.ts
  *
  * Copyright 2021 Jamie Thalacker
  *
@@ -16,25 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import type { NextComponentType } from 'next'
-import type { ReactNode } from 'react'
-import { Global } from "@emotion/react"
-import { Container, GlobalStyle } from './style'
-import Header from './Header'
-import { AnimatedBackground } from './Animated'
+import styled from "@emotion/styled"
 
-const Layout: NextComponentType = ({ children }: { children?: ReactNode }) => {
-    return (
-        <>
-            <Global styles={GlobalStyle} />
-            <AnimatedBackground />
-            <Header />
-            <Container>
-                {children}
-            </Container>
-        </>
-            
-    )
-}
-
-export default Layout
+export const StyledAnimatedBackground = styled.div`
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+`
