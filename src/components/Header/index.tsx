@@ -19,32 +19,36 @@
 import type { NextComponentType } from 'next'
 import Link from 'next/link'
 import { Menu } from 'react-feather'
-import Image from 'next/image'
+import { Container, Image, LinkContainer, MobileButton, StyledHeader } from './style'
 
 const Header: NextComponentType = () => {
     return (
         <>
-            <header>
-                <span>
-                    <Image
-                        src={"/assets/logo.png"}
-                        width={24}
-                        height={24}
-                        alt={"Logo"}
-                    />
-                </span>
-                <nav className={'nav-links'}>
-                    <Link href={'/'}>Home</Link>
-                    <Link href={'/blog'}>Blog</Link>
-                    <Link href={'/work'}>Work</Link>
-                    <Link href={'/about'}>About</Link>
-                </nav>
-                <nav className={'mobile-button'}>
-                    <button onClick={() => alert("test")}>
-                        <Menu size={24} />
-                    </button>
-                </nav>
-            </header>
+            <StyledHeader>
+                <Container>
+                    <span>
+                        <Link href={"/"}>
+                            <Image
+                                src={"/assets/logo.png"}
+                                alt={"Logo"}
+                            />
+                        </Link>
+                    </span>
+
+                    <LinkContainer>
+                        <Link href={'/'}>Home</Link>
+                        <Link href={'/blog'}>Blog</Link>
+                        <Link href={'/work'}>Work</Link>
+                        <Link href={'/about'}>About</Link>
+                    </LinkContainer>
+
+                    <MobileButton>
+                        <button onClick={() => alert("test")}>
+                            <Menu size={24} />
+                        </button>
+                    </MobileButton>
+                </Container>
+            </StyledHeader>
             {/* <Mobile visible={isMenuOpen} /> */}
         </>
     )
