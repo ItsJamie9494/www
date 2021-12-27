@@ -18,16 +18,17 @@
 
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
 import Layout from '../components/Layout'
+import AboutLayout from '../components/Layouts/about'
 import MainLayout from '../components/Layouts/main'
 import WorkLayout from '../components/Layouts/work'
 import { Repository } from '../interfaces/Repository'
-import { GetLanguageColour } from '../lib/colours'
 
 const Home: NextPage = ({ repositories }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
     <Layout>
       <MainLayout />
       <WorkLayout repositories={repositories} />
+      <AboutLayout />
     </Layout>
   )
 }

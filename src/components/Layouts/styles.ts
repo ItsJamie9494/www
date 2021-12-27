@@ -93,3 +93,12 @@ export const StyledWorkLayout = styled.div`
     padding: 3rem 10vw;
     margin-bottom: 40px;
 `
+
+export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    width: 80vw;
+    margin-bottom: 40px;
+    padding: 0 10vw;
+`

@@ -19,6 +19,7 @@
 import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
 import { scroller } from '../../pages/_app';
+import { Emoji, generateEmojiConfig } from '../../tools/emoji';
 import { StyledChevron, StyledMainHeader, StyledMainLayout, StyledMainSubheader } from './styles'
 
 const MainLayout: NextComponentType = () => {
@@ -29,9 +30,15 @@ const MainLayout: NextComponentType = () => {
             <StyledMainLayout>
                 <div>
                     <StyledMainHeader>
-                        Hello, I'm Jamie
+                        Hello, I'm Jamie{' '}
+                        <Emoji
+                            text={'👋'}
+                            options={generateEmojiConfig({
+                                className: 'emoji',
+                            })}
+                        />
                     </StyledMainHeader>
-                    <StyledMainSubheader>I'm a programmer that works on open-source projects</StyledMainSubheader>
+                    <StyledMainSubheader>I'm a programmer that works on open-source projects &lt;3</StyledMainSubheader>
                 </div>
                 <StyledChevron 
                 onClick={() => scroller.scrollTo('workLayout', {
