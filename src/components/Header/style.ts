@@ -26,16 +26,18 @@ export const StyledHeader = styled.header`
     top: 0;
     transition: 0.5s background-color, 0.5s box-shadow;
     text-decoration: none;
-    background-color: var(--ui-background) E6;
+    background-color: var(--ui-background);
+    opacity: 0.9;
     z-index: 999999999;
     @media print {
         display: none;
     }
+    ${({ isBlurred }: { isBlurred: boolean }) => css`
+        box-shadow: ${isBlurred ? '0 0 10px 0' : ''}
+            ${isBlurred ? 'rgba(225, 225, 225, .65)' : ''};
+    `}
 `
-// ${({ isBlurred }: { isBlurred: boolean }) => css`
-//     box-shadow: ${isBlurred ? '0 0 10px 0' : ''}
-//         ${isBlurred ? (props) => props.theme.colors.tertiary + 'A6' : ''};
-// `}
+// TODO this should use a variable in box shadow, but it doesn't.
 
 export const Container = styled.section`
     margin: 0px auto;

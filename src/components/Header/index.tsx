@@ -74,10 +74,22 @@ export const HeaderLinks: NextComponentType = () => {
 
 const Header: NextComponentType = () => {
     const [isMenuOpen, setMenuOpen] = React.useState(false)
+    const [isBlurred, setBlurred] = React.useState(false)
+
+    React.useEffect(() => {
+        // header blur
+        window.onscroll = function () {
+            if (window.scrollY <= 25) {
+                setBlurred(false)
+            } else {
+                setBlurred(true)
+            }
+        }
+    })
 
     return (
         <>
-            <StyledHeader>
+            <StyledHeader isBlurred={isBlurred}>
                 <Container>
                     <span>
                         <Link href={'/'}>
