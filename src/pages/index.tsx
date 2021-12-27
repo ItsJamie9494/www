@@ -57,6 +57,19 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
         }
       })
 
+      repos.sort((firstEl, secondEl) => {
+        if (firstEl.stargazers_count < secondEl.stargazers_count) {
+          return 1
+        }
+
+        if (firstEl.stargazers_count > secondEl.stargazers_count) {
+          return -1
+        }
+
+        // After stargazers are handled, sort by pushed at date
+        return (new Date(secondEl.pushed_at).getTime() - new Date(firstEl.pushed_at).getTime())
+      })
+
       return reposList = repos
     })
     .catch(error => {
