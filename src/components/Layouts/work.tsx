@@ -19,13 +19,13 @@
 import scroll from 'react-scroll'
 import { Repository } from '../../interfaces/Repository';
 import RepositoryComponent from '../Repository';
-import { RepositoriesGrid, StyledMainHeader, StyledMainLayout, StyledMainSubheader } from './styles'
+import { RepositoriesGrid, StyledMainHeader, StyledMainLayout, StyledMainSubheader, StyledWorkLayout } from './styles'
 
 const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
     let ScrollElement = scroll.Element;
     return (
         <ScrollElement name={"workLayout"}>
-            <StyledMainLayout>
+            <StyledWorkLayout>
                 <div>
                     <StyledMainHeader>
                         What I Do
@@ -36,7 +36,7 @@ const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
                         <RepositoryComponent repo={repo} key={repo.id} />
                     ))}
                 </RepositoriesGrid>
-            </StyledMainLayout>
+            </StyledWorkLayout>
         </ScrollElement>
     )
 }

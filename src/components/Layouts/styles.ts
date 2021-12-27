@@ -82,3 +82,14 @@ export const RepositoriesGrid = styled.section`
     width: 100%;
     align-items: center;
 `
+
+export const StyledWorkLayout = styled.div`
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+    width: 100%;
+    padding: 3rem 10vw;
+    margin-bottom: 40px;
+`

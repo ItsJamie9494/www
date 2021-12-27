@@ -26,6 +26,7 @@ export const StyledRepository = styled.div`
     white-space: nowrap;
     overflow: hidden;
     justify-content: space-between;
+    flex-direction: column;
 `
 
 export const TextContainer = styled.span`
@@ -41,18 +42,21 @@ export const TextContainer = styled.span`
     `}
 `
 
-export const HeaderContainer = styled.span`
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-`
+// export const HeaderContainer = styled.span`
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     overflow: hidden;
+//     display: flex;
+//     align-items: center;
+// `
 
 export const HeaderText = styled.p`
     font-size: 24px;
     margin: 0;
     display: inline-flex;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 100%;
 `
 
 export const LanguagePill = styled.span`
@@ -69,7 +73,6 @@ export const LanguagePill = styled.span`
     border-radius: 8px;
     padding: 0px 5px;
     font-size: 15px;
-    margin-left: 15px;
     width: max-content;
     white-space: nowrap;
 `
@@ -81,8 +84,20 @@ export const Description = styled.span`
     font-size: 15px;
 `
 
+export const LowerContainer = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    p {
+        margin: 0;
+    }
+`
+
 export const StarContainer = styled.span`
     display: flex;
     align-items: center;
-    margin-left: .3rem;
+
+    p {
+        margin: 0;
+    }
 `

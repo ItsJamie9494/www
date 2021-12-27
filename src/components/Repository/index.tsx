@@ -20,7 +20,7 @@ import Link from "next/link"
 import React from "react"
 import { Star } from "react-feather"
 import { Repository } from "../../interfaces/Repository"
-import { StyledLink, StyledRepository, TextContainer, HeaderContainer, HeaderText, LanguagePill, Description, StarContainer } from "./style"
+import { StyledLink, StyledRepository, TextContainer, HeaderText, LanguagePill, Description, StarContainer, LowerContainer } from "./style"
 
 const Repository = ({ repo }: { repo: Repository }) => {
 
@@ -29,20 +29,22 @@ const Repository = ({ repo }: { repo: Repository }) => {
             <StyledLink href={repo.html_url}>
                 <StyledRepository>
                     <TextContainer discontinued={repo.archived}>
-                        <HeaderContainer>
-                            <HeaderText>{repo.name}</HeaderText>
-                            {repo.language && (
-                                <LanguagePill discontinued={repo.archived}>
-                                    {repo.language}
-                                </LanguagePill>
-                            )}
-                        </HeaderContainer>
-                        <Description>{repo.description}</Description>
+                        <HeaderText>{repo.name}</HeaderText>
+                        <Description>{repo.description != null ? repo.description : <i>No Description Provided</i> }</Description>
                     </TextContainer>
-                    <StarContainer>
+
+                    <LowerContainer>
+                        {repo.language && (
+                            <LanguagePill discontinued={repo.archived}>
+                                {repo.language}
+                            </LanguagePill>
+                        )}
+                        <StarContainer>
                         <Star size={18} />
-                        <p>{repo.stargazers_count}</p>
-                    </StarContainer>
+                            <p>{repo.stargazers_count}</p>
+                        </StarContainer>
+                    </LowerContainer>
+                    
                 </StyledRepository>
             </StyledLink>
         </Link>
