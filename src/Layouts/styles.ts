@@ -67,7 +67,7 @@ export const StyledChevron = styled(ChevronsDown)`
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
-    bottom: 1rem;
+    bottom: 2rem;
     position: absolute;
     width: 2rem;
     height: 2rem;
