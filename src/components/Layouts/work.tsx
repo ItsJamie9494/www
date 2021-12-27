@@ -16,10 +16,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
 import { Repository } from '../../interfaces/Repository';
-import { StyledMainHeader, StyledMainLayout, StyledMainSubheader } from './styles'
+import RepositoryComponent from '../Repository';
+import { RepositoriesGrid, StyledMainHeader, StyledMainLayout, StyledMainSubheader } from './styles'
 
 const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
     let ScrollElement = scroll.Element;
@@ -31,11 +31,11 @@ const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
                         What I Do
                     </StyledMainHeader>
                 </div>
-                {repositories && repositories.map((repo) => (
-                    <p key={repo.id}>
-                        {repo.name}
-                    </p>
-                ))}
+                <RepositoriesGrid>
+                    {repositories && repositories.map((repo) => (
+                        <RepositoryComponent repo={repo} key={repo.id} />
+                    ))}
+                </RepositoriesGrid>
             </StyledMainLayout>
         </ScrollElement>
     )

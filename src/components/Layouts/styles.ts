@@ -73,3 +73,12 @@ export const StyledChevron = styled(ChevronsDown)`
     width: 2rem;
     height: 2rem;
 `
+
+export const RepositoriesGrid = styled.section`
+    display: grid;
+    gap: 10px;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(2, minmax(0px, 1fr));
+    width: 100%;
+    align-items: center;
+`
