@@ -21,16 +21,18 @@ import twemoji from "twemoji";
 
 interface Options {
     protocol?: 'http' | 'https'
-    baseUrl?: string
+    base?: string
     size?: string
-    ext?: 'svg' | 'png'
+    ext?: '.svg' | 'png'
+    folder?: 'svg'
     className?: string
 }
 
 export const generateEmojiConfig = ({ className }: { className: string }): Options => {
     return {
         protocol: 'https',
-        ext: 'svg',
+        ext: '.svg',
+        folder: 'svg',
         size: '',
         className,
     }
@@ -38,9 +40,13 @@ export const generateEmojiConfig = ({ className }: { className: string }): Optio
 
 export const Emoji = ({ text, options }: { text: string, options: Options }) => {
     const EmojiRef = React.createRef<HTMLSpanElement>();
-    if (EmojiRef.current) {
-        twemoji.parse(EmojiRef.current, options)
-    }
+
+    React.useEffect(() => {
+        if (EmojiRef.current) {
+            twemoji.parse(EmojiRef.current, options)
+        }
+    }, [])
+    
     return (
         <span ref={EmojiRef}>
             {text}
