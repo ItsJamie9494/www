@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import React from "react";
-import twemoji from "twemoji";
+import React from 'react'
+import twemoji from 'twemoji'
 
 interface Options {
     protocol?: 'http' | 'https'
@@ -28,7 +28,11 @@ interface Options {
     className?: string
 }
 
-export const generateEmojiConfig = ({ className }: { className: string }): Options => {
+export const generateEmojiConfig = ({
+    className,
+}: {
+    className: string
+}): Options => {
     return {
         protocol: 'https',
         ext: '.svg',
@@ -38,18 +42,20 @@ export const generateEmojiConfig = ({ className }: { className: string }): Optio
     }
 }
 
-export const Emoji = ({ text, options }: { text: string, options: Options }) => {
-    const EmojiRef = React.createRef<HTMLSpanElement>();
+export const Emoji = ({
+    text,
+    options,
+}: {
+    text: string
+    options: Options
+}) => {
+    const EmojiRef = React.createRef<HTMLSpanElement>()
 
     React.useEffect(() => {
         if (EmojiRef.current) {
             twemoji.parse(EmojiRef.current, options)
         }
     }, [])
-    
-    return (
-        <span ref={EmojiRef}>
-            {text}
-        </span>
-    )
+
+    return <span ref={EmojiRef}>{text}</span>
 }

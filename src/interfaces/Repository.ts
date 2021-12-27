@@ -24,7 +24,7 @@ export interface Repository {
     pushed_at: string
     language: null | string
     description: string
-    fork: boolean,
-    stargazers_count: number,
+    fork: boolean
+    stargazers_count: number
     archived: boolean
 }

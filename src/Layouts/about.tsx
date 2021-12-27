@@ -18,19 +18,22 @@
 
 import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
-import { StyledMainHeader, StyledMainLayout, StyledMainSubheader, Container } from './styles'
+import {
+    StyledMainHeader,
+    StyledMainLayout,
+    StyledMainSubheader,
+    Container,
+} from './styles'
 import { generateEmojiConfig, Emoji } from '../tools/emoji'
 
 const AboutLayout: NextComponentType = () => {
-    let ScrollElement = scroll.Element;
-    
+    let ScrollElement = scroll.Element
+
     return (
         <ScrollElement name="aboutLayout">
             <StyledMainLayout>
                 <div>
-                    <StyledMainHeader>
-                        About Me
-                    </StyledMainHeader>
+                    <StyledMainHeader>About Me</StyledMainHeader>
                     <StyledMainSubheader>$ whoami</StyledMainSubheader>
                 </div>
             </StyledMainLayout>
@@ -42,19 +45,27 @@ const AboutLayout: NextComponentType = () => {
                             className: 'emoji',
                         })}
                     />{' '}
-                    Hey there, my name is Jamie. You might also know me as "AwesomeTech10," which was my online identity for a few years, before I decided to use my name.
+                    Hey there, my name is Jamie. You might also know me as
+                    "AwesomeTech10," which was my online identity for a few
+                    years, before I decided to use my name.
                 </p>
 
-                <span style={{ display: "inline-block"}}>
+                <span style={{ display: 'inline-block' }}>
                     <Emoji
                         text={'🏳️‍⚧️'}
                         options={generateEmojiConfig({
                             className: 'emoji',
                         })}
                     />{' '}
-                    <a href={"https://en.pronouns.page/@ItsJamie"} style={{ display: 'inline-block' }}>I am a transgirl, and use She/They/It pronouns, although She/Her are preferred.</a>
+                    <a
+                        href={'https://en.pronouns.page/@ItsJamie'}
+                        style={{ display: 'inline-block' }}
+                    >
+                        I am a transgirl, and use She/They/It pronouns, although
+                        She/Her are preferred.
+                    </a>
                 </span>
-                
+
                 <p>
                     <Emoji
                         text={'🚀'}
@@ -62,7 +73,8 @@ const AboutLayout: NextComponentType = () => {
                             className: 'emoji',
                         })}
                     />{' '}
-                    I'm a teenage computer programmer and developer that designs apps and websites.
+                    I'm a teenage computer programmer and developer that designs
+                    apps and websites.
                 </p>
 
                 <h2>More Information</h2>
@@ -90,12 +102,12 @@ const AboutLayout: NextComponentType = () => {
                 <ul>
                     <li>
                         <span style={{ display: 'inline-block' }}>
-                            <a href={"https://tau.innatical.com"}>tauOS</a>
+                            <a href={'https://tau.innatical.com'}>tauOS</a>
                         </span>
                     </li>
                     <li>
                         <span style={{ display: 'inline-block' }}>
-                            <a href={"https://fivnex.co"}>Fivnex</a>
+                            <a href={'https://fivnex.co'}>Fivnex</a>
                         </span>
                     </li>
                 </ul>

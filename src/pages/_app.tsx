@@ -23,7 +23,7 @@ import scroll from 'react-scroll'
 export const scroller = scroll.scroller
 
 function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+    return <Component {...pageProps} />
 }
 
 export default App

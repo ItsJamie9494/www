@@ -24,16 +24,16 @@ const cache: Cache = {}
 
 export const fetchWithCache = async (url: string) => {
     if ('caches' in window) {
-        return await caches.open('fetchWithCacheData').then(async cache => {
+        return await caches.open('fetchWithCacheData').then(async (cache) => {
             cache.put(url, await fetch(url))
             if (!cache.match(url)) {
                 console.log('test')
                 cache.put(url, await fetch(url))
             }
             return await cache.match(url)
-        });
+        })
     } else {
-        console.debug("Cache API not available")
+        console.debug('Cache API not available')
         return await fetch(url)
     }
 }

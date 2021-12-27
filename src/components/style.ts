@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export const Container = styled.article`
     margin-top: 80px;
@@ -48,7 +48,7 @@ export const GlobalStyle = css`
     p,
     label,
     input[type='datetime-local'] {
-        color: var(--colours-tertiary)db;
+        color: var(--colours-tertiary) db;
         transition: color 0.5s;
     }
     a {
@@ -97,9 +97,9 @@ export const GlobalStyle = css`
         font-size: 0.875em;
     }
     tr {
-        box-shadow: 0 2px 0 0 var(--colours-tertiary)40;
-        -webkit-box-shadow: 0 2px 0 0 var(--colours-tertiary)40;
-        -moz-box-shadow: 0 2px 0 0 var(--colours-tertiary)40;
+        box-shadow: 0 2px 0 0 var(--colours-tertiary) 40;
+        -webkit-box-shadow: 0 2px 0 0 var(--colours-tertiary) 40;
+        -moz-box-shadow: 0 2px 0 0 var(--colours-tertiary) 40;
     }
     td {
         padding: 10px;

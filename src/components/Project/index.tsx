@@ -46,14 +46,14 @@ export const Project = ({
     discontinued?: boolean
     language?: string
 }) => {
-
-    const [languageColour, setLanguage] = React.useState("")
+    const [languageColour, setLanguage] = React.useState('')
 
     React.useEffect(() => {
-        const doThing = async (language: string) => await GetLanguageColour(language)
+        const doThing = async (language: string) =>
+            await GetLanguageColour(language)
 
         if (language) {
-            doThing(language).then(res => setLanguage(res))
+            doThing(language).then((res) => setLanguage(res))
         }
     }, [])
 
@@ -68,12 +68,14 @@ export const Project = ({
                 {language && (
                     <>
                         <span style={{ margin: '.5rem' }} />
-                        <LanguagePill discontinued={false} colour={languageColour}>
+                        <LanguagePill
+                            discontinued={false}
+                            colour={languageColour}
+                        >
                             {language}
                         </LanguagePill>
                     </>
                 )}
-                
             </ProjectName>
             <ProjectDescription>{projectDescription}</ProjectDescription>
             <div
@@ -95,8 +97,10 @@ export const Project = ({
                                     style={{
                                         display: 'flex',
                                         marginLeft: -10,
-                                    }}>
-                                    <i className={'icon github-icon'} /> View on Github
+                                    }}
+                                >
+                                    <i className={'icon github-icon'} /> View on
+                                    Github
                                 </span>
                             </a>
                         </Link>

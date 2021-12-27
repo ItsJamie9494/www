@@ -18,13 +18,18 @@
 
 import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
-import { scroller } from '../pages/_app';
-import { Emoji, generateEmojiConfig } from '../tools/emoji';
-import { StyledChevron, StyledMainHeader, StyledMainLayout, StyledMainSubheader } from './styles'
+import { scroller } from '../pages/_app'
+import { Emoji, generateEmojiConfig } from '../tools/emoji'
+import {
+    StyledChevron,
+    StyledMainHeader,
+    StyledMainLayout,
+    StyledMainSubheader,
+} from './styles'
 
 const MainLayout: NextComponentType = () => {
-    let ScrollElement = scroll.Element;
-    
+    let ScrollElement = scroll.Element
+
     return (
         <ScrollElement name="mainLayout">
             <StyledMainLayout>
@@ -38,13 +43,19 @@ const MainLayout: NextComponentType = () => {
                             })}
                         />
                     </StyledMainHeader>
-                    <StyledMainSubheader>I'm a programmer that works on open-source projects &lt;3</StyledMainSubheader>
+                    <StyledMainSubheader>
+                        I'm a programmer that works on open-source projects
+                        &lt;3
+                    </StyledMainSubheader>
                 </div>
-                <StyledChevron 
-                onClick={() => scroller.scrollTo('workLayout', {
-                    duration: 500,
-                    smooth: true,
-                })}/>
+                <StyledChevron
+                    onClick={() =>
+                        scroller.scrollTo('workLayout', {
+                            duration: 500,
+                            smooth: true,
+                        })
+                    }
+                />
             </StyledMainLayout>
         </ScrollElement>
     )

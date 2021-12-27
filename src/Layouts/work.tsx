@@ -16,27 +16,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Link from 'next/link';
+import Link from 'next/link'
 import scroll from 'react-scroll'
-import { Repository } from '../interfaces/Repository';
-import { Project } from '../components/Project';
-import RepositoryComponent from '../components/Repository';
-import { TextButton } from '../components/TextButton';
-import { RepositoriesGrid, StyledMainHeader, StyledMainLayout, StyledMainSubheader, StyledWorkLayout } from './styles'
+import { Repository } from '../interfaces/Repository'
+import { Project } from '../components/Project'
+import RepositoryComponent from '../components/Repository'
+import { TextButton } from '../components/TextButton'
+import {
+    RepositoriesGrid,
+    StyledMainHeader,
+    StyledMainLayout,
+    StyledMainSubheader,
+    StyledWorkLayout,
+} from './styles'
 
 const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
-    let ScrollElement = scroll.Element;
+    let ScrollElement = scroll.Element
     return (
-        <ScrollElement name={"workLayout"}>
+        <ScrollElement name={'workLayout'}>
             <StyledWorkLayout>
                 <div>
-                    <StyledMainHeader>
-                        What I Do
-                    </StyledMainHeader>
+                    <StyledMainHeader>What I Do</StyledMainHeader>
                 </div>
 
                 <Project
-                    header={"tauOS"}
+                    header={'tauOS'}
                     projectDescription={
                         'A First Class Platform for All You Do.'
                     }
@@ -46,40 +50,36 @@ const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
                 />
 
                 <Project
-                    header={"Fivnex"}
-                    projectDescription={
-                        'Your Technology Matters.'
-                    }
+                    header={'Fivnex'}
+                    projectDescription={'Your Technology Matters.'}
                     image={'/assets/projects/fivnex.jpg'}
                     repo={'fivnex'}
                     link={'https://fivnex.co'}
                 />
 
                 <Project
-                    header={"bingus.link"}
+                    header={'bingus.link'}
                     projectDescription={
                         'A free, private URL shortener with the greatest domain in existence.'
                     }
                     image={'/assets/projects/binguslink.png'}
                     repo={'ItsJamie9494/bingus.link'}
                     link={'https://bingus.link'}
-                    language={"TypeScript"}
+                    language={'TypeScript'}
                 />
 
                 <Project
-                    header={"keyboardnotfound.com"}
+                    header={'keyboardnotfound.com'}
                     projectDescription={
                         'The famous "Keyboard not found, Press F1 to continue" message, in website form'
                     }
                     image={'/assets/projects/keyboardnotfound.png'}
                     repo={'ItsJamie9494/keyboardnotfound'}
                     link={'https://keyboardnotfound.com'}
-                    language={"JavaScript"}
+                    language={'JavaScript'}
                 />
 
-                <StyledMainHeader>
-                    Repositories
-                </StyledMainHeader>
+                <StyledMainHeader>Repositories</StyledMainHeader>
                 <p>A list of public repositories on my Github page</p>
                 <TextButton>
                     <Link href={`https://github.com/ItsJamie9494`}>
@@ -88,16 +88,19 @@ const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
                                 style={{
                                     display: 'flex',
                                     marginLeft: -10,
-                                }}>
-                                <i className={'icon github-icon'} /> View my Profile
+                                }}
+                            >
+                                <i className={'icon github-icon'} /> View my
+                                Profile
                             </span>
                         </a>
                     </Link>
                 </TextButton>
                 <RepositoriesGrid>
-                    {repositories && repositories.map((repo) => (
-                        <RepositoryComponent repo={repo} key={repo.id} />
-                    ))}
+                    {repositories &&
+                        repositories.map((repo) => (
+                            <RepositoryComponent repo={repo} key={repo.id} />
+                        ))}
                 </RepositoriesGrid>
             </StyledWorkLayout>
         </ScrollElement>

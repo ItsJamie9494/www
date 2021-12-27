@@ -23,41 +23,65 @@ import { Menu } from 'react-feather'
 import scroll from 'react-scroll'
 import { scroller } from '../../pages/_app'
 import Mobile from './mobile'
-import { Container, Image, LinkContainer, MobileButton, StyledHeader } from './style'
+import {
+    Container,
+    Image,
+    LinkContainer,
+    MobileButton,
+    StyledHeader,
+} from './style'
 
 export const HeaderLinks: NextComponentType = () => {
-    const localScroller = scroll.animateScroll;
+    const localScroller = scroll.animateScroll
     return (
         <>
-            <a href={'#'} onClick={() => localScroller.scrollToTop({
-                    duration: 500,
-                    smooth: true,
-                })}>Home</a>
-            <a href={'#'} onClick={() => scroller.scrollTo('workLayout', {
-                    duration: 500,
-                    smooth: true,
-                })}>Work</a>
-            <a href={'#'} onClick={() => scroller.scrollTo('aboutLayout', {
-                    duration: 500,
-                    smooth: true,
-                })}>About</a>
+            <a
+                href={'#'}
+                onClick={() =>
+                    localScroller.scrollToTop({
+                        duration: 500,
+                        smooth: true,
+                    })
+                }
+            >
+                Home
+            </a>
+            <a
+                href={'#'}
+                onClick={() =>
+                    scroller.scrollTo('workLayout', {
+                        duration: 500,
+                        smooth: true,
+                    })
+                }
+            >
+                Work
+            </a>
+            <a
+                href={'#'}
+                onClick={() =>
+                    scroller.scrollTo('aboutLayout', {
+                        duration: 500,
+                        smooth: true,
+                    })
+                }
+            >
+                About
+            </a>
         </>
     )
 }
 
 const Header: NextComponentType = () => {
     const [isMenuOpen, setMenuOpen] = React.useState(false)
-    
+
     return (
         <>
             <StyledHeader>
                 <Container>
                     <span>
-                        <Link href={"/"}>
-                            <Image
-                                src={"/assets/logo.jpg"}
-                                alt={"Logo"}
-                            />
+                        <Link href={'/'}>
+                            <Image src={'/assets/logo.jpg'} alt={'Logo'} />
                         </Link>
                     </span>
 

@@ -16,22 +16,31 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import Link from "next/link"
-import React from "react"
-import { Star } from "react-feather"
-import { Repository } from "../../interfaces/Repository"
-import { GetLanguageColour } from "../../lib/colours"
-import { StyledLink, StyledRepository, TextContainer, HeaderText, LanguagePill, Description, StarContainer, LowerContainer } from "./style"
+import Link from 'next/link'
+import React from 'react'
+import { Star } from 'react-feather'
+import { Repository } from '../../interfaces/Repository'
+import { GetLanguageColour } from '../../lib/colours'
+import {
+    StyledLink,
+    StyledRepository,
+    TextContainer,
+    HeaderText,
+    LanguagePill,
+    Description,
+    StarContainer,
+    LowerContainer,
+} from './style'
 
 const Repository = ({ repo }: { repo: Repository }) => {
-    const [language, setLanguage] = React.useState("")
+    const [language, setLanguage] = React.useState('')
 
     React.useEffect(() => {
-        
-        const doThing = async (language: string) => await GetLanguageColour(language)
+        const doThing = async (language: string) =>
+            await GetLanguageColour(language)
 
         if (repo.language) {
-            doThing(repo.language).then(res => setLanguage(res))
+            doThing(repo.language).then((res) => setLanguage(res))
         }
     }, [])
 
@@ -41,7 +50,13 @@ const Repository = ({ repo }: { repo: Repository }) => {
                 <StyledRepository>
                     <TextContainer discontinued={repo.archived}>
                         <HeaderText>{repo.name}</HeaderText>
-                        <Description>{repo.description != null ? repo.description : <i>No Description Provided</i> }</Description>
+                        <Description>
+                            {repo.description != null ? (
+                                repo.description
+                            ) : (
+                                <i>No Description Provided</i>
+                            )}
+                        </Description>
                     </TextContainer>
 
                     <LowerContainer>
@@ -50,12 +65,14 @@ const Repository = ({ repo }: { repo: Repository }) => {
                             <p>{repo.stargazers_count}</p>
                         </StarContainer>
                         {repo.language && (
-                            <LanguagePill discontinued={repo.archived} colour={language}>
+                            <LanguagePill
+                                discontinued={repo.archived}
+                                colour={language}
+                            >
                                 {repo.language}
                             </LanguagePill>
                         )}
                     </LowerContainer>
-                    
                 </StyledRepository>
             </StyledLink>
         </Link>

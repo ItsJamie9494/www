@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { css } from "@emotion/react"
-import styled from "@emotion/styled"
+import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export const StyledLink = styled.a`
     margin: 10px;
@@ -56,7 +56,7 @@ export const TextContainer = styled.span`
     ${({ discontinued }: { discontinued: boolean }) => css`
         color: ${discontinued
             ? 'rgba(217, 119, 6, 1)'
-            : 'var(--colours-tertiary)'}
+            : 'var(--colours-tertiary)'};
     `}
 `
 
@@ -78,19 +78,23 @@ export const HeaderText = styled.p`
 `
 
 export const LanguagePill = styled.span`
-    ${({ discontinued, colour }: { discontinued: boolean; colour: string }) => css`
-        color: ${discontinued
-            ? 'rgba(217, 119, 6, 1)'
-            : colour};
+    ${({
+        discontinued,
+        colour,
+    }: {
+        discontinued: boolean
+        colour: string
+    }) => css`
+        color: ${discontinued ? 'rgba(217, 119, 6, 1)' : colour};
         &:before {
-            content: "";
+            content: '';
             background-color: ${colour};
             color: ${colour};
             border-radius: 100%;
             width: 10px;
             height: 10px;
             display: inline-block;
-            margin-right: .5rem;
+            margin-right: 0.5rem;
         }
     `}
     display: inline-flex;

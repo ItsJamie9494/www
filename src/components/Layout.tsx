@@ -18,7 +18,7 @@
 
 import type { NextComponentType } from 'next'
 import type { ReactNode } from 'react'
-import { Global } from "@emotion/react"
+import { Global } from '@emotion/react'
 import { Container, GlobalStyle } from './style'
 import Header from './Header'
 import { AnimatedBackground } from './Animated'
@@ -29,11 +29,8 @@ const Layout: NextComponentType = ({ children }: { children?: ReactNode }) => {
             <Global styles={GlobalStyle} />
             <AnimatedBackground />
             <Header />
-            <Container>
-                {children}
-            </Container>
+            <Container>{children}</Container>
         </>
-            
     )
 }
 

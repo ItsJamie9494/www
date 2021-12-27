@@ -77,8 +77,8 @@ export const ProjectLink = styled.div`
 export const ProjectImage = styled.img`
     margin: 1rem auto;
     max-width: 70%;
-    box-shadow: 0 0 10px 0 var(--colours-tertiary)A6;
-    opacity: .75;
+    box-shadow: 0 0 10px 0 var(--colours-tertiary) A6;
+    opacity: 0.75;
     transition: box-shadow 0.5s, opacity 0.5s;
 `
 

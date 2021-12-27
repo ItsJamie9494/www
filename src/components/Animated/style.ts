@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import styled from "@emotion/styled"
+import styled from '@emotion/styled'
 
 export const StyledAnimatedBackground = styled.div`
     overflow: hidden;

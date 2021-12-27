@@ -16,9 +16,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import { keyframes } from "@emotion/react";
-import styled from "@emotion/styled";
-import { ChevronsDown } from "react-feather";
+import { keyframes } from '@emotion/react'
+import styled from '@emotion/styled'
+import { ChevronsDown } from 'react-feather'
 
 export const StyledMainLayout = styled.section`
     display: flex;
@@ -27,7 +27,6 @@ export const StyledMainLayout = styled.section`
     width: 100%;
     height: calc(100vh - 80px);
     flex-direction: column;
-    
 `
 
 export const StyledMainHeader = styled.h1`

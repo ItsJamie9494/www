@@ -26,16 +26,16 @@ export const StyledHeader = styled.header`
     top: 0;
     transition: 0.5s background-color, 0.5s box-shadow;
     text-decoration: none;
-    background-color: var(--ui-background)E6;
+    background-color: var(--ui-background) E6;
     z-index: 999999999;
     @media print {
         display: none;
     }
 `
-    // ${({ isBlurred }: { isBlurred: boolean }) => css`
-    //     box-shadow: ${isBlurred ? '0 0 10px 0' : ''}
-    //         ${isBlurred ? (props) => props.theme.colors.tertiary + 'A6' : ''};
-    // `}
+// ${({ isBlurred }: { isBlurred: boolean }) => css`
+//     box-shadow: ${isBlurred ? '0 0 10px 0' : ''}
+//         ${isBlurred ? (props) => props.theme.colors.tertiary + 'A6' : ''};
+// `}
 
 export const Container = styled.section`
     margin: 0px auto;
@@ -104,15 +104,13 @@ export const MobileButton = styled.div`
         background: none;
         cursor: pointer;
         transition: color 0.5s, opacity 0.2s;
-        
+
         &:hover {
             color: var(--colours-tertiary);
             opacity: 0.7;
         }
     }
 `
-
-
 
 export const MobileContainer = styled.section`
     position: absolute;
@@ -138,7 +136,7 @@ export const MobileLinkContainer = styled.div`
     gap: 0;
     grid-auto-flow: row;
     justify-content: center;
-    
+
     a {
         padding: 1rem;
         text-align: center;
