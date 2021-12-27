@@ -55,7 +55,7 @@ const Header: NextComponentType = () => {
                     <span>
                         <Link href={"/"}>
                             <Image
-                                src={"/assets/logo.png"}
+                                src={"/assets/logo.jpg"}
                                 alt={"Logo"}
                             />
                         </Link>
