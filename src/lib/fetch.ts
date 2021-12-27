@@ -16,12 +16,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-interface Cache {
-    [key: string]: Response
-}
-
-const cache: Cache = {}
-
 export const fetchWithCache = async (url: string) => {
     if ('caches' in window) {
         return await caches.open('fetchWithCacheData').then(async (cache) => {

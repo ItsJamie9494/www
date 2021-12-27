@@ -16,17 +16,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import React from 'react'
 import Link from 'next/link'
-import {
-    StyledProject,
-    ProjectName,
-    ProjectDescription,
-    ProjectLink,
-    ProjectImage,
-} from './style'
-import { LanguagePill } from '../Repository/style'
+import React from 'react'
 import { GetLanguageColour } from '../../lib/colours'
+import { LanguagePill } from '../Repository/style'
+import {
+    ProjectDescription,
+    ProjectImage,
+    ProjectLink,
+    ProjectName,
+    StyledProject,
+} from './style'
 
 export const Project = ({
     header,

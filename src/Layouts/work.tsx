@@ -18,17 +18,11 @@
 
 import Link from 'next/link'
 import scroll from 'react-scroll'
-import { Repository } from '../interfaces/Repository'
 import { Project } from '../components/Project'
 import RepositoryComponent from '../components/Repository'
 import { TextButton } from '../components/TextButton'
-import {
-    RepositoriesGrid,
-    StyledMainHeader,
-    StyledMainLayout,
-    StyledMainSubheader,
-    StyledWorkLayout,
-} from './styles'
+import { Repository } from '../interfaces/Repository'
+import { RepositoriesGrid, StyledMainHeader, StyledWorkLayout } from './styles'
 
 const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
     let ScrollElement = scroll.Element

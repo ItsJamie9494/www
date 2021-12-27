@@ -16,8 +16,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-import styled from '@emotion/styled'
 import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export const StyledHeader = styled.header`
     height: 80px;

@@ -18,7 +18,7 @@
 
 import React from 'react'
 import { Emoji, generateEmojiConfig } from '../../tools/emoji'
-import { InvertImage, Tooltip, Image, StyledList } from './style'
+import { Image, InvertImage, StyledList, Tooltip } from './style'
 
 export const TooltipImage = ({
     src,

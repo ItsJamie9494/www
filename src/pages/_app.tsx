@@ -17,8 +17,8 @@
  */
 
 import type { AppProps } from 'next/app'
-import '../style/globals.css'
 import scroll from 'react-scroll'
+import '../style/globals.css'
 
 export const scroller = scroll.scroller
 

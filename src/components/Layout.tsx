@@ -16,13 +16,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import { Global } from '@emotion/react'
 import type { NextComponentType } from 'next'
 import type { ReactNode } from 'react'
-import { Global } from '@emotion/react'
-import { Container, GlobalStyle } from './style'
-import Header from './Header'
 import { AnimatedBackground } from './Animated'
 import { Footer } from './Footer'
+import Header from './Header'
+import { Container, GlobalStyle } from './style'
 
 const Layout: NextComponentType = ({ children }: { children?: ReactNode }) => {
     return (

@@ -19,8 +19,6 @@
 import type { NextComponentType } from 'next'
 import Link from 'next/link'
 import scroll from 'react-scroll'
-import { TextButton } from '../components/TextButton'
-import { scroller } from '../pages/_app'
 import { Emoji, generateEmojiConfig } from '../tools/emoji'
 import {
     ContactGrid,

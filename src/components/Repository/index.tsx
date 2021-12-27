@@ -22,14 +22,14 @@ import { Star } from 'react-feather'
 import { Repository } from '../../interfaces/Repository'
 import { GetLanguageColour } from '../../lib/colours'
 import {
+    Description,
+    HeaderText,
+    LanguagePill,
+    LowerContainer,
+    StarContainer,
     StyledLink,
     StyledRepository,
     TextContainer,
-    HeaderText,
-    LanguagePill,
-    Description,
-    StarContainer,
-    LowerContainer,
 } from './style'
 
 const Repository = ({ repo }: { repo: Repository }) => {

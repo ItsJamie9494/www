@@ -16,15 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import Link from 'next/link'
 import React from 'react'
 import {
-    StyledFooter,
     Container,
+    CopyrightContainer,
     Image,
     RightContainer,
-    CopyrightContainer,
+    StyledFooter,
 } from './style'
-import Link from 'next/link'
 
 export const Footer = () => {
     return (
