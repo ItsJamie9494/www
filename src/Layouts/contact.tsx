@@ -40,7 +40,10 @@ const SocialMediaGrid = ({ items }: { items: Array<SocialMedia> }) => {
     return (
         <ContactGrid>
             {items.map((gridItem) => (
-                <span style={{ width: 'fit-content', display: 'flex' }}>
+                <span
+                    style={{ width: 'fit-content', display: 'flex' }}
+                    key={gridItem.name}
+                >
                     <span
                         style={{
                             display: 'inline-flex',
