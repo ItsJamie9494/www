@@ -20,16 +20,27 @@ import type { NextComponentType } from 'next'
 import Link from 'next/link'
 import React from 'react'
 import { Menu } from 'react-feather'
+import scroll from 'react-scroll'
+import { scroller } from '../../pages/_app'
 import Mobile from './mobile'
 import { Container, Image, LinkContainer, MobileButton, StyledHeader } from './style'
 
 export const HeaderLinks: NextComponentType = () => {
+    const localScroller = scroll.animateScroll;
     return (
         <>
-            <Link href={'/'}>Home</Link>
-            <Link href={'/blog'}>Blog</Link>
-            <Link href={'/work'}>Work</Link>
-            <Link href={'/about'}>About</Link>
+            <a href={'#'} onClick={() => localScroller.scrollToTop({
+                    duration: 500,
+                    smooth: true,
+                })}>Home</a>
+            <a href={'#'} onClick={() => scroller.scrollTo('workLayout', {
+                    duration: 500,
+                    smooth: true,
+                })}>Work</a>
+            <a href={'#'} onClick={() => scroller.scrollTo('aboutLayout', {
+                    duration: 500,
+                    smooth: true,
+                })}>About</a>
         </>
     )
 }
