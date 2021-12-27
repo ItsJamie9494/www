@@ -18,8 +18,8 @@
 
 import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
-import { scroller } from '../../pages/_app';
-import { Emoji, generateEmojiConfig } from '../../tools/emoji';
+import { scroller } from '../pages/_app';
+import { Emoji, generateEmojiConfig } from '../tools/emoji';
 import { StyledChevron, StyledMainHeader, StyledMainLayout, StyledMainSubheader } from './styles'
 
 const MainLayout: NextComponentType = () => {

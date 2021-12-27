@@ -19,7 +19,7 @@
 import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
 import { StyledMainHeader, StyledMainLayout, StyledMainSubheader, Container } from './styles'
-import { generateEmojiConfig, Emoji } from '../../tools/emoji'
+import { generateEmojiConfig, Emoji } from '../tools/emoji'
 
 const AboutLayout: NextComponentType = () => {
     let ScrollElement = scroll.Element;

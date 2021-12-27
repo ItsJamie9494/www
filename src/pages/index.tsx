@@ -18,9 +18,9 @@
 
 import type { GetServerSideProps, InferGetServerSidePropsType, NextPage } from 'next'
 import Layout from '../components/Layout'
-import AboutLayout from '../components/Layouts/about'
-import MainLayout from '../components/Layouts/main'
-import WorkLayout from '../components/Layouts/work'
+import AboutLayout from '../Layouts/about'
+import MainLayout from '../Layouts/main'
+import WorkLayout from '../Layouts/work'
 import { Repository } from '../interfaces/Repository'
 
 const Home: NextPage = ({ repositories }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
