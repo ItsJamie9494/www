@@ -60,14 +60,14 @@ export const HeaderText = styled.p`
 `
 
 export const LanguagePill = styled.span`
-    ${({ discontinued }: { discontinued: boolean }) => css`
+    ${({ discontinued, colour }: { discontinued: boolean; colour: string }) => css`
         border: 1px solid
             ${discontinued
                 ? 'rgba(217, 119, 6, 1)'
-                : 'var(--colours-primary)'};
+                : colour};
         color: ${discontinued
             ? 'rgba(217, 119, 6, 1)'
-            : 'var(--colours-primary)'};
+            : colour};
     `}
     display: inline-block;
     border-radius: 8px;

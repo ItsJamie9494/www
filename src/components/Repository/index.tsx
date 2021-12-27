@@ -20,9 +20,20 @@ import Link from "next/link"
 import React from "react"
 import { Star } from "react-feather"
 import { Repository } from "../../interfaces/Repository"
+import { GetLanguageColour } from "../../lib/colours"
 import { StyledLink, StyledRepository, TextContainer, HeaderText, LanguagePill, Description, StarContainer, LowerContainer } from "./style"
 
 const Repository = ({ repo }: { repo: Repository }) => {
+    const [language, setLanguage] = React.useState("")
+
+    React.useEffect(() => {
+        
+        const doThing = async (language: string) => await GetLanguageColour(language)
+
+        if (repo.language) {
+            doThing(repo.language).then(res => setLanguage(res))
+        }
+    }, [])
 
     return (
         <Link href={repo.html_url}>
@@ -35,7 +46,7 @@ const Repository = ({ repo }: { repo: Repository }) => {
 
                     <LowerContainer>
                         {repo.language && (
-                            <LanguagePill discontinued={repo.archived}>
+                            <LanguagePill discontinued={repo.archived} colour={language}>
                                 {repo.language}
                             </LanguagePill>
                         )}

@@ -21,6 +21,7 @@ import Layout from '../components/Layout'
 import MainLayout from '../components/Layouts/main'
 import WorkLayout from '../components/Layouts/work'
 import { Repository } from '../interfaces/Repository'
+import { GetLanguageColour } from '../lib/colours'
 
 const Home: NextPage = ({ repositories }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
   return (
