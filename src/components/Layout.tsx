@@ -22,6 +22,7 @@ import { Global } from '@emotion/react'
 import { Container, GlobalStyle } from './style'
 import Header from './Header'
 import { AnimatedBackground } from './Animated'
+import { Footer } from './Footer'
 
 const Layout: NextComponentType = ({ children }: { children?: ReactNode }) => {
     return (
@@ -30,6 +31,7 @@ const Layout: NextComponentType = ({ children }: { children?: ReactNode }) => {
             <AnimatedBackground />
             <Header />
             <Container>{children}</Container>
+            <Footer />
         </>
     )
 }
