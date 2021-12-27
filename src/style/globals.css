@@ -19,11 +19,11 @@
 @import './colours.css';
 @import './icons.css';
 
-/* @font-face {
+@font-face {
     font-family: 'Inter';
     src: url('/Inter.var.woff2') format('woff2-variations');
     font-weight: 400;
-} */
+}
 
 html,
 body {
