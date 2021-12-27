@@ -1,4 +1,4 @@
-/* style.ts
+/* components/style.ts
  *
  * Copyright 2021 Jamie Thalacker
  *
