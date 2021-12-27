@@ -45,15 +45,15 @@ const Repository = ({ repo }: { repo: Repository }) => {
                     </TextContainer>
 
                     <LowerContainer>
+                        <StarContainer>
+                            <Star size={18} />
+                            <p>{repo.stargazers_count}</p>
+                        </StarContainer>
                         {repo.language && (
                             <LanguagePill discontinued={repo.archived} colour={language}>
                                 {repo.language}
                             </LanguagePill>
                         )}
-                        <StarContainer>
-                        <Star size={18} />
-                            <p>{repo.stargazers_count}</p>
-                        </StarContainer>
                     </LowerContainer>
                     
                 </StyledRepository>

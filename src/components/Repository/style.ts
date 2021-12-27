@@ -61,20 +61,28 @@ export const HeaderText = styled.p`
 
 export const LanguagePill = styled.span`
     ${({ discontinued, colour }: { discontinued: boolean; colour: string }) => css`
-        border: 1px solid
-            ${discontinued
-                ? 'rgba(217, 119, 6, 1)'
-                : colour};
         color: ${discontinued
             ? 'rgba(217, 119, 6, 1)'
             : colour};
+        &:before {
+            content: "";
+            background-color: ${colour};
+            color: ${colour};
+            border-radius: 100%;
+            width: 10px;
+            height: 10px;
+            display: inline-block;
+            margin-right: .5rem;
+        }
     `}
-    display: inline-block;
+    display: inline-flex;
     border-radius: 8px;
     padding: 0px 5px;
     font-size: 15px;
     width: max-content;
     white-space: nowrap;
+    justify-content: center;
+    align-items: center;
 `
 
 export const Description = styled.span`

@@ -16,9 +16,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+import Link from 'next/link';
 import scroll from 'react-scroll'
 import { Repository } from '../../interfaces/Repository';
 import RepositoryComponent from '../Repository';
+import { TextButton } from '../TextButton';
 import { RepositoriesGrid, StyledMainHeader, StyledMainLayout, StyledMainSubheader, StyledWorkLayout } from './styles'
 
 const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
@@ -31,6 +33,24 @@ const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
                         What I Do
                     </StyledMainHeader>
                 </div>
+
+                <StyledMainHeader>
+                    Repositories
+                </StyledMainHeader>
+                <p>A list of public repositories on my Github page</p>
+                <TextButton>
+                    <Link href={`https://github.com/ItsJamie9494`}>
+                        <a>
+                            <span
+                                style={{
+                                    display: 'flex',
+                                    marginLeft: -10,
+                                }}>
+                                <i className={'icon github-icon'} /> View my Profile
+                            </span>
+                        </a>
+                    </Link>
+                </TextButton>
                 <RepositoriesGrid>
                     {repositories && repositories.map((repo) => (
                         <RepositoryComponent repo={repo} key={repo.id} />
