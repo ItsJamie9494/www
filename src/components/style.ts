@@ -55,6 +55,7 @@ export const GlobalStyle = css`
         color: var(--colours-tertiary);
         text-decoration: none;
         transition: color 0.5s, opacity 0.2s;
+        font-weight: bold;
     }
     a:hover {
         color: var(--colours-tertiary);
