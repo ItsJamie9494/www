@@ -20,9 +20,9 @@ import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
 import {
     StyledMainHeader,
-    StyledMainLayout,
     StyledMainSubheader,
     Container,
+    StyledWorkLayout,
 } from './styles'
 import { generateEmojiConfig, Emoji } from '../tools/emoji'
 import { AboutFamiliarList } from '../components/AboutFamiliarList'
@@ -32,12 +32,12 @@ const AboutLayout: NextComponentType = () => {
 
     return (
         <ScrollElement name="aboutLayout">
-            <StyledMainLayout>
+            <StyledWorkLayout>
                 <div>
                     <StyledMainHeader>About Me</StyledMainHeader>
                     <StyledMainSubheader>$ whoami</StyledMainSubheader>
                 </div>
-            </StyledMainLayout>
+            </StyledWorkLayout>
             <Container>
                 <p>
                     <Emoji

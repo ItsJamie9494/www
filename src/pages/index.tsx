@@ -26,6 +26,7 @@ import AboutLayout from '../Layouts/about'
 import MainLayout from '../Layouts/main'
 import WorkLayout from '../Layouts/work'
 import { Repository } from '../interfaces/Repository'
+import ContactLayout from '../Layouts/contact'
 
 const Home: NextPage = ({
     repositories,
@@ -35,6 +36,7 @@ const Home: NextPage = ({
             <MainLayout />
             <WorkLayout repositories={repositories} />
             <AboutLayout />
+            <ContactLayout />
         </Layout>
     )
 }

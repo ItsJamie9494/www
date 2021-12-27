@@ -68,6 +68,17 @@ export const HeaderLinks: NextComponentType = () => {
             >
                 About
             </a>
+            <a
+                href={'#'}
+                onClick={() =>
+                    scroller.scrollTo('contactLayout', {
+                        duration: 500,
+                        smooth: true,
+                    })
+                }
+            >
+                Get in Touch
+            </a>
         </>
     )
 }

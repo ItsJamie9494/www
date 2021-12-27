@@ -101,3 +101,35 @@ export const Container = styled.div`
     margin-bottom: 40px;
     padding: 0 10vw;
 `
+
+export const ContactGrid = styled.div`
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+    margin: 1rem 0;
+    @media screen and (max-width: 850px) {
+        grid-auto-flow: row;
+        align-items: center;
+        justify-content: center;
+    }
+`
+
+export const ContactSocialLink = styled.span`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0;
+    i {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        margin-bottom: 5px;
+        filter: invert(1);
+        transition: opacity 0.5s ease 0s, filter 0.5s ease;
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+    }
+`
