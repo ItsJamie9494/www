@@ -25,6 +25,7 @@ export const Container = styled.article`
     transition: 0.5s background-color;
     color: var(--colours-tertiary);
     background-color: var(--ui-background);
+    flex-direction: column;
 `
 
 export const GlobalStyle = css`
