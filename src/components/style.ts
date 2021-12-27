@@ -20,70 +20,43 @@ import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 
 export const Container = styled.article`
-    padding: 0 0.5rem;
     margin-top: 80px;
     display: flex;
     transition: 0.5s background-color;
-    color: #222222;
-    background-color: #ffffff;
+    color: var(--colours-tertiary);
+    background-color: var(--ui-background);
 `
 
 export const GlobalStyle = css`
     html,
     body {
-        background-color: #FFFFFF;
+        background-color: var(--ui-background);
         font-family: Inter, sans-serif;
         transition: 0.5s background-color;
         line-height: 1.7142857;
-    }
-    ::-webkit-scrollbar {
-        color: transparent;
-        background-color: transparent;
-        transition: background-color 0.5s;
-    }
-    ::-webkit-scrollbar-thumb {
-        background-color: rgba(
-           0,0,0,
-            0.48
-        );
-        border-radius: 8px;
-        border: solid #FFFFFF;
-        &:hover {
-            background-color: rgba(
-                0,0,0,
-                0.68
-            );
-        }
-    }
-    ::-webkit-calendar-picker-indicator,
-    input[type='checkbox'] {
-        filter: ;
-    }
-    ::selection {
-        background-color: #deeffd;
     }
     h1,
     h2,
     h3,
     h4,
     h5 {
-        color: #222222;
+        color: var(--colours-tertiary);
         transition: color 0.5s;
         margin: 0;
     }
     p,
     label,
     input[type='datetime-local'] {
-        color: #222222db;
+        color: var(--colours-tertiary)db;
         transition: color 0.5s;
     }
     a {
-        color: #222222;
+        color: var(--colours-tertiary);
         text-decoration: none;
         transition: color 0.5s, opacity 0.2s;
     }
     a:hover {
-        color: #222222;
+        color: var(--colours-tertiary);
         text-decoration: none;
         transition: color 0.5s;
         cursor: pointer;
@@ -104,7 +77,7 @@ export const GlobalStyle = css`
     }
     a:hover:after {
         width: 100%;
-        background: #222222;
+        background: var(--colours-tertiary);
         text-decoration: none;
     }
     .noHover:hover {
@@ -112,7 +85,7 @@ export const GlobalStyle = css`
     }
     .noHover:hover:after {
         width: 0;
-        background: #222222;
+        background: var(--colours-tertiary);
         text-decoration: none;
     }
     table {
@@ -123,10 +96,9 @@ export const GlobalStyle = css`
         font-size: 0.875em;
     }
     tr {
-        box-shadow: 0 2px 0 0 #22222240;
-        -webkit-box-shadow: 0 2px 0 0
-        #22222240;
-        -moz-box-shadow: 0 2px 0 0 #22222240;
+        box-shadow: 0 2px 0 0 var(--colours-tertiary)40;
+        -webkit-box-shadow: 0 2px 0 0 var(--colours-tertiary)40;
+        -moz-box-shadow: 0 2px 0 0 var(--colours-tertiary)40;
     }
     td {
         padding: 10px;
@@ -139,7 +111,7 @@ export const GlobalStyle = css`
         }
     }
     canvas {
-        background-color: #eaeaea;
+        background-color: var(--ui-secondary-background);
         cursor: pointer;
         width: 300px;
         height: 300px;

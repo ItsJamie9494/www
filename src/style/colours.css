@@ -1,0 +1,70 @@
+:root {
+    /* Animated Background Colours */
+
+    --grey-1: #e2e8f0;
+    --grey-2: #cbd5e0;
+    --teal-1: #81e6d9;
+    --teal-2: #4fd1c5;
+    --blue-1: #90cdf4;
+    --blue-2: #63b3ed;
+    --green-1: #9ae6b4;
+    --green-2: #68d391;
+    --purple-1: #d6bcfa;
+    --purple-2: #b794f4;
+
+    /* Main Page Colours */
+    --colours-primary: #0070f3;
+    --colours-secondary: #222222;
+    --colours-tertiary: #FFFFFF;
+    --ui-background: rgb(31, 41, 55);
+    --ui-secondary-background: #0e0e0e;
+    --ui-colour: #ffffff;
+    --ui-border: #333333;
+}
+
+/* .darkTheme {
+
+
+    --grey-1: #e2e8f0;
+    --grey-2: #cbd5e0;
+    --teal-1: #81e6d9;
+    --teal-2: #4fd1c5;
+    --blue-1: #90cdf4;
+    --blue-2: #63b3ed;
+    --green-1: #9ae6b4;
+    --green-2: #68d391;
+    --purple-1: #d6bcfa;
+    --purple-2: #b794f4;
+
+
+    --colours-primary: #0070f3;
+    --colours-secondary: #222222;
+    --colours-tertiary: #FFFFFF;
+    --ui-background: #222222;
+    --ui-secondary-background: #0e0e0e;
+    --ui-colour: #ffffff;
+    --ui-border: #333333;
+}
+
+.lightTheme {
+
+    --grey-1: #4a5568;
+    --grey-2: #2d3748;
+    --teal-1: #2c7a7b;
+    --teal-2: #285e61;
+    --blue-1: #2b6cb0;
+    --blue-2: #2c5282;
+    --green-1: #2f855a;
+    --green-2: #276749;
+    --purple-1: #6b46c1;
+    --purple-2: #553c9a;
+
+
+    --colours-primary: #0070f3;
+    --colours-secondary: #ffffff;
+    --colours-tertiary: #222222;
+    --ui-background: #ffffff;
+    --ui-secondary-background: #eaeaea;
+    --ui-colour: #222222;
+    --ui-border: #eaeaea;
+} */
