@@ -1,4 +1,4 @@
-/* styles/globals.css
+/* interfaces/Repository.ts
  *
  * Copyright 2021 Jamie Thalacker
  *
@@ -16,23 +16,15 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-@import './colours.css';
-
-/* @font-face {
-    font-family: 'Inter';
-    src: url('/Inter.var.woff2') format('woff2-variations');
-    font-weight: 400;
-} */
-
-html,
-body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-        Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-        sans-serif;
-}
-
-* {
-    box-sizing: border-box;
+export interface Repository {
+    id: number
+    name: string
+    html_url: string
+    created_at: string
+    pushed_at: string
+    language: null | string
+    description: string
+    fork: boolean,
+    stargazers_count: number,
+    archived: boolean
 }

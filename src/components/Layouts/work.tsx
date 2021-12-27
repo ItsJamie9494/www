@@ -18,7 +18,7 @@
 
 import type { NextComponentType } from 'next'
 import scroll from 'react-scroll'
-import { Repository } from '../../interface/Repository';
+import { Repository } from '../../interfaces/Repository';
 import { StyledMainHeader, StyledMainLayout, StyledMainSubheader } from './styles'
 
 const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
