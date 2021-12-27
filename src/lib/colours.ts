@@ -1,4 +1,5 @@
 import yaml from 'js-yaml'
+import { fetchWithCache } from './fetch'
 
 interface Language {
     color: string
@@ -6,11 +7,8 @@ interface Language {
 }
 
 export const GetLanguageColour = async (language: string) => {
-    // TODO cache this
-    return await fetch('https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml').then(async (response) => {
-        let document = yaml.load(await response.text())
-
-        console.log(((document as any)[language] as Language).color)
+    return await fetchWithCache('https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml').then(async (response) => {
+        let document = yaml.load(await (response as Response).text())
         return ((document as any)[language] as Language).color
     })
 }
