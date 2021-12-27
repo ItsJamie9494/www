@@ -25,6 +25,7 @@ import {
     Container,
 } from './styles'
 import { generateEmojiConfig, Emoji } from '../tools/emoji'
+import { AboutFamiliarList } from '../components/AboutFamiliarList'
 
 const AboutLayout: NextComponentType = () => {
     let ScrollElement = scroll.Element
@@ -88,7 +89,8 @@ const AboutLayout: NextComponentType = () => {
                     />{' '}
                     I'm familiar with
                 </h3>
-                {/* This is where I'd add the language thing when I feel like doing that */}
+
+                <AboutFamiliarList />
 
                 <h3>
                     <Emoji
