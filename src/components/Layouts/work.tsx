@@ -19,6 +19,7 @@
 import Link from 'next/link';
 import scroll from 'react-scroll'
 import { Repository } from '../../interfaces/Repository';
+import { Project } from '../Project';
 import RepositoryComponent from '../Repository';
 import { TextButton } from '../TextButton';
 import { RepositoriesGrid, StyledMainHeader, StyledMainLayout, StyledMainSubheader, StyledWorkLayout } from './styles'
@@ -33,6 +34,48 @@ const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
                         What I Do
                     </StyledMainHeader>
                 </div>
+
+                <Project
+                    header={"tauOS"}
+                    projectDescription={
+                        'A First Class Platform for All You Do.'
+                    }
+                    image={'/assets/projects/tau.jpg'}
+                    repo={'tauLinux'}
+                    link={'https://tau.innatical.com'}
+                />
+
+                <Project
+                    header={"Fivnex"}
+                    projectDescription={
+                        'Your Technology Matters.'
+                    }
+                    image={'/assets/projects/fivnex.jpg'}
+                    repo={'fivnex'}
+                    link={'https://fivnex.co'}
+                />
+
+                <Project
+                    header={"bingus.link"}
+                    projectDescription={
+                        'A free, private URL shortener with the greatest domain in existence.'
+                    }
+                    image={'/assets/projects/binguslink.png'}
+                    repo={'ItsJamie9494/bingus.link'}
+                    link={'https://bingus.link'}
+                    language={"TypeScript"}
+                />
+
+                <Project
+                    header={"keyboardnotfound.com"}
+                    projectDescription={
+                        'The famous "Keyboard not found, Press F1 to continue" message, in website form'
+                    }
+                    image={'/assets/projects/keyboardnotfound.png'}
+                    repo={'ItsJamie9494/keyboardnotfound'}
+                    link={'https://keyboardnotfound.com'}
+                    language={"JavaScript"}
+                />
 
                 <StyledMainHeader>
                     Repositories
