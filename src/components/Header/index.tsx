@@ -36,7 +36,7 @@ export const HeaderLinks: NextComponentType = () => {
     return (
         <>
             <a
-                href={'#'}
+                href={'/#'}
                 onClick={() =>
                     localScroller.scrollToTop({
                         duration: 500,
@@ -47,7 +47,7 @@ export const HeaderLinks: NextComponentType = () => {
                 Home
             </a>
             <a
-                href={'#'}
+                href={'/#workLayout'}
                 onClick={() =>
                     scroller.scrollTo('workLayout', {
                         duration: 500,
@@ -58,7 +58,7 @@ export const HeaderLinks: NextComponentType = () => {
                 Work
             </a>
             <a
-                href={'#'}
+                href={'/#aboutLayout'}
                 onClick={() =>
                     scroller.scrollTo('aboutLayout', {
                         duration: 500,
@@ -69,7 +69,7 @@ export const HeaderLinks: NextComponentType = () => {
                 About
             </a>
             <a
-                href={'#'}
+                href={'/#contactLayout'}
                 onClick={() =>
                     scroller.scrollTo('contactLayout', {
                         duration: 500,
