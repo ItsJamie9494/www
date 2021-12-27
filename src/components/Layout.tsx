@@ -17,17 +17,82 @@
  */
 
 import { Global } from '@emotion/react'
-import type { NextComponentType } from 'next'
+import Head from 'next/head'
+import { useRouter } from 'next/router'
 import type { ReactNode } from 'react'
 import { AnimatedBackground } from './Animated'
 import { Footer } from './Footer'
 import Header from './Header'
 import { Container, GlobalStyle } from './style'
 
-const Layout: NextComponentType = ({ children }: { children?: ReactNode }) => {
+const Layout = ({
+    children,
+    title,
+}: {
+    children?: ReactNode
+    title: string
+}) => {
+    const router = useRouter()
+
     return (
         <>
             <Global styles={GlobalStyle} />
+            <Head>
+                <title>{title} • Jamie Thalacker</title>
+                <link
+                    rel="apple-touch-icon"
+                    sizes="180x180"
+                    href="/apple-touch-icon.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="32x32"
+                    href="/favicon-32x32.png"
+                />
+                <link
+                    rel="icon"
+                    type="image/png"
+                    sizes="16x16"
+                    href="/favicon-16x16.png"
+                />
+                <meta
+                    name={'description'}
+                    content={
+                        "I'm a programmer that works on open-source projects"
+                    }
+                />
+                <meta
+                    name={'og:title'}
+                    content={`${title} • Jamie Thalacker`}
+                />
+                <meta
+                    name={'og:description'}
+                    content={
+                        "I'm a programmer that works on open-source projects"
+                    }
+                />
+                <meta name={'og:type'} content={'website'} />
+                <meta name={'og:image'} content={'/assets/logo.png'} />
+                <meta name={'twitter:card'} content={'summary'} />
+                <meta name={'twitter:creator'} content={'@ItsJamie9494'} />
+                <meta
+                    name={'twitter:description'}
+                    content={
+                        "I'm a programmer that works on open-source projects"
+                    }
+                />
+                <meta
+                    name={'twitter:title'}
+                    content={`${title} • Jamie Thalacker`}
+                />
+                <link
+                    rel="canonical"
+                    href={`${
+                        process.env.NODE_ENV === 'production' ? 'https' : 'http'
+                    }://jamiethalacker.dev${router.asPath}`}
+                />
+            </Head>
             <AnimatedBackground />
             <Header />
             <Container>{children}</Container>
