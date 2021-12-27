@@ -25,20 +25,14 @@ import { Footer } from './Footer'
 import Header from './Header'
 import { Container, GlobalStyle } from './style'
 
-const Layout = ({
-    children,
-    title,
-}: {
-    children?: ReactNode
-    title: string
-}) => {
+const Layout = ({ children }: { children?: ReactNode }) => {
     const router = useRouter()
 
     return (
         <>
             <Global styles={GlobalStyle} />
             <Head>
-                <title>{title} • Jamie Thalacker</title>
+                <title>Jamie Thalacker</title>
                 <link
                     rel="apple-touch-icon"
                     sizes="180x180"
@@ -62,10 +56,7 @@ const Layout = ({
                         "I'm a programmer that works on open-source projects"
                     }
                 />
-                <meta
-                    name={'og:title'}
-                    content={`${title} • Jamie Thalacker`}
-                />
+                <meta name={'og:title'} content={`Jamie Thalacker`} />
                 <meta
                     name={'og:description'}
                     content={
@@ -82,10 +73,7 @@ const Layout = ({
                         "I'm a programmer that works on open-source projects"
                     }
                 />
-                <meta
-                    name={'twitter:title'}
-                    content={`${title} • Jamie Thalacker`}
-                />
+                <meta name={'twitter:title'} content={`Jamie Thalacker`} />
                 <link
                     rel="canonical"
                     href={`${
