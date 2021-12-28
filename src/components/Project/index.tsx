@@ -55,7 +55,7 @@ export const Project = ({
         if (language) {
             doThing(language).then((res) => setLanguage(res))
         }
-    }, [])
+    }, [language])
 
     return (
         <StyledProject>

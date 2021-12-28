@@ -17,6 +17,7 @@
  */
 
 import { NextPage } from 'next'
+import Image from 'next/image'
 import Script from 'next/script'
 import React from 'react'
 
@@ -35,7 +36,7 @@ const Home: NextPage = () => {
                 <br />
                 <div className="logo"></div>
                 <div className="fullscreen">
-                    <img
+                    <Image
                         src="/egg/TemplateData/fullscreen.png"
                         width="38"
                         height="38"

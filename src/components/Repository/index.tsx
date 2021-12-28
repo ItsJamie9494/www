@@ -42,10 +42,10 @@ const Repository = ({ repo }: { repo: Repository }) => {
         if (repo.language) {
             doThing(repo.language).then((res) => setLanguage(res))
         }
-    }, [])
+    }, [repo.language])
 
     return (
-        <Link href={repo.html_url}>
+        <Link href={repo.html_url} passHref>
             <StyledLink href={repo.html_url}>
                 <StyledRepository>
                     <TextContainer discontinued={repo.archived}>

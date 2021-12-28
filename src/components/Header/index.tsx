@@ -134,14 +134,14 @@ const Header: NextComponentType = () => {
         return () => {
             window.removeEventListener('keydown', downHandler)
         }
-    })
+    }, [keys, router])
 
     return (
         <>
             <StyledHeader isBlurred={isBlurred}>
                 <Container>
                     <span>
-                        <Link href={'/'}>
+                        <Link href={'/'} passHref>
                             <Image src={'/assets/logo.jpg'} alt={'Logo'} />
                         </Link>
                     </span>

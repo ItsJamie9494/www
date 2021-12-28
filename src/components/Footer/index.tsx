@@ -66,7 +66,7 @@ export const Footer = () => {
         if (devCount > 10) {
             setDevMsg(`No need, you are already a developer`)
         }
-    })
+    }, [devCount])
 
     return (
         <>

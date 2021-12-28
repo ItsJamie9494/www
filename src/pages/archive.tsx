@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -926,7 +927,7 @@ const Index = () => {
 
                         <p>
                             <a href="#">Link</a> and{' '}
-                            <img src="src" alt="Image" />
+                            <Image src="src" alt="Image" />
                         </p>
 
                         <h3 id="jekyll-themes-for-github-pages">
