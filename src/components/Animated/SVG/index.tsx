@@ -93,6 +93,7 @@ export const AnimatedSVG = ({
     return (
         <AnimatedBackground
             viewBox={icons[icon].viewBox}
+            // @ts-ignore
             slow={animation === 'slow' ? true : false}
             large={animation === 'wide' ? true : false}
             horizontal={horizontal}
@@ -105,6 +106,7 @@ export const AnimatedSVG = ({
             hiddenMobile={hiddenMobile}
         >
             {icons[icon].shape}
+            <></>
         </AnimatedBackground>
     )
 }
