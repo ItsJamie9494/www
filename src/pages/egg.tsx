@@ -17,6 +17,7 @@
  */
 
 import { NextPage } from 'next'
+import Script from 'next/script'
 import React from 'react'
 
 const Home: NextPage = () => {
@@ -48,8 +49,8 @@ const Home: NextPage = () => {
                 </div>
                 <div className="title">The Savior: Planet of Magistera</div>
             </div>
-            <script src="/egg/egg.js"></script>
-            <script src="/egg/Release/UnityLoader.js"></script>
+            <Script src="/egg/egg.js" />
+            <Script src="/egg/Release/UnityLoader.js" />
         </>
     )
 }

@@ -32,6 +32,7 @@ export const Footer = () => {
     const [devCount, setDevCount] = React.useState(0)
     const [devMsg, setDevMsg] = React.useState('')
     const [showToast, setShowToast] = React.useState(false)
+    const router = useRouter()
 
     const onIconClick = () => {
         if (devCount >= 4) {
@@ -48,7 +49,6 @@ export const Footer = () => {
     }
 
     if (devCount === 12) {
-        const router = useRouter()
         router.push('/archive')
     }
 
