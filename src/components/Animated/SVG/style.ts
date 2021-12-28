@@ -55,50 +55,29 @@ export const backgroundAnimationHorizontalWide = keyframes`
     }
 `
 
+const BackgroundSVG = (props: any) => css`
+    animation: ${props.horizontal
+            ? props.large
+                ? backgroundAnimationHorizontalWide
+                : backgroundAnimationHorizontal
+            : props.large
+            ? backgroundAnimationVerticalLong
+            : backgroundAnimationVertical}
+        ${props.slow ? '11s' : props.large ? '10s' : '4s'} ease-in-out infinite
+        alternate;
+    position: absolute;
+    filter: blur(4px) saturate(160%);
+    overflow: visible;
+    stroke: ${!!props.stroke ? 'currentColor' : 'none'};
+    fill: ${props.stroke ? 'none' : 'currentColor'};
+    display: ${props.hiddenMobile ? '{ base: `none`, md: `block` }' : 'block'};
+    color: ${props.colour};
+    z-index: ${props.zIndex};
+    width: ${props.width};
+    left: ${props.left};
+    top: ${props.top};
+`
+
 export const AnimatedBackground = styled.svg`
-    ${({
-        slow,
-        large,
-        horizontal,
-        colour,
-        zIndex,
-        stroke,
-        width,
-        left,
-        top,
-        hiddenMobile,
-    }: {
-        slow: boolean
-        large: boolean
-        horizontal: boolean
-        colour: string
-        zIndex: number
-        stroke: boolean
-        width: number
-        left: string
-        top: string
-        hiddenMobile: boolean
-    }) => css`
-        /* i'm certain theres a better way to do this */
-        animation: ${horizontal
-                ? large
-                    ? backgroundAnimationHorizontalWide
-                    : backgroundAnimationHorizontal
-                : large
-                ? backgroundAnimationVerticalLong
-                : backgroundAnimationVertical}
-            ${slow ? '11s' : large ? '10s' : '4s'} ease-in-out infinite
-            alternate;
-        position: absolute;
-        filter: blur(4px) saturate(160%);
-        overflow: visible;
-        stroke: ${!!stroke ? 'currentColor' : 'none'};
-        fill: ${stroke ? 'none' : 'currentColor'};
-        display: ${hiddenMobile ? '{ base: `none`, md: `block` }' : 'block'};
-        color: ${colour};
-        z-index: ${zIndex};
-        width: ${width};
-        left: ${left};
-        top: ${top};
-    `}
+    ${BackgroundSVG}
 `
