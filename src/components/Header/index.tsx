@@ -18,6 +18,7 @@
 
 import type { NextComponentType } from 'next'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { Menu } from 'react-feather'
 import scroll from 'react-scroll'
@@ -87,7 +88,40 @@ const Header: NextComponentType = () => {
     const [isMenuOpen, setMenuOpen] = React.useState(false)
     const [isBlurred, setBlurred] = React.useState(false)
 
+    const router = useRouter()
+    const [keys, setKeys] = React.useState([])
+
     React.useEffect(() => {
+        if (keys.join('') === 'uuddlrlrbae') {
+            router.push('/snake')
+            setKeys([])
+        }
+
+        const downHandler = (e: { code: string }) => {
+            let key: string | ConcatArray<never> | null = null
+            if (e.code === 'ArrowUp') key = 'u'
+            if (e.code === 'ArrowDown') key = 'd'
+            if (e.code === 'ArrowLeft') key = 'l'
+            if (e.code === 'ArrowRight') key = 'r'
+            if (e.code === 'KeyA') key = 'a'
+            if (e.code === 'KeyB') key = 'b'
+            if (e.code === 'Enter') key = 'e'
+
+            if (key) {
+                setKeys((keyState) =>
+                    keyState.length >= 11
+                        ? keyState
+                              .concat(key as ConcatArray<never>)
+                              .slice(1, 12)
+                        : keyState.concat(key as ConcatArray<never>)
+                )
+            } else {
+                setKeys([])
+            }
+        }
+
+        window.addEventListener('keydown', downHandler, { passive: true })
+
         // header blur
         window.onscroll = function () {
             if (window.scrollY <= 25) {
@@ -95,6 +129,10 @@ const Header: NextComponentType = () => {
             } else {
                 setBlurred(true)
             }
+        }
+
+        return () => {
+            window.removeEventListener('keydown', downHandler)
         }
     })
 

@@ -17,6 +17,7 @@
  */
 
 import type { NextComponentType } from 'next'
+import React from 'react'
 import scroll from 'react-scroll'
 import { AboutFamiliarList } from '../components/AboutFamiliarList'
 import { Emoji, generateEmojiConfig } from '../tools/emoji'
@@ -29,6 +30,7 @@ import {
 
 const AboutLayout: NextComponentType = () => {
     let ScrollElement = scroll.Element
+    const [superSneakyElement, setSuperSneakyElement] = React.useState(false)
 
     return (
         <ScrollElement name="aboutLayout">
@@ -140,6 +142,20 @@ const AboutLayout: NextComponentType = () => {
                 </h3>
                 <ul>
                     <li>My favourite kernel is Linux</li>
+                    <li>
+                        I love Easter Eggs and try and include them in every
+                        project. Including{' '}
+                        <b
+                            onClick={() => {
+                                setSuperSneakyElement(true)
+                            }}
+                        >
+                            this site!
+                        </b>
+                    </li>
+                    {superSneakyElement && (
+                        <li>Try the Konami Code and see what that does.</li>
+                    )}
                 </ul>
             </Container>
         </ScrollElement>

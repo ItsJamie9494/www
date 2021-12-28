@@ -113,3 +113,24 @@ export const CopyrightContainer = styled.p`
         text-align: center;
     }
 `
+
+export const EggToast = styled.span`
+    width: max-content;
+    height: auto;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    background-color: var(--colours-tertiary);
+    color: var(--colours-secondary);
+    font-size: 15px;
+    padding: 15px 40px 15px 40px;
+    text-align: center;
+    border-radius: 25px;
+    opacity: 0.7;
+    z-index: 999999;
+    @media screen and (max-width: 660px) {
+        display: none; // too lazy to bother programming this for tiny screens
+    }
+`
