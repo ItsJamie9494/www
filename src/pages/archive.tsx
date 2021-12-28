@@ -1,5 +1,6 @@
 import styled from '@emotion/styled'
 import Head from 'next/head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
 
@@ -652,7 +653,8 @@ const Index = () => {
                                 )
                             }}
                         >
-                            View this website's source on GitHub <small></small>
+                            View this website&apos;s source on GitHub{' '}
+                            <small></small>
                         </a>
                     </p>
                     <p className="view">All the pages on this site</p>
@@ -705,7 +707,10 @@ const Index = () => {
                     <section>
                         <h2>External Page!</h2>
 
-                        <p>External pages don't work in this archive. Sorry!</p>
+                        <p>
+                            External pages don&apos;t work in this archive.
+                            Sorry!
+                        </p>
 
                         <p>
                             If you were wondering, that link would have taken
@@ -719,7 +724,7 @@ const Index = () => {
                 {page === 'homepage' && (
                     <section>
                         <h2 id="welcome-to-awesometech10s-personal-webpage">
-                            Welcome to AwesomeTech10’s Personal Webpage
+                            Welcome to AwesomeTech10s Personal Webpage
                         </h2>
 
                         <p>
@@ -807,7 +812,7 @@ const Index = () => {
                         </p>
 
                         <p>
-                            If it’s this website, use the{' '}
+                            If its this website, use the{' '}
                             <a
                                 href={'#'}
                                 onClick={() => {
@@ -1047,7 +1052,7 @@ const Index = () => {
                             Welcome to The AwesomeTech10 Blog
                         </h3>
 
-                        <p>Here is my posts I’ve made.</p>
+                        <p>Here is my posts I&apos;ve made.</p>
                         <ul>
                             <li>
                                 <a
@@ -1168,21 +1173,22 @@ const Index = () => {
                         <h3>You really wanna?</h3>
                         <p>
                             This game is extremely old and bad. It was developed
-                            back in 2017, and may not work anymore. I'm not
+                            back in 2017, and may not work anymore. I&apos;m not
                             willing to fix it.
-                            <a href="/egg">
+                            <Link href="/egg">
                                 Click here if you really wanna try it.
-                            </a>
+                            </Link>
                         </p>
                     </section>
                 )}
 
                 {page === 'startbox' && (
                     <section>
-                        <h3>That page isn't archived!</h3>
+                        <h3>That page isn&apos;t archived!</h3>
                         <p>
-                            I'm sorry, but i'm not gonna bother trying to put
-                            the start page here in this archive. Not today.
+                            I&apos;m sorry, but i&apos;m not gonna bother trying
+                            to put the start page here in this archive. Not
+                            today.
                         </p>
                     </section>
                 )}
