@@ -95,7 +95,7 @@ export const RepositoriesGrid = styled.section`
     grid-template-columns: repeat(2, minmax(0px, 1fr));
     width: 100%;
     align-items: center;
-    @media (min-width: 320px) {
+    @media (max-width: 800px) {
         grid-template-columns: repeat(1, minmax(0px, 1fr));
     }
 `
