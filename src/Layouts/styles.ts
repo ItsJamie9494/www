@@ -44,6 +44,9 @@ export const StyledMainHeader = styled.h1`
     color: var(--colours-tertiary);
     width: fit-content;
     text-align: center;
+    @media (min-width: 750px) {
+        display: flex;
+    }
     @media (max-width: 500px) {
         font-size: 3rem;
         line-height: 2.5rem;
