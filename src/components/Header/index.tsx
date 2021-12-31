@@ -29,7 +29,7 @@ import {
     Image,
     LinkContainer,
     MobileButton,
-    StyledHeader,
+    StyledHeader
 } from './style'
 
 export const HeaderLinks: NextComponentType = () => {
@@ -138,7 +138,7 @@ const Header: NextComponentType = () => {
 
     return (
         <>
-            <StyledHeader isBlurred={isBlurred}>
+            <StyledHeader isBlurred={isBlurred && !isMenuOpen} isOpen={isMenuOpen}>
                 <Container>
                     <span>
                         <Link href={'/'} passHref>

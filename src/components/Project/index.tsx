@@ -24,8 +24,9 @@ import {
     ProjectDescription,
     ProjectImage,
     ProjectLink,
+    ProjectLinkRow,
     ProjectName,
-    StyledProject,
+    StyledProject
 } from './style'
 
 export const Project = ({
@@ -78,13 +79,7 @@ export const Project = ({
                 )}
             </ProjectName>
             <ProjectDescription>{projectDescription}</ProjectDescription>
-            <div
-                style={{
-                    display: 'grid',
-                    gridAutoFlow: 'column',
-                    gap: '30px',
-                    margin: '0 auto',
-                }}
+            <ProjectLinkRow
             >
                 <ProjectLink>
                     <Link href={link}>Visit Website</Link>
@@ -106,7 +101,7 @@ export const Project = ({
                         </Link>
                     </ProjectLink>
                 )}
-            </div>
+            </ProjectLinkRow>
         </StyledProject>
     )
 }

@@ -27,6 +27,13 @@ export const StyledMainLayout = styled.section`
     width: 100%;
     height: calc(100vh - 80px);
     flex-direction: column;
+
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
 `
 
 export const StyledMainHeader = styled.h1`
@@ -34,12 +41,10 @@ export const StyledMainHeader = styled.h1`
     font-size: 5rem;
     font-weight: 500;
     color: var(--colours-tertiary);
-    @media only screen and (max-width: 1224px) {
-        font-size: 3.5rem;
-        line-height: 3.5rem;
-    }
-    @media only screen and (max-width: 400px) {
-        font-size: 2.5rem;
+    width: fit-content;
+    text-align: center;
+    @media (max-width: 500px) {
+        font-size: 3rem;
         line-height: 2.5rem;
     }
 `
@@ -51,6 +56,12 @@ export const StyledMainSubheader = styled.h2`
     color: var(--ui-colour);
     align-self: start;
     display: flex;
+    width: fit-content;
+    text-align: center;
+    @media (max-width: 420px) {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
 `
 
 export const Bounce = keyframes`
@@ -80,6 +91,9 @@ export const RepositoriesGrid = styled.section`
     grid-template-columns: repeat(2, minmax(0px, 1fr));
     width: 100%;
     align-items: center;
+    @media (min-width: 320px) {
+        grid-template-columns: repeat(1, minmax(0px, 1fr));
+    }
 `
 
 export const StyledWorkLayout = styled.div`
@@ -100,6 +114,9 @@ export const Container = styled.div`
     width: 80vw;
     margin-bottom: 40px;
     padding: 0 10vw;
+    @media (min-width: 320px) {
+        width: 100%;
+    }
 `
 
 export const ContactGrid = styled.div`

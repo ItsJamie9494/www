@@ -27,14 +27,14 @@ export const StyledHeader = styled.header`
     transition: 0.5s background-color, 0.5s box-shadow;
     text-decoration: none;
     background-color: var(--ui-background);
-    opacity: 0.9;
     z-index: 999999999;
     @media print {
         display: none;
     }
-    ${({ isBlurred }: { isBlurred: boolean }) => css`
+    ${({ isBlurred, isOpen }: { isBlurred: boolean, isOpen: boolean }) => css`
         box-shadow: ${isBlurred ? '0 0 10px 0' : ''}
             ${isBlurred ? 'rgba(225, 225, 225, .65)' : ''};
+        opacity: ${isOpen ? '1' : '0.9'};
     `}
 `
 // TODO this should use a variable in box shadow, but it doesn't.
@@ -102,6 +102,7 @@ export const MobileButton = styled.div`
     }
 
     button {
+        color: var(--colours-tertiary);
         border: none;
         background: none;
         cursor: pointer;
@@ -115,7 +116,7 @@ export const MobileButton = styled.div`
 `
 
 export const MobileContainer = styled.section`
-    position: absolute;
+    position: fixed;
     top: 80px;
     left: 0;
     background-color: var(--ui-background);
@@ -123,6 +124,7 @@ export const MobileContainer = styled.section`
     width: 100%;
     z-index: 99;
     max-width: 100vw;
+    box-shadow: 0 0 10px 0 rgba(225, 225, 225, .65);
 
     ${({ isVisible }: { isVisible: boolean }) => css`
         transform: translateY(${isVisible ? '0%' : '-200%'});

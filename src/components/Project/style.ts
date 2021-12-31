@@ -57,6 +57,21 @@ export const ProjectDescription = styled.span`
     }
 `
 
+export const ProjectLinkRow = styled.div`
+    display: grid;
+    gridAutoFlow: column;
+    gap: 30px;
+    margin: 0 auto;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+
+    @media (min-width: 320px) {
+        gap: 1px;
+        grid-auto-flow: row;
+    }
+`
+
 export const ProjectLink = styled.div`
     width: max-content;
     margin-top: 12px;

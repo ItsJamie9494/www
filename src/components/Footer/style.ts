@@ -42,6 +42,10 @@ export const StyledFooter = styled.div`
         position: absolute;
         top: -3rem;
     }
+
+    @media (min-width: 320px) {
+        height: fit-content;
+    }
 `
 
 export const Container = styled.div`
@@ -69,9 +73,10 @@ export const Container = styled.div`
             cursor: pointer;
         }
     }
-    @media screen and (max-width: 660px) {
+    @media screen and (min-width: 320px) {
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
 `
 
@@ -85,6 +90,9 @@ export const Image = styled.img`
         transform: scale(1.1);
         cursor: pointer;
     }
+    @media screen and (min-width: 320px) {
+        margin: 0;
+    }
 `
 
 export const RightContainer = styled.div`
@@ -93,10 +101,12 @@ export const RightContainer = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem;
-    @media screen and (max-width: 380px) {
+    @media screen and (max-width: 800px) {
+        margin-top: 1rem;
         flex-direction: column;
         align-items: center;
         justify-items: center;
+        gap: 0;
     }
 `
 
@@ -107,10 +117,12 @@ export const CopyrightContainer = styled.p`
     transition: 0.5s opacity;
     color: var(--colours-tertiary);
     text-decoration: none;
-    @media screen and (max-width: 660px) {
+    @media screen and (max-width: 800px) {
         margin-bottom: 20px;
         align-items: center;
         text-align: center;
+        gap: 0;
+        margin: 0;
     }
 `
 

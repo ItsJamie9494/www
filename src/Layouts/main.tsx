@@ -24,7 +24,7 @@ import {
     StyledChevron,
     StyledMainHeader,
     StyledMainLayout,
-    StyledMainSubheader,
+    StyledMainSubheader
 } from './styles'
 
 const MainLayout: NextComponentType = () => {
@@ -33,7 +33,7 @@ const MainLayout: NextComponentType = () => {
     return (
         <ScrollElement name="mainLayout">
             <StyledMainLayout>
-                <div>
+                <span>
                     <StyledMainHeader>
                         Hello, I'm Jamie{' '}
                         <Emoji
@@ -47,7 +47,7 @@ const MainLayout: NextComponentType = () => {
                         I'm a programmer that works on open-source projects
                         &lt;3
                     </StyledMainSubheader>
-                </div>
+                    </span>
                 <StyledChevron
                     onClick={() =>
                         scroller.scrollTo('workLayout', {
