@@ -90,6 +90,8 @@ export const AboutFamiliarList = () => {
                 />
                 <TooltipImage src={'frameworks/node'} alt={'Node.js'} />
                 <TooltipImage src={'frameworks/webpack'} alt={'Webpack'} />
+                <TooltipImage src={'frameworks/gtk'} alt={'GTK4'} />
+                <TooltipImage src={'frameworks/libadwaita'} alt={'LibAdwaita'} />
             </div>
 
             <h4>

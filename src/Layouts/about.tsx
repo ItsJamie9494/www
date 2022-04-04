@@ -25,7 +25,7 @@ import {
     Container,
     StyledMainHeader,
     StyledMainSubheader,
-    StyledWorkLayout,
+    StyledWorkLayout
 } from './styles'
 
 const AboutLayout: NextComponentType = () => {
@@ -48,9 +48,7 @@ const AboutLayout: NextComponentType = () => {
                             className: 'emoji',
                         })}
                     />{' '}
-                    Hey there, my name is Jamie. You might also know me as
-                    "AwesomeTech10," which was my online identity for a few
-                    years, before I decided to use my name.
+                    Hey there, my name is Jamie.
                 </p>
 
                 <span style={{ display: 'inline-block' }}>
@@ -106,12 +104,7 @@ const AboutLayout: NextComponentType = () => {
                 <ul>
                     <li>
                         <span style={{ display: 'inline-block' }}>
-                            <a href={'https://tau.innatical.com'}>tauOS</a>
-                        </span>
-                    </li>
-                    <li>
-                        <span style={{ display: 'inline-block' }}>
-                            <a href={'https://fivnex.co'}>Fivnex</a>
+                            <a href={'https://tauos.co'}>tauOS</a>
                         </span>
                     </li>
                 </ul>
@@ -128,6 +121,8 @@ const AboutLayout: NextComponentType = () => {
                 <ul>
                     <li>TypeScript</li>
                     <li>Rust</li>
+                    <li>GTK4</li>
+                    <li>LibAdwaita</li>
                     <li>Vala</li>
                 </ul>
 
@@ -142,6 +137,7 @@ const AboutLayout: NextComponentType = () => {
                 </h3>
                 <ul>
                     <li>My favourite kernel is Linux</li>
+                    <li>My favourite Linux DE is GNOME</li>
                     <li>
                         I love Easter Eggs and try and include them in every
                         project. Including{' '}

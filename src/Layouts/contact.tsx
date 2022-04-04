@@ -25,7 +25,7 @@ import {
     ContactSocialLink,
     Container,
     StyledMainHeader,
-    StyledWorkLayout,
+    StyledWorkLayout
 } from './styles'
 
 interface SocialMedia {
@@ -88,25 +88,12 @@ const ContactLayout: NextComponentType = () => {
                     <li>
                         Do you have an issue or question relating to{' '}
                         <span style={{ display: 'inline-block' }}>
-                            <a href={'https://tau.innatical.com'}>tauOS</a>
+                            <a href={'https://tauos.co'}>tauOS</a>
                         </span>
-                        ? Please contact Innatical at{' '}
+                        ? Please contact us at{' '}
                         <span style={{ display: 'inline-block' }}>
-                            <a href={'mailto:contact@innatical.com'}>
-                                contact@innatical.com
-                            </a>
-                        </span>
-                        .
-                    </li>
-                    <li>
-                        Do you have an issue or question relating to{' '}
-                        <span style={{ display: 'inline-block' }}>
-                            <a href={'https://fivnex.co'}>Fivnex</a>
-                        </span>
-                        ? Please contact Fivnex at{' '}
-                        <span style={{ display: 'inline-block' }}>
-                            <a href={'mailto:support@fivnex.co'}>
-                                support@fivnex.co
+                            <a href={'mailto:contact@tauos.co'}>
+                                contact@tauos.co
                             </a>
                         </span>
                         .
@@ -142,7 +129,7 @@ const ContactLayout: NextComponentType = () => {
                         },
                         {
                             name: 'Reddit',
-                            link: 'https://reddit.com/u/IAmAwesomeTech10',
+                            link: 'https://reddit.com/u/418_AM_TEAPOT',
                             icon: 'reddit-icon',
                         },
                         {
@@ -154,16 +141,6 @@ const ContactLayout: NextComponentType = () => {
                             name: 'GitHub',
                             link: 'https://github.com/ItsJamie9494',
                             icon: 'github-icon',
-                        },
-                        {
-                            name: 'Polywork',
-                            link: 'https://www.polywork.com/itsjamie9494',
-                            icon: 'polywork-icon',
-                        },
-                        {
-                            name: 'Mastodon',
-                            link: 'https://mastodon.online/@jamiethalacker',
-                            icon: 'mastodon-icon',
                         },
                     ]}
                 />

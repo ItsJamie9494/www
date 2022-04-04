@@ -36,19 +36,11 @@ const WorkLayout = ({ repositories }: { repositories?: Array<Repository> }) => {
                 <Project
                     header={'tauOS'}
                     projectDescription={
-                        'A First Class Platform for All You Do.'
+                        'Form. Function. Elegance.'
                     }
-                    image={'/assets/projects/tau.jpg'}
-                    repo={'tauLinux'}
-                    link={'https://tau.innatical.com'}
-                />
-
-                <Project
-                    header={'Fivnex'}
-                    projectDescription={'Your Technology Matters.'}
-                    image={'/assets/projects/fivnex.jpg'}
-                    repo={'fivnex'}
-                    link={'https://fivnex.co'}
+                    image={'/assets/projects/tau.png'}
+                    repo={'tau-OS'}
+                    link={'https://tauos.co'}
                 />
 
                 <Project
